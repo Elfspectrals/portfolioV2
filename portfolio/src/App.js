@@ -3,7 +3,7 @@ import Secret from './Assets/secret.png'
 import Design from './Assets/design.png'
 export default function Component() {
   return (
-    <div className="bg-black text-white w-full h-screen flex justify-center items-center overflow-hidden">
+    <div className="bg-black text-white w-full h-screen flex justify-center items-center">
       <section className="mb-8 w-full max-w-screen-lg mx-auto">
         <h2 className="text-4xl font-bold mb-4 text-center text-indigo-400 ">Creation of Jerome</h2>
         <div className="flex space-x-4">
