@@ -1,6 +1,8 @@
 import Escape from './Assets/hacker.jpg'
 import Secret from './Assets/secret.png'
 import Design from './Assets/design.png'
+import Zombie from './Assets/zombie.png'
+import './App.css'
 export default function Component() {
   return (
     <div className="bg-black text-white w-full h-screen flex justify-center items-center">
@@ -26,10 +28,12 @@ export default function Component() {
             </div>
           </div>
           <div className="w-64 flex-shrink-0">
-            <img src={Secret} alt="A Christmas Prince" className="w-full h-64 object-cover" />
+            <img src={Zombie} alt="A Christmas Prince" className="w-full h-64 object-cover" />
             <div className="mt-2 text-center">
               <p className="text-sm">CIA</p>
               <p className="font-bold">Secret project [Jeux Vidéo]</p>
+              <p>Unreal Engine 5 🤫 <br />
+              [ Il arrive bientôt promis ! ]</p>
             </div>
           </div>
           <div className="w-64 flex-shrink-0">
