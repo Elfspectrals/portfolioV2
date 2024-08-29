@@ -3,6 +3,9 @@ import Escape from './Assets/hacker.jpg';
 import Secret from './Assets/secret.png';
 import Design from './Assets/design.png';
 import Zombie from './Assets/zombie.png';
+import Tailwind from './Assets/tailwind.png';
+import ReactImage from './Assets/React.png';
+import ThreeJS from './Assets/ThreeJS.png';
 import './App.css';
 
 export default function App () {
@@ -12,35 +15,35 @@ export default function App () {
     switch (selectedProject) {
       case 'Neo Jerome':
         return (
-          <div className="p-5 bg-gray-800 rounded-lg mt-5">
-            <p className="text-gray-300">
-              Description : The Hacking Traitor <br />
-              Envoyé par la compagnie <i>Neo Jerome</i> pour trouver leur traître, <br />
-              Il y aura donc plusieurs phases de jeu : <br />
-              - La phase de hacking des informations de la compagnie <br />
-              - La phase de recherche <br />
+          <div className="p-5 bg-black rounded-lg mt-5">
+            <p className="text-green-400 font-mono">
+              <span className="font-bold">Description :</span> <span className="italic">The Hacking Traitor</span> <br />
+              <span className="font-semibold">Envoyé par la compagnie</span> <i>Neo Jerome</i> <span className="font-semibold">pour trouver leur traître,</span> <br />
+              <span className="font-semibold">Il y aura donc plusieurs phases de jeu :</span> <br />
+              <span className="font-semibold">La première phase sera de trouver le traître, accumuler des preuves puis récuperer tout ce qui est possible</span> <br />
             </p>
             <div className="mt-2">
-              <h3 className="text-yellow-400">Technologies utilisées :</h3>
-              <li className="list-none mt-1">React <img src={Zombie} alt='' className="inline-block w-5 h-5 ml-2"/></li>
+              <h3 className="text-green-500 font-mono">Technologies utilisées :</h3>
+              <li className="list-none mt-1 text-green-400 font-mono">React : <img src={ReactImage} alt={ReactImage} className="inline-block w-12 h-12 ml-2"/></li>
+              <li className="list-none mt-1 text-green-400 font-mono">Tailwind : <img src={Tailwind} alt='' className="inline-block w-12 h-12 ml-2"/></li>
             </div>
           </div>
         );
       case 'Jerome Chanel':
         return (
-          <div className="p-5 bg-gray-800 rounded-lg mt-5">
-            <p className="text-gray-300">
-              Description : Chanel Jérôme <br />
-              The ability to design your own outfit <br />
+          <div className="p-5 bg-black rounded-lg mt-5">
+            <p className="text-yellow-300 font-serif">
+              <span className="font-bold">Description :</span> <span className="italic">Chanel Jérôme</span> <br />
+              <span className="font-semibold">Luxe, élégance et design</span> <br />
+              <span className="font-semibold">La capacité de concevoir votre propre tenue de luxe, </span> <br />
+              <span className="font-semibold">avec une touche de sophistication inégalée.</span> <br />
             </p>
             <div className="mt-2">
-              <h3 className="text-yellow-400">Technologies utilisées :</h3>
-              <ul>
-                <li className="list-none mt-1">React <img src={Zombie} alt='' className="inline-block w-12 h-12 ml-2"/></li>
-                <li className="list-none mt-1">React <img src={Zombie} alt='' className="inline-block w-12 h-12 ml-2"/></li>
-                <li className="list-none mt-1">React <img src={Zombie} alt='' className="inline-block w-12 h-12 ml-2"/></li>
-                <li className="list-none mt-1">React <img src={Zombie} alt='' className="inline-block w-12 h-12 ml-2"/></li>
-              </ul>
+              <h3 className="text-yellow-400 font-serif">Technologies utilisées :</h3>
+              <li className="list-none mt-1 text-yellow-300 font-serif">React : <img src={ReactImage} alt="React" className="inline-block w-12 h-12 ml-2" /></li>
+              <li className="list-none mt-1 text-yellow-300 font-serif">Tailwind : <img src={Tailwind} alt="Tailwind" className="inline-block w-12 h-12 ml-2" /></li>
+              <li className="list-none mt-1 text-yellow-300 font-serif">ThreeJS : <img src={ThreeJS} alt="Tailwind" className="inline-block w-12 h-12 ml-2" /></li>
+
             </div>
           </div>
         );
