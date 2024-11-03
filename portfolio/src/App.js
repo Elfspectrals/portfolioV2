@@ -172,7 +172,7 @@ export default function App () {
        <section className="w-full max-w-screen-lg mx-auto mt-10 p-5 bg-gray-800 rounded-lg">
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-indigo-400">Contact Me</h2>
         <form 
-          action="https://formsubmit.co/your-email@example.com" 
+          action="https://formsubmit.co/jerome.neupert@gmail.com" 
           method="POST" 
           className="flex flex-col gap-4"
         >
