@@ -132,7 +132,7 @@ export default function App() {
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory">
       {/* Présentation */}
       <section className="h-screen flex flex-col justify-center items-center px-4 snap-start bg-slate-900 to-purple-700">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center title">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center title titleDev">
           Jérôme NEUPERT : Développeur Web
         </h2>
         <div className="flex justify-center">

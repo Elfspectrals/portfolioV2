@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Goudy';
+  src: url('./goudy.ttf') format('truetype');
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+  font-family: 'Goudy', sans-serif;
+  font-style: normal;
+}
 .title {
     padding-top: 5vh;
     padding-bottom: 5vh;
@@ -43,4 +52,13 @@ ul .LI_AL{
   height: auto;
   border-radius: 10px;
   display: block;
+}
+
+.titleDev {
+  color: #50C9CE;
+  border-radius: 50px;
+}
+
+.cursor-pointer {
+  background: white;
 }
