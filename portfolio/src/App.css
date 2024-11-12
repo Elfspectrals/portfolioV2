@@ -1,4 +1,46 @@
-body {
-  background: black;
-  width: 100vw;
+.title {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    text-decoration: underline;
+}
+
+.aboutMe {
+    margin-top: 5vh;
+    margin-bottom: 15vh;
+}
+
+ul {
+  color: #FFFD82;
+}
+ul .LI_AR{
+    list-style-image: url('./Assets/gamepad.svg');
+}
+
+ul .LI_JV{
+  list-style-image: url('./Assets/gamepad-2.svg');
+}
+
+ul .LI_AL{
+  list-style-image: url('./Assets/wine.svg');
+}
+
+.neon-border {
+  padding: 10px; /* Space around the image */
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+  background-size: 300% 300%;
+  animation: neon-border-animation 3s infinite linear;
+  display: inline-block;
+}
+
+@keyframes neon-border-animation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.portrait {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
 }
