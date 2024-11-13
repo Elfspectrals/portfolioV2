@@ -8,7 +8,6 @@ import Moi from './Assets/moi.jpg';
 import './App.css';
 
 export default function App() {
-  const [selectedProject, setSelectedProject] = useState('default');
   const [showAboutMe, setShowAboutMe] = useState(false);
   const [currentImage, setCurrentImage] = useState(Escape); // State for the current image
   const [currentDescription, setCurrentDescription] = useState('Click on a project to see more information.');
@@ -17,6 +16,10 @@ export default function App() {
   useEffect(() => {
     if (svgRef.current) {
       const textElements = svgRef.current.querySelectorAll('text');
+
+      textElements.forEach((textElement) => {
+        textElement.style.cursor = 'pointer';
+      });
 
       const handleClick = (e) => {
         const projectName = e.target.textContent.trim();
@@ -31,11 +34,12 @@ export default function App() {
 
         // Map of project names to descriptions
         const descriptionMap = {
-          'Hacking Traitor': 'Hacking Traitor is a thrilling game where you navigate complex security systems.',
-          'Jerome Chanel': 'Jerome Chanel is a fashion-forward project blending technology and style.',
-          'Emoji Impostor': 'Emoji Impostor is a fun app that lets you express yourself with custom emojis.',
-          'Battleship': 'Battleship is a classic naval strategy game brought to the digital age.',
+          'Hacking Traitor': 'Plongez dans un jeu palpitant où le hacking est votre seule arme pour démasquer le traître parmi vous. Suspense et stratégie sont au rendez-vous dans cette aventure numérique intense !',
+          'Jerome Chanel': 'Explorez le monde de la mode personnalisée ! Ce mini site vous permet de prévisualiser des accessoires uniques et de les personnaliser à votre goût, fusionnant créativité et technologie.',
+          'Emoji Impostor': 'Trouvez l’emoji imposteur dans ce jeu amusant et addictif, intégré directement dans votre navigateur. Un défi ludique pour vos capacités d’observation, accessible en un clic !',
+          'Battleship': 'Redécouvrez le classique de la bataille navale avec une touche moderne, alliant stratégie et compétition. Un incontournable pour les fans de jeux de stratégie !',
         };
+        
 
         const imageToDisplay = imageMap[projectName];
         const descriptionToDisplay = descriptionMap[projectName];
@@ -66,9 +70,6 @@ export default function App() {
     }
   }, []);
 
-  const handleImageClick = (project) => {
-    setSelectedProject((prevProject) => (prevProject === project ? 'default' : project));
-  };
 
   return (
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory">
