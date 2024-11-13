@@ -59,6 +59,11 @@ ul .LI_AL{
   border-radius: 50px;
 }
 
-.cursor-pointer {
-  background: white;
+
+.test {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  
 }
