@@ -11,6 +11,7 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState('default');
   const [showAboutMe, setShowAboutMe] = useState(false);
   const [currentImage, setCurrentImage] = useState(Escape); // State for the current image
+  const [currentDescription, setCurrentDescription] = useState('Click on a project to see more information.');
   const svgRef = useRef(null);
 
   useEffect(() => {
@@ -28,11 +29,27 @@ export default function App() {
           'Battleship': BattleShip,
         };
 
+        // Map of project names to descriptions
+        const descriptionMap = {
+          'Hacking Traitor': 'Hacking Traitor is a thrilling game where you navigate complex security systems.',
+          'Jerome Chanel': 'Jerome Chanel is a fashion-forward project blending technology and style.',
+          'Emoji Impostor': 'Emoji Impostor is a fun app that lets you express yourself with custom emojis.',
+          'Battleship': 'Battleship is a classic naval strategy game brought to the digital age.',
+        };
+
         const imageToDisplay = imageMap[projectName];
+        const descriptionToDisplay = descriptionMap[projectName];
+
         if (imageToDisplay) {
           setCurrentImage(imageToDisplay);
         } else {
           console.warn(`No image found for project: ${projectName}`);
+        }
+
+        if (descriptionToDisplay) {
+          setCurrentDescription(descriptionToDisplay);
+        } else {
+          console.warn(`No description found for project: ${projectName}`);
         }
       };
 
@@ -83,14 +100,18 @@ export default function App() {
 
       {/* Projets */}
       <section className="min-h-screen px-4 snap-start bg-gradient-to-b from-slate-600 to-gray-800 flex flex-col justify-center items-center">
-        <div className="relative w-3/4 h-auto">
-          <SVG ref={svgRef} className="w-full h-full" />
-          <img
-            src={currentImage}
-            className="absolute m-auto w-1/2 h-1/2 object-contain test"
-            alt="Project Visual"
-          />
-        </div>
+      <div className="relative w-3/4 h-auto">
+  <SVG ref={svgRef} className="w-full h-full" />
+  <p className="textSVG">{currentDescription}</p>
+  <div className="imageContainer">
+    <img
+      src={currentImage}
+      className="imageSVG"
+      alt="Project Visual"
+    />
+  </div>
+</div>
+
       </section>
 
       {/* Formulaire de contact */}
