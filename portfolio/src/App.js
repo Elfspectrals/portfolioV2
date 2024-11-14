@@ -4,6 +4,8 @@ import Escape from './Assets/hacker.jpg'; // Hacking Traitor
 import Design from './Assets/design.png'; // Jerome Chanel
 import Smiley from './Assets/smiley.png'; // Emoji Impostor
 import BattleShip from './Assets/battleship.png'; // Battleship
+import Cocktail from './Assets/cocktail.jpg';
+import Skribble from './Assets/skribble.png'
 import Moi from './Assets/moi.jpg';
 import './App.css';
 
@@ -30,6 +32,8 @@ export default function App() {
           'Jerome Chanel': Design,
           'Emoji Impostor': Smiley,
           'Battleship': BattleShip,
+          'ShakeDrink' : Cocktail,
+          'Skribble' : Skribble
         };
 
         // Map of project names to descriptions
@@ -38,6 +42,8 @@ export default function App() {
           'Jerome Chanel': 'Explorez le monde de la mode personnalisée ! Ce mini site vous permet de prévisualiser des accessoires uniques et de les personnaliser à votre goût, fusionnant créativité et technologie.',
           'Emoji Impostor': 'Trouvez l’emoji imposteur dans ce jeu amusant et addictif, intégré directement dans votre navigateur. Un défi ludique pour vos capacités d’observation, accessible en un clic !',
           'Battleship': 'Redécouvrez le classique de la bataille navale avec une touche moderne, alliant stratégie et compétition. Un incontournable pour les fans de jeux de stratégie !',
+          'ShakeDrink' : 'Découvrez des recettes de cocktails uniques et savoureuses avec notre application Shake Drink. Parfait pour les amateurs de boissons de qualité qui souhaitent expérimenter et savourer de nouvelles saveurs !',
+          'Skribble' : 'Un jeu de dessin multijoueur où vous pouvez exprimer votre créativité et deviner les dessins de vos amis. Amusement garanti pour tous les âges ! '
         };
         
 
