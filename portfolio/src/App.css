@@ -74,9 +74,12 @@ ul .LI_AL{
 
 .imageSVG {
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover; /* Remplit le conteneur sans distorsion */
   display: block;
+}
+.svgDiv {
+  scale: 0.8;
 }
 
 

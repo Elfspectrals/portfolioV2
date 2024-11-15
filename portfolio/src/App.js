@@ -107,7 +107,7 @@ export default function App() {
 
       {/* Projets */}
       <section className="min-h-screen px-4 snap-start bg-gradient-to-b from-slate-600 to-gray-800 flex flex-col justify-center items-center">
-      <div className="relative w-3/4 h-auto">
+      <div className="relative w-3/4 h-auto svgDiv">
   <SVG ref={svgRef} className="w-full h-full" />
   <p className="textSVG">{currentDescription}</p>
   <div className="imageContainer">
