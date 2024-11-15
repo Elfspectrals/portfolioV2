@@ -78,9 +78,7 @@ ul .LI_AL{
   object-fit: cover; /* Remplit le conteneur sans distorsion */
   display: block;
 }
-.svgDiv {
-  scale: 0.8;
-}
+
 
 
 .textSVG {
@@ -91,4 +89,10 @@ ul .LI_AL{
   color: white;
   background-color: grey;
   z-index: 1;
+}
+
+@media (max:600px) {
+  .svgDiv {
+    scale: 0.4;
+  }
 }
