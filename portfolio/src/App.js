@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ContactMe from './ContactMe'; // Import ContactMe component
 import Presentation from './Presentation'; // Import Presentation component
+import ThreeJS from './ThreeJS'; // Import ThreeJS component
 import './App.css';
 
 export default function App() {
@@ -17,7 +18,7 @@ export default function App() {
 
       {/* Section Projets */}
       <section className="min-h-screen px-4 snap-start bg-gradient-to-b from-slate-600 to-gray-800 flex flex-col justify-center items-center">
-        {/* SVG Project Section */}
+        <ThreeJS />
       </section>
 
       {/* Contact Form */}
