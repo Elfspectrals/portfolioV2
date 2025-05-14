@@ -1,5 +1,6 @@
 import React from 'react';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import '../styles/Header.css';
 
 const Header = () => {
@@ -7,15 +8,17 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="logo-area">
-          <img src="https://via.placeholder.com/120x40?text=Logo" alt="Logo" className="logo" />
+          <Link to="/">
+            <img src="https://via.placeholder.com/120x40?text=Logo" alt="Logo" className="logo" />
+          </Link>
         </div>
 
         <nav className="nav">
           <ul className="nav-list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/projects">Projects</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </nav>
 
