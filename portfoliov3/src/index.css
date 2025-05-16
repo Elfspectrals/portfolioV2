@@ -5,4 +5,7 @@ body {
 .app {
     height: 100vh;
     background: #393464;
-}
+
+    h1 {
+        margin: 0;
+      }}

@@ -1,5 +1,6 @@
 .header {
-  background-color: #0f0e17;
+  /* Use css to blend this with white */
+  background-color: #1a1922;
   padding: 1rem 2rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   position: sticky;
