@@ -1,5 +1,5 @@
 .header {
-    background-color: #7a7878;
+    background-color: #312121;
     padding: 1rem 2rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     position: sticky;
@@ -16,7 +16,7 @@
   }
   
   .logo-area .logo {
-    height: 40px;
+    height: 50px;
   }
   
   .nav {
@@ -50,11 +50,11 @@
   }
   
   .social-icons a {
-    color: #333;
+    color: #b3acac;
     transition: color 0.3s;
   }
   
   .social-icons a:hover {
-    color: #007bff;
+    color: #b50b0b;
   }
   
