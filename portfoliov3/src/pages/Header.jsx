@@ -7,28 +7,26 @@ import logo from '../assets/logo.png';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Prevent background scroll while drawer is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => (document.body.style.overflow = '');
   }, [isOpen]);
 
   const toggleMenu = () => setIsOpen(prev => !prev);
-  const closeMenu  = () => setIsOpen(false);
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <header className="header">
       <div className="container">
-        {/* Desktop logo */}
+        {/* Left: Logo */}
         <div className="logo-area">
           <Link to="/" onClick={closeMenu}>
             <img src={logo} alt="Logo" className="logo" />
           </Link>
         </div>
 
-        {/* Nav drawer / desktop bar */}
+        {/* Center: Nav */}
         <nav className={`nav ${isOpen ? 'open' : ''}`}>
-          {/* Mobile logo in drawer */}
           <div className="logo-mobile">
             <Link to="/" onClick={closeMenu}>
               <img src={logo} alt="Logo" className="logo" />
@@ -42,25 +40,46 @@ const Header = () => {
             <li><Link to="/contact">Contact</Link></li>
           </ul>
 
-          <div className="social-icons">
-            <a
-              href="https://github.com/orgs/SpectralsOrganization/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/jerome-neupert/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin size={24} />
-            </a>
-          </div>
+          {/* This only shows inside mobile drawer */}
+          {isOpen && (
+            <div className="social-icons">
+              <a
+                href="https://github.com/orgs/SpectralsOrganization/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github size={24} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/jerome-neupert/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin size={24} />
+              </a>
+            </div>
+          )}
         </nav>
 
-        {/* Hamburger icon (mobile only) */}
+        {/* Right: Social (desktop only) */}
+        <div className="social-icons desktop-only">
+          <a
+            href="https://github.com/orgs/SpectralsOrganization/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github size={24} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jerome-neupert/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Linkedin size={24} />
+          </a>
+        </div>
+
+        {/* Hamburger */}
         <button
           aria-label="Toggle navigation menu"
           className={`hamburger ${isOpen ? 'open' : ''}`}

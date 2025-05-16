@@ -11,7 +11,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Header />
+      <div className="app">
       <App />
+      </div>
     </BrowserRouter>
   </React.StrictMode>
 );
