@@ -1,0 +1,19 @@
+@use 'abstracts/variables' as v;
+
+html.theme-light {
+  @each $name, $value in v.$v-light {
+    --#{$name}: #{$value};
+  }
+}
+
+html.theme-dark {
+  @each $name, $value in v.$v-dark {
+    --#{$name}: #{$value};
+  }
+}
+
+/* Optionally, apply theme variables to the body */
+body {
+  background-color: var(--background);
+  color: var(--text);
+}

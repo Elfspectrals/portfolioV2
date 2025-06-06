@@ -1,0 +1,29 @@
+// Palette tokens (independent of theme)
+$blue:   #2563eb;
+$orange: #f97316;
+$green:  #16a34a;
+$gray-1: #f8f9fa;
+$gray-9: #111827;
+
+// Light theme map
+$light: (
+  bg: $gray-1,
+  fg: $gray-9
+);
+
+// Dark theme map
+$dark: (
+  bg: #111827,
+  fg: #f8f9fa
+);
+
+
+$v-light: (
+  "background": #ffffff,
+  "text": #000000
+);
+
+$v-dark: (
+  "background": #000000,
+  "text": #ffffff
+);
