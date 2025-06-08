@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--fg);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  &.active,
+  &:hover {
+    background: var(--fg);
+    color: var(--bg);
+  }
+}
