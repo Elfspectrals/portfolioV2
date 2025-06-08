@@ -22,7 +22,9 @@ export const Navigation: React.FC<NavigationProps> = ({ links, className }) => (
           clsx(styles.link, isActive && styles.active)
         }
       >
+        <h1>
         {label}
+        </h1>
       </NavLink>
     ))}
   </nav>

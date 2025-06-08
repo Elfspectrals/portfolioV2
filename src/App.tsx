@@ -4,8 +4,9 @@ import { setTheme } from './utils/theme';
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Work', href: '/work' },
+  { label: 'Extension Chrome', href: '/extension-chrome' },
   { label: 'Contact', href: '/contact' },
+  
 ];
 
 const themeOptions = [
@@ -14,10 +15,8 @@ const themeOptions = [
 ];
 
 function App() {
-  // Set default theme to dark
   const [theme, setLocalTheme] = useState<'light' | 'dark'>('dark');
 
-  // Ensure the document gets the dark theme on mount or theme change
   useEffect(() => {
     setTheme(theme);
   }, [theme]);

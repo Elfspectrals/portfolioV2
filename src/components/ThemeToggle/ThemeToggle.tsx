@@ -29,7 +29,7 @@ export const ThemeToggle: React.FC<{ className?: string }> = ({ className }) => 
       className={clsx(styles.toggle, dark && styles.dark, className)}
       onClick={toggle}
     >
-      {dark ? <Sun size={18} strokeWidth={2} color='white'/> : <Moon size={18} strokeWidth={2} />}
+      {dark ? <Sun size={24} strokeWidth={2} color='white'/> : <Moon size={24} strokeWidth={2} />}
     </button>
   );
 };
