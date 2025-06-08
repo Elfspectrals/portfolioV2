@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Header } from './components/Header/Header';
-import { Button } from './components/Button/Button';
 import { setTheme } from './utils/theme';
 
 const navLinks = [
@@ -15,9 +14,13 @@ const themeOptions = [
 ];
 
 function App() {
-  const [theme, setLocalTheme] = useState<'light' | 'dark'>(
-    document.documentElement.classList.contains('theme-dark') ? 'dark' : 'light'
-  );
+  // Set default theme to dark
+  const [theme, setLocalTheme] = useState<'light' | 'dark'>('dark');
+
+  // Ensure the document gets the dark theme on mount or theme change
+  useEffect(() => {
+    setTheme(theme);
+  }, [theme]);
 
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark';

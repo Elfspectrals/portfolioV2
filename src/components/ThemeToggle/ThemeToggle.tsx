@@ -9,7 +9,6 @@ export const ThemeToggle: React.FC<{ className?: string }> = ({ className }) => 
     document.documentElement.classList.contains('theme-dark')
   );
 
-  // keep local state in sync if theme is changed elsewhere
   useEffect(() => {
     const obs = new MutationObserver(() =>
       setDark(document.documentElement.classList.contains('theme-dark'))
@@ -30,7 +29,7 @@ export const ThemeToggle: React.FC<{ className?: string }> = ({ className }) => 
       className={clsx(styles.toggle, dark && styles.dark, className)}
       onClick={toggle}
     >
-      {dark ? <Sun size={18} strokeWidth={2} /> : <Moon size={18} strokeWidth={2} />}
+      {dark ? <Sun size={18} strokeWidth={2} color='white'/> : <Moon size={18} strokeWidth={2} />}
     </button>
   );
 };
