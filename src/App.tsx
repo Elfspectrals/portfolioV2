@@ -17,7 +17,7 @@ const themeOptions = [
 ];
 
 function App() {
-  const [theme, setLocalTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setLocalTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
     setTheme(theme);

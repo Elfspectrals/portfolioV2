@@ -33,6 +33,18 @@
 
 .card-short-description,
 .card-link {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     color: var(--text);
+}
+
+.card-skills {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem; 
+}
+
+.card-skill-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--card-icon);
 }
