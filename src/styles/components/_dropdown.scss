@@ -1,5 +1,4 @@
-/* pull in the .btn declarations so @extend can see them */
-@use 'buttons' as *;   // buttons == _buttons.scss in the same folder
+@use 'buttons' as *;
 
 .dropdown {
   position: relative;
