@@ -1,9 +1,8 @@
-// Palette tokens (independent of theme)
 $blue:   #2563eb;
 $orange: #f97316;
 $green:  #16a34a;
-$gray-1: #f8f9fa;
-$gray-9: #111827;
+$border-Card-Light: blue;
+$border-Card-Dark: red;
 
 
 
@@ -11,12 +10,13 @@ $gray-9: #111827;
 $v-light: (
   "background": #DDE1C5,
   "text": #1A1A1A,
-  "card-bg": #FFEFD6
-
+  "card-bg": #FFEFD6,
+  "card-text": #333333,
 );
 
 $v-dark: (
   "background": #042B29,
   "text": #EAEAEA,
   "card-bg": #581818,
+  "card-text": #F5F5F5,
 );

@@ -2,38 +2,38 @@ import React from 'react';
 import Card from '../components/Card/Card';
 import styles from './ExtensionChrome.module.scss';
 
+import Scribe from '../assets/scribe.png';
+import MailResponse from '../assets/mailResponse.png';
+import Smiley from '../assets/smiley.png';
+import Traduction from '../assets/traduction.png';
+
 const ExtensionChrome: React.FC = () => {
   return (
     <div className={styles.container}>
       <Card
-        projectLink='a'
-        projectLinkText='Où retrouver ce projet : GitHub'
-        shortDescription='Extension Chrome pour corriger les fautes d’orthographe dans les emails'
-        imgSrc='https://www.tourisme-yonne.com/uploads/2023/03/noyers-sur-serein_copyright-cd89-studio-morize-1600x900.png'
+        title='IA : Scribe correction de mails'
+        projectLink='https://chromewebstore.google.com/detail/mkimocgphihjblpofonojpiplhfdafbi?authuser=0&hl=fr'
+        shortDescription='Utilisez l’IA pour corriger vos fautes d’orthographe dans vos emails'
+        imgSrc={Scribe}
       />
       <Card
-        projectLink='a'
-        projectLinkText='Où retrouver ce projet : GitHub'
-        shortDescription='Extension Chrome pour corriger les fautes d’orthographe dans les emails'
-        imgSrc='https://www.tourisme-yonne.com/uploads/2023/03/noyers-sur-serein_copyright-cd89-studio-morize-1600x900.png'
+        title='Création de templates pour mails'
+        projectLink='https://chromewebstore.google.com/detail/smart-response/ojamkcajnmmiemaidehilboeljknnjde?authuser=0&hl=fr'
+        shortDescription='Création de templates pour répondre à vos emails plus rapidement'
+        imgSrc={MailResponse}
       />
       <Card
-        projectLink='a'
-        projectLinkText='Où retrouver ce projet : GitHub'
-        shortDescription='Extension Chrome pour corriger les fautes d’orthographe dans les emails'
-        imgSrc='https://www.tourisme-yonne.com/uploads/2023/03/noyers-sur-serein_copyright-cd89-studio-morize-1600x900.png'
-     />
-     <Card
-        projectLink='a'
-        projectLinkText='Où retrouver ce projet : GitHub'
-        shortDescription='Extension Chrome pour corriger les fautes d’orthographe dans les emails'
-        imgSrc='https://www.tourisme-yonne.com/uploads/2023/03/noyers-sur-serein_copyright-cd89-studio-morize-1600x900.png'
-     /><Card
-        projectLink='a'
-        projectLinkText='Où retrouver ce projet : GitHub'
-        shortDescription='Extension Chrome pour corriger les fautes d’orthographe dans les emails'
-        imgSrc='https://www.tourisme-yonne.com/uploads/2023/03/noyers-sur-serein_copyright-cd89-studio-morize-1600x900.png'
-     />
+        title='Impostor Emoji'
+        projectLink='https://chromewebstore.google.com/detail/impostor-emoji/hiokcpoidlfkgmeiednkcagmhakkoeph?hl=fr&authuser=0'
+        shortDescription="Petit mini jeu d'observation pour passer le temps"
+        imgSrc={Smiley}
+      />
+      <Card
+        title='IA : Traduction de mails'
+        projectLink='https://chromewebstore.google.com/detail/switch-language/cchfkaamljdlfkmpekjdmamfflpiihhn'
+        shortDescription="Avec le pouvoir de l'IA, le monde s'offre à vous"
+        imgSrc={Traduction}
+      />
     </div>
   );
 };

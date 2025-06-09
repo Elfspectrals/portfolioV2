@@ -12,7 +12,7 @@ export interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ navLinks, className }) => (
   <header className={clsx(styles.header, className)}>
-    <h1 className={styles.logo}>Portolio</h1>
+    <h1 className={styles.logo}>Portfolio</h1>
 
     <Navigation links={navLinks} />
 
