@@ -4,11 +4,14 @@ import { setTheme } from './utils/theme';
 import { Routes, Route } from 'react-router-dom';
 import Contact from './pages/Contact';
 import ExtensionChrome from './pages/ExtensionChrome';
+import ThreeDWorld from './pages/3DWorld';
+
 
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Extension Chrome', href: '/extension-chrome' },
   { label: 'Contact', href: '/contact' },
+  { label: '3D World', href: '/3DWorld' },
 ];
 
 const themeOptions = [
@@ -42,6 +45,8 @@ function App() {
       <Routes>
         <Route path="/contact" element={<Contact />} />
         <Route path="/extension-chrome" element={<ExtensionChrome />} />
+        <Route path="/3DWorld" element={<ThreeDWorld />} />
+
       </Routes>
     </>
   );
