@@ -3,24 +3,28 @@ import React, { useRef } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 
-interface ThreeDImageProps {
+export interface ThreeDImageProps {
   textureImage: string;
   shape: 'box' | 'circle' | 'rectangle';
-  position?: [number, number, number];
+  position: [number, number, number];
+  link? : string;
 }
 
 const ThreeDImage: React.FC<ThreeDImageProps> = ({
   textureImage,
   shape,
-  position = [0, 0, 0]
+  position = [0, 0, 0],
+  link = '',
 }) => {
   const meshRef = useRef<THREE.Mesh>(null!);
   const texture = useLoader(THREE.TextureLoader, textureImage);
 
-  useFrame((_, delta) => {
-    meshRef.current.rotation.x += delta * 0.5;
-    meshRef.current.rotation.y += delta * 0.5;
-  });
+  const handleClick = () => {
+    if (link) {
+      window.open(link, '_blank'); // Open the link in a new tab
+    }
+  };
+
 
   let geometry;
   switch (shape) {
@@ -33,12 +37,14 @@ const ThreeDImage: React.FC<ThreeDImageProps> = ({
     case 'rectangle':
       geometry = <boxGeometry args={[2, 1, 1]} />;
       break;
+    default:
+      geometry = <boxGeometry args={[1.5, 1.5, 1.5]} />;
   }
 
   return (
-    <mesh ref={meshRef} position={position}>
+    <mesh ref={meshRef} position={position} onClick={handleClick}>
       {geometry}
-      <meshStandardMaterial map={texture} />
+      <meshStandardMaterial map={texture} side={THREE.DoubleSide}/>
     </mesh>
   );
 };
