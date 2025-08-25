@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 
 const HomePagePartTwo = () => {
   return (
-    <div>HomePagePartTwo</div>
-  )
-}
+    <section className="homepagePartTwo">
+      <h2>Animaux vs Zombie</h2>
+      <iframe
+        src="https://myges.fr/student/planning-calendar"
+        title="Animaux vs Zombie"
+        allowFullScreen
+      ></iframe>
+    </section>
+  );
+};
 
-export default HomePagePartTwo
+export default HomePagePartTwo;
