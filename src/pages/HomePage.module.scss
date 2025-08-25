@@ -181,42 +181,117 @@
   .highlight { animation: none; }
 }
 
-/* Section HomePagePartTwo */
 .homepagePartTwo {
   width: 100%;
-  min-height: 100vh; /* occupe toute la hauteur de l'écran */
+  height: 100vh;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 15%);
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: var(--background);
-  color: var(--text);
-  gap: 1.5rem;
+  gap: 1rem;
 
-  h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
+  .title {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
     font-weight: 800;
     margin: 0;
-    text-align: center;
+    color: var(--text);
 
     &::after {
       content: "";
       display: block;
-      width: 80px;
-      height: 4px;
-      margin: 0.75rem auto 0;
+      width: 60px;
+      height: 3px;
+      margin: 0.6rem auto 0;
       background: linear-gradient(90deg, var(--accent, #2563eb), var(--accent-2, #f97316));
       border-radius: 999px;
+      
     }
   }
 
-  iframe {
-    flex: 1; /* prend toute la place dispo */
-    width: 100vw;
-    height: 80vh;
-    border: none;
-    border-radius: 0.5rem;
+  /* NEW: two-column row that fills the remaining viewport */
+  .contentRow {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* video a bit bigger than text */
+    gap: 1rem;
+    align-items: start;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    min-height: 0; /* allow children to manage overflow */
+  }
+
+  /* LEFT: video */
+  .videoWrapper {
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+  }
+
+  .video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    max-height: 56vh;       /* fits with title + description */
+    object-fit: cover;
+    border-radius: 0.75rem;
     box-shadow: 0 6px 18px rgba(0,0,0,.12);
     background: #000;
+  }
+
+  /* RIGHT: YouTube-style description with its own scroll if needed */
+  .description {
+    min-height: 0;
+    max-height: 56vh;       /* balanced with video */
+    overflow: auto;
+    border-radius: 0.75rem;
+    background: color-mix(in oklab, var(--card-bg), #0000 85%);
+    border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 35%);
+    box-shadow: 0 4px 14px rgba(0,0,0,.04);
+
+    summary::-webkit-details-marker { display: none; }
+    &[open] .descriptionSummary {
+      border-bottom: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 35%);
+    }
+  }
+
+  .descriptionSummary {
+    cursor: pointer;
+    padding: 0.875rem 1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+
+    .chevron { transition: transform .2s ease; opacity: .65; }
+  }
+
+  .descriptionBody {
+    padding: 1rem 1.1rem 1.25rem;
+    p { margin: 0 0 .75rem; line-height: 1.65; color: var(--card-text); }
+  }
+
+  .bullets { margin: .5rem 0 1rem 1rem; padding-left: 1rem; }
+  .meta { display:flex; flex-wrap:wrap; gap:.5rem; }
+  .tag {
+    font-size: .8rem; padding:.25rem .5rem; border-radius:.5rem;
+    background: color-mix(in oklab, var(--accent-2, #f97316), #fff 75%);
+    border: 1px solid color-mix(in oklab, var(--accent-2, #f97316), #000 85%);
+    opacity:.9;
+  }
+}
+
+/* Stack on small screens */
+@media (max-width: 900px) {
+  .homepagePartTwo {
+    .contentRow { grid-template-columns: 1fr; }
+    .video { max-height: 34vh; }
+    .description { max-height: 34vh; }
   }
 }
