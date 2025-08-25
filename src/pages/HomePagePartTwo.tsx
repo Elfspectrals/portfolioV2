@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./HomePage.module.scss";
 
 const HomePagePartTwo = () => {
   return (
-    <section className="homepagePartTwo">
+    <section className={styles.homepagePartTwo}>
       <h2>Animaux vs Zombie</h2>
       <iframe
         src="https://myges.fr/student/planning-calendar"

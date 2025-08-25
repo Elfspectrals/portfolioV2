@@ -181,24 +181,16 @@
   .highlight { animation: none; }
 }
 
-  iframe {
-    flex: 1; /* prend toute la place dispo */
-    width: 100vw;
-    height: 80vh;
-    border: none;
-    border-radius: 0.5rem;
-    box-shadow: 0 6px 18px rgba(0,0,0,.12);
-    background: #000;
-  }
+/* Section HomePagePartTwo */
 .homepagePartTwo {
   width: 100%;
+  min-height: 100vh; /* occupe toute la hauteur de l'écran */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: var(--background);
   color: var(--text);
-  padding: 1rem;
   gap: 1.5rem;
 
   h2 {
@@ -218,5 +210,13 @@
     }
   }
 
-
+  iframe {
+    flex: 1; /* prend toute la place dispo */
+    width: 100vw;
+    height: 80vh;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    background: #000;
+  }
 }
