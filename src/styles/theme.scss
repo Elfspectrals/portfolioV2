@@ -1,0 +1,15 @@
+@use 'abstracts/variables' as v;
+
+html.theme-light {
+  --gray-1: #{v.$border-Card-Light};
+  @each $name, $value in v.$v-light { --#{$name}: #{$value}; }
+  --accent: #{v.$blue};
+  --accent-2: #{v.$orange};
+}
+
+html.theme-dark {
+  --gray-1: #{v.$border-Card-Dark};
+  @each $name, $value in v.$v-dark { --#{$name}: #{$value}; }
+  --accent: #{v.$blue};
+  --accent-2: #{v.$orange};
+}

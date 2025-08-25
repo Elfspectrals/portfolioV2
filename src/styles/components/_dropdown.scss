@@ -1,0 +1,46 @@
+@use 'buttons' as *;
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.trigger {
+  @extend .btn;
+  padding-right: 2rem;
+  position: relative;
+}
+
+.chevron {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  min-width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--fg);
+  border-radius: 0.5rem;
+  z-index: 20;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+
+  &:hover,
+  &.active {
+    background: var(--fg);
+    color: var(--bg);
+  }
+}

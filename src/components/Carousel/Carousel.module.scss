@@ -1,0 +1,121 @@
+.carouselSection {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  background: linear-gradient(180deg, color-mix(in oklab, var(--card-bg), #fff 5%), var(--card-bg));
+  border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 12%);
+  border-radius: 1.25rem;
+  padding: clamp(1rem, 2.5vw, 2rem);
+  box-shadow: 0 12px 34px rgba(0,0,0,.06);
+}
+
+.header {
+  display: grid;
+  gap: .35rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(90deg, var(--accent, #2563eb), var(--accent-2, #f97316));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.subtitle { margin: 0; color: var(--card-text); }
+
+.viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.track {
+  display: flex;
+  transition: transform .5s cubic-bezier(.22, .61, .36, 1);
+  will-change: transform;
+}
+
+.slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-rows: 14rem auto;
+  background: var(--card-bg);
+}
+
+.cover {
+  background:
+    radial-gradient(80% 60% at 15% 20%, color-mix(in oklab, var(--accent), transparent 82%), transparent),
+    radial-gradient(80% 60% at 85% 10%, color-mix(in oklab, var(--accent-2), transparent 84%), transparent),
+    linear-gradient(160deg, color-mix(in oklab, var(--card-bg), #fff 8%), var(--card-bg));
+  background-size: cover; /* replaced if item.cover provided */
+  background-position: center;
+}
+
+.content {
+  padding: 1rem 1.1rem 1.25rem;
+  display: grid;
+  gap: .5rem;
+}
+
+.gameTitle { margin: 0; font-size: 1.15rem; }
+.desc { margin: 0; color: var(--card-text); }
+
+.cta {
+  justify-self: start;
+  margin-top: .25rem;
+  padding: .6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--accent), transparent 35%);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--accent), transparent 80%), color-mix(in oklab, var(--accent-2), transparent 80%));
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+
+  &:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.12); }
+  &:disabled { opacity: .6; cursor: not-allowed; }
+}
+
+/* arrows */
+.prev, .next {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 2.5rem; height: 2.5rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 20%);
+  background: color-mix(in oklab, var(--card-bg), #fff 8%);
+  color: var(--text);
+  display: grid; place-items: center;
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+
+  &:hover { transform: translateY(-50%) scale(1.05); }
+}
+
+.prev { left: .75rem; }
+.next { right: .75rem; }
+
+/* dots */
+.dots {
+  display: flex;
+  gap: .4rem;
+  justify-content: center;
+  margin-top: .75rem;
+}
+
+.dot {
+  width: .55rem; height: .55rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--card-border, #e5e7eb), transparent 20%);
+  border: none; cursor: pointer;
+}
+
+.active { background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+
+@media (max-width: 720px) {
+  .slide { grid-template-rows: 11rem auto; }
+}
+
