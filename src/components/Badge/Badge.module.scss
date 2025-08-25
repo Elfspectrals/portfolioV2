@@ -1,0 +1,11 @@
+.badge {
+  padding: 0.625rem 0.875rem;
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--card-text);
+  border: 1px solid var(--gray-1);
+  font-size: 0.875rem;
+  line-height: 1;
+  white-space: nowrap;
+  display: inline-block;
+}

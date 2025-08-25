@@ -1,15 +1,19 @@
 import React from "react";
 import jeromeProfilePic from "../assets/jerome.jpg";
 import styles from "./HomePage.module.scss";
+import Badge from "../components/Badge/Badge";
 
 const technologies = [
   "TypeScript",
   "React",
   "Node.js",
   "Express",
-  "Cypress",       // CV
-  "Jira",          // CV
-  "GitHub Actions" // CV
+  "Cypress",
+  "Jira",
+  "GitHub Actions",
+  "SQL/NoSQL",
+  "Three.js",
+  "Unreal Engine 5",
 ];
 
 const softSkills = [
@@ -19,7 +23,7 @@ const softSkills = [
   "Autonomie",
   "Curiosité",
   "Résolution de problèmes",
-  "Sens du produit"
+  "Sens du produit",
 ];
 
 const HomePagePartOne = () => {
@@ -37,7 +41,9 @@ const HomePagePartOne = () => {
 
         <div className={styles.titleBlock}>
           <h1>
-            Salut, je suis Jérôme — <span className={styles.highlight}>Développeur full-stack</span> & créateur d'expériences numériques
+            Salut, je suis Jérôme —{" "}
+            <span className={styles.highlight}>Développeur full-stack</span> &
+            créateur d'expériences numériques
           </h1>
           <h3>
             Vous retrouverez ici certains de mes projets et réalisations.
@@ -51,8 +57,8 @@ const HomePagePartOne = () => {
         <h2>Technologies que je maîtrise</h2>
         <ul className={styles.chips} aria-label="Technologies">
           {technologies.map((tech) => (
-            <li key={tech} className={styles.chip} role="listitem">
-              {tech}
+            <li key={tech} role="listitem">
+              <Badge text={tech} />
             </li>
           ))}
         </ul>
