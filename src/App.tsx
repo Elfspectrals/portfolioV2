@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Contact from './pages/Contact';
 import ExtensionChrome from './pages/ExtensionChrome';
 import ThreeDWorld from './pages/3DWorld';
+import Home from './pages/Home';
 
 
 const navLinks = [
@@ -43,6 +44,7 @@ function App() {
         }}
       />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/extension-chrome" element={<ExtensionChrome />} />
         <Route path="/3DWorld" element={<ThreeDWorld />} />
