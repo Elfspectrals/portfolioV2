@@ -11,8 +11,8 @@ import Home from './pages/Home';
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Extension Chrome', href: '/extension-chrome' },
-  { label: 'Contact', href: '/contact' },
   { label: '3D World', href: '/3DWorld' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const themeOptions = [
