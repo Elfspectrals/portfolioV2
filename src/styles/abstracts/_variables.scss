@@ -1,3 +1,5 @@
+@use "sass:map";
+
 /* ===== Couleurs & maps ===== */
 $blue:   #2563eb;
 $orange: #f97316;
@@ -22,16 +24,16 @@ $v-dark: (
 );
 
 /* ===== Mixins pour exporter des maps en variables CSS ===== */
-@function m($map, $key, $fallback:null) {
-  @return if(map-has-key($map, $key), map-get($map, $key), $fallback);
+@function m($mapObj, $key, $fallback:null) {
+  @return if(map.has-key($mapObj, $key), map.get($mapObj, $key), $fallback);
 }
 
-@mixin export-theme-vars($map) {
-  --background: #{m($map, "background")};
-  --text: #{m($map, "text")};
-  --card-bg: #{m($map, "card-bg")};
-  --card-text: #{m($map, "card-text")};
-  --card-icon: #{m($map, "card-icon")};
+@mixin export-theme-vars($mapObj) {
+  --background: #{m($mapObj, "background")};
+  --text: #{m($mapObj, "text")};
+  --card-bg: #{m($mapObj, "card-bg")};
+  --card-text: #{m($mapObj, "card-text")};
+  --card-icon: #{m($mapObj, "card-icon")};
 
   /* accents globaux (optionnel) */
   --accent: #{$blue};
@@ -39,7 +41,7 @@ $v-dark: (
   --success: #{$green};
 
   /* bordures selon thème (si besoin) */
-  --card-border: #{if($map == $v-dark, $border-Card-Dark, $border-Card-Light)};
+  --card-border: #{if($mapObj == $v-dark, $border-Card-Dark, $border-Card-Light)};
 }
 
 /* Variables spécifiques au badge violet */

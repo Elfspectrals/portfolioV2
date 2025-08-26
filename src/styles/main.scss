@@ -9,3 +9,14 @@
 @use 'layout/grid';
 @use 'components/buttons';
 @use 'components/card';
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--text);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+}
