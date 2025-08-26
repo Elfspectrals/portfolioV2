@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Header } from './components/Header/Header';
+import  ChatBot from './components/ChatBot/ChatBot';
+
 import { setTheme } from './utils/theme';
 import { Routes, Route } from 'react-router-dom';
 import Contact from './pages/Contact';
@@ -38,6 +40,7 @@ function App() {
           setTheme(v as 'light' | 'dark');
         }}
       />
+      <ChatBot />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
