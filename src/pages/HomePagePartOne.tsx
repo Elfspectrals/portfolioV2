@@ -59,7 +59,6 @@ const softSkills: SoftSkill[] = [
   { text: "Rigueur (QA mindset)" },
   { text: "Autonomie" },
   { text: "Curiosité" },
-  { text: "Résolution de problèmes" },
   { text: "Sens du produit" },
 ];
 
