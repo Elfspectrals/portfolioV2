@@ -1,6 +1,6 @@
 // components/ThreeDImage/ThreeDImage.tsx
 import React, { useRef } from 'react';
-import { useFrame, useLoader } from '@react-three/fiber';
+import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 
 export interface ThreeDImageProps {

@@ -27,11 +27,6 @@ function App() {
     setTheme(theme);
   }, [theme]);
 
-  const toggleTheme = () => {
-    const next = theme === 'dark' ? 'light' : 'dark';
-    setLocalTheme(next);
-    setTheme(next);
-  };
 
   return (
     <>

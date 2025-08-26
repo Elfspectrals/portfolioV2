@@ -3,10 +3,12 @@ import styles from "./Header.module.scss";
 
 import { Navigation, type NavItem } from "../Navigation/Navigation";
 import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
+import type { DropdownOption } from "../Dropdown/Dropdown";
 
 export interface HeaderProps {
   navLinks: NavItem[];
   className?: string;
+    dropdownOptions?: DropdownOption[];            // 
   onDropdownSelect?: (v: string) => void;
 }
 

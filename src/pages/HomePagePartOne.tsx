@@ -1,4 +1,3 @@
-import React from "react";
 import jeromeProfilePic from "../assets/jerome.jpg";
 import styles from "./HomePage.module.scss";
 import Badge from "../components/Badge/Badge";

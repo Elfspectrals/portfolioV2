@@ -1,6 +1,5 @@
-import React from 'react'
-import styles from './HomePage.module.scss'
-import videoUE5 from '../assets/gluttonyfighter.mp4'
+import styles from "./HomePage.module.scss";
+import videoUE5 from "../assets/gluttonyfighter.mp4";
 
 const HomePagePartTwo = () => {
   return (
@@ -22,31 +21,50 @@ const HomePagePartTwo = () => {
 
         <details className={styles.description} open>
           <summary className={styles.descriptionSummary}>
-            Description <span className={styles.chevron} aria-hidden>▾</span>
+            Description{" "}
+            <span className={styles.chevron} aria-hidden>
+              ▾
+            </span>
           </summary>
           <div className={styles.descriptionBody}>
             <p>
-              <strong>Gluttony Eater</strong> is an <span className={styles.badge}><span className={styles.label}>Unreal Engine 5</span></span> under-project
-              where you play a fighter who <em>eats</em> different aliments to unlock contextual superpowers.
-              Each food grants a short-lived boost — from explosive dashes to iron-stomach shields —
-              encouraging creative combos and resource management during fights.
+              <strong>Gluttony Eater</strong> est un{" "}
+              <span className={styles.badge}>
+                <span className={styles.label}>
+                  jeu créé avec Unreal Engine 5
+                </span>
+              </span>
+              où vous incarnez un combattant qui <em>mange</em> différents
+              aliments pour débloquer des super-pouvoirs contextuels. Chaque
+              nourriture accorde un bonus temporaire — allant de dashs explosifs
+              à des boucliers « estomac de fer » — encourageant les combos
+              créatifs et la gestion des ressources en plein combat.
             </p>
             <ul className={styles.bullets}>
-              <li>Eat to power up: stack effects and time your snacks mid-battle.</li>
-              <li>Situational abilities tied to food types (movement, defense, burst).</li>
-              <li>Arcade feel with modern VFX and responsive controls.</li>
+              <li>
+                Mangez pour gagner en puissance : cumulez les effets et
+                choisissez le bon timing pour vos encas en pleine bataille.
+              </li>
+              <li>
+                Compétences situationnelles liées aux types d’aliments
+                (mouvement, défense, explosion).
+              </li>
+              <li>
+                Un esprit arcade avec des effets visuels modernes et des
+                contrôles réactifs.
+              </li>
             </ul>
             <div className={styles.meta}>
               <span className={styles.tag}>#UE5</span>
               <span className={styles.tag}>#IndieDev</span>
-              <span className={styles.tag}>#FightingGame</span>
+              <span className={styles.tag}>#JeuDeCombat</span>
               <span className={styles.tag}>#Prototype</span>
             </div>
           </div>
         </details>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HomePagePartTwo
+export default HomePagePartTwo;
