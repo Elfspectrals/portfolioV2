@@ -20,6 +20,7 @@ import blenderLogo from "../assets/blender.svg";
 import threeLogo from "../assets/threej.svg";  
 import ue5Logo from "../assets/unreal.svg"; 
 import googleLogo from "../assets/google.svg"; 
+
 interface Technology {
   text: string;
   svgLogo?: string;
@@ -86,6 +87,13 @@ const HomePagePartOne = () => {
             <br />
             Je vous laisse vous amuser en découvrant mon portfolio !
           </h3>
+
+          {/* Petit lien pour sauter à la section Soft skills */}
+          <div className={styles.ctaRow}>
+            <a href="#soft-skills" className={styles.badge} aria-label="Aller aux Soft skills">
+              <span className={styles.label}>Voir Soft skills ↘︎</span>
+            </a>
+          </div>
         </div>
       </header>
 
@@ -100,7 +108,8 @@ const HomePagePartOne = () => {
         </ul>
       </section>
 
-      <section className={styles.section}>
+      {/* Ajout d'un id pour l'ancre */}
+      <section className={styles.section} id="soft-skills">
         <h2>Soft skills</h2>
         <ul className={styles.chips} aria-label="Soft skills">
           {softSkills.map((skill) => (

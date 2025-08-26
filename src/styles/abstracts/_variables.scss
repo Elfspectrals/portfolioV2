@@ -1,3 +1,4 @@
+/* ===== Couleurs & maps ===== */
 $blue:   #2563eb;
 $orange: #f97316;
 $green:  #16a34a;
@@ -19,3 +20,60 @@ $v-dark: (
   "card-text": #F5F5F5,
   "card-icon": #EE7A46,
 );
+
+/* ===== Mixins pour exporter des maps en variables CSS ===== */
+@function m($map, $key, $fallback:null) {
+  @return if(map-has-key($map, $key), map-get($map, $key), $fallback);
+}
+
+@mixin export-theme-vars($map) {
+  --background: #{m($map, "background")};
+  --text: #{m($map, "text")};
+  --card-bg: #{m($map, "card-bg")};
+  --card-text: #{m($map, "card-text")};
+  --card-icon: #{m($map, "card-icon")};
+
+  /* accents globaux (optionnel) */
+  --accent: #{$blue};
+  --accent-2: #{$orange};
+  --success: #{$green};
+
+  /* bordures selon thème (si besoin) */
+  --card-border: #{if($map == $v-dark, $border-Card-Dark, $border-Card-Light)};
+}
+
+/* Variables spécifiques au badge violet */
+@mixin export-badge-light() {
+  --badge-bg-1: #ede9fe;   /* violet 100 */
+  --badge-bg-2: #ddd6fe;   /* violet 200 */
+  --badge-ring-1: #c4b5fd; /* violet 300 */
+  --badge-ring-2: #a78bfa; /* violet 400 */
+  --badge-text:  #4c1d95;  /* violet 900 */
+  --badge-shadow: rgba(0,0,0,.08);
+}
+
+@mixin export-badge-dark() {
+  --badge-bg-1: #6d28d9;   /* violet 700 */
+  --badge-bg-2: #5b21b6;   /* violet 800 */
+  --badge-ring-1: #8b5cf6; /* violet 500 */
+  --badge-ring-2: #a78bfa; /* violet 400 */
+  --badge-text:  #ffffff;  /* lisible en sombre */
+  --badge-shadow: rgba(0,0,0,.24);
+}
+
+/* ===== Définition par défaut (light) ===== */
+:root {
+  @include export-theme-vars($v-light);
+  @include export-badge-light();
+}
+
+/* ===== Thèmes via classes (pilotées par utils/theme.ts) ===== */
+.theme-light {
+  @include export-theme-vars($v-light);
+  @include export-badge-light();
+}
+
+.theme-dark {
+  @include export-theme-vars($v-dark);
+  @include export-badge-dark();
+}

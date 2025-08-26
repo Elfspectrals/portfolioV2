@@ -34,7 +34,7 @@ const HomePagePartTwo = () => {
                   jeu créé avec Unreal Engine 5
                 </span>
               </span>
-              où vous incarnez un combattant qui <em>mange</em> différents
+              {" "}où vous incarnez un combattant qui <em>mange</em> différents
               aliments pour débloquer des super-pouvoirs contextuels. Chaque
               nourriture accorde un bonus temporaire — allant de dashs explosifs
               à des boucliers « estomac de fer » — encourageant les combos

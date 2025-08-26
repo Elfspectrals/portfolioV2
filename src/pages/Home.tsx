@@ -2,7 +2,7 @@ import styles from "./Home.module.scss";
 
 import HomePagePartOne from "./HomePagePartOne";
 import HomePagePartTwo from "./HomePagePartTwo";
-import HomePagePartThree from "./HomePagePartThree";
+// import HomePagePartThree from "./HomePagePartThree";
 
 const Home = () => {
   return (
@@ -15,9 +15,9 @@ const Home = () => {
         <HomePagePartTwo />
       </section>
 
-      <section className={`${styles.section}`}>
+      {/* <section className={`${styles.section}`}>
         <HomePagePartThree />
-      </section>
+      </section> */}
     </div>
   );
 };
