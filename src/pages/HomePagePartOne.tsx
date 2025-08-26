@@ -4,7 +4,7 @@ import Badge from "../components/Badge/Badge";
 
 // tes imports logos
 import htmlLogo from "../assets/html.svg";
-import cssLogo from "../assets/css.svg"; 
+import cssLogo from "../assets/css.svg";
 import jsLogo from "../assets/javascript-1.svg";
 import tsLogo from "../assets/typescript.svg";
 import reactLogo from "../assets/reactlogo.svg";
@@ -16,10 +16,10 @@ import sqlLogo from "../assets/mysql-logo-pure.svg"; // SQL → MySQL logo
 import mongoLogo from "../assets/mongodb-icon-2.svg";
 import dockerLogo from "../assets/docker.svg";
 import figmaLogo from "../assets/figma-icon.svg";
-import blenderLogo from "../assets/blender.svg"; 
-import threeLogo from "../assets/threej.svg";  
-import ue5Logo from "../assets/unreal.svg"; 
-import googleLogo from "../assets/google.svg"; 
+import blenderLogo from "../assets/blender.svg";
+import threeLogo from "../assets/threej.svg";
+import ue5Logo from "../assets/unreal.svg";
+import googleLogo from "../assets/google.svg";
 
 interface Technology {
   text: string;
@@ -85,11 +85,21 @@ const HomePagePartOne = () => {
             Vous retrouverez ici certains de mes projets et réalisations.
             <br />
             Je vous laisse vous amuser en découvrant mon portfolio !
+            <br />
+          </h3>
+          <h1>Qui suis-je ?</h1>
+          <h3>
+            Développeur passionné, curieux et créatif, j’aime concevoir des
+            expériences numériques qui vont soit vous aider ou vous amuser
           </h3>
 
           {/* Petit lien pour sauter à la section Soft skills */}
           <div className={styles.ctaRow}>
-            <a href="#soft-skills" className={styles.badge} aria-label="Aller aux Soft skills">
+            <a
+              href="#soft-skills"
+              className={styles.badge}
+              aria-label="Aller aux Soft skills"
+            >
               <span className={styles.label}>Voir Soft skills ↘︎</span>
             </a>
           </div>
