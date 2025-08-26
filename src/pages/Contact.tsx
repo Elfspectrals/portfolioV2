@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Contact.module.scss";
 import toast, { Toaster } from "react-hot-toast";
+// import Rocket from "../assets/rocket.svg";
 
 type Status = "idle" | "loading" | "success" | "error";
 
