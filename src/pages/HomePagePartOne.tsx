@@ -87,11 +87,7 @@ const HomePagePartOne = () => {
             Je vous laisse vous amuser en découvrant mon portfolio !
             <br />
           </h3>
-          <h1>Qui suis-je ?</h1>
-          <h3>
-            Développeur passionné, curieux et créatif, j’aime concevoir des
-            expériences numériques qui vont soit vous aider ou vous amuser
-          </h3>
+          
 
           {/* Petit lien pour sauter à la section Soft skills */}
           <div className={styles.ctaRow}>

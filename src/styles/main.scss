@@ -20,3 +20,8 @@ html, body {
   overflow-x: hidden;
 
 }
+
+/* Ensure CSS variables root selector is correct */
+:root {
+  /* reserved for global css vars if needed */
+}

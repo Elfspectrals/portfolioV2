@@ -6,3 +6,36 @@
   background: var(--background);
   color: var(--text);
 }
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  width: 100%;
+}
+
+.menuBtn {
+  display: none;
+  border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 35%);
+  background: color-mix(in oklab, var(--background), #000 4%);
+  color: var(--text);
+  padding: .4rem .6rem;
+  border-radius: .5rem;
+}
+
+.menuIcon { font-size: 1.1rem; line-height: 1; }
+
+.navWrapper { display: block; }
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0.5rem 0.75rem;
+    gap: .5rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .menuBtn { display: inline-flex; margin-left: auto; }
+  .navWrapper { display: none; }
+  .navWrapper[data-open="true"] { display: block; }
+}

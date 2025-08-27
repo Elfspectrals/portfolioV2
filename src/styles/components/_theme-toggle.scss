@@ -1,5 +1,5 @@
 .toggle {
-  --size: 2.5rem;
+  --size: 2.25rem;
   display: grid;
   place-content: center;
   width: var(--size);
@@ -34,4 +34,8 @@
   &.dark {
     background: rgba(17, 24, 39, 0.4);
   }
+}
+
+@media (max-width: 480px) {
+  .toggle { --size: 2rem; box-shadow: 0 0 6px rgba(14,165,233,.45), 0 0 10px rgba(139,92,246,.35); }
 }

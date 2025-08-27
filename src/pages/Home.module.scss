@@ -1,8 +1,7 @@
 /* Scroll container */
 .container {
-  height: 100vh;                 
-  overflow-y: auto;              
-  scroll-snap-type: y mandatory; 
+  min-height: 100vh;
+  overflow-y: auto;
   scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
@@ -12,8 +11,11 @@
 }
 
 .section {
-  height: 100vh;
-  scroll-snap-align: start; 
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container { min-height: 100vh; }
 }
 
 /* src/assets/styles/typography.scss */

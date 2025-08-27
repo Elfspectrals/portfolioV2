@@ -2,8 +2,8 @@
 @use '../abstracts/mixins' as m;
 
 .btn {
-  font: 600 0.875rem/1.2 'Inter', sans-serif;
-  padding: 0.5rem 1.25rem;
+  font: 600 var(--font-size-sm)/1.25 'Inter', sans-serif;
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: 2px solid transparent;
   cursor: pointer;
@@ -16,4 +16,8 @@
 
   &:hover      { filter: brightness(1.07); }
   &:disabled   { opacity: 0.5; cursor: not-allowed; }
+}
+
+@media (max-width: 480px) {
+  .btn { padding: 0.45rem 0.85rem; border-width: 1.5px; }
 }

@@ -7,16 +7,16 @@
 
 .trigger {
   @extend .btn;
-  padding-right: 2rem;
+  padding-right: 1.6rem;
   position: relative;
 }
 
 .chevron {
   position: absolute;
-  right: 0.75rem;
+  right: 0.6rem;
   top: 50%;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.45rem;
+  height: 0.45rem;
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
   transform: translateY(-50%) rotate(45deg);
@@ -27,20 +27,25 @@
   top: calc(100% + 0.25rem);
   left: 0;
   min-width: 100%;
-  background: var(--bg);
-  border: 1px solid var(--fg);
+  background: var(--background);
+  border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 20%);
   border-radius: 0.5rem;
   z-index: 20;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .item {
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 0.85rem;
   cursor: pointer;
 
   &:hover,
   &.active {
-    background: var(--fg);
-    color: var(--bg);
+    background: var(--accent);
+    color: var(--text);
   }
+}
+
+@media (max-width: 480px) {
+  .trigger { padding-right: 1.25rem; }
+  .chevron { right: 0.5rem; }
 }

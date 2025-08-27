@@ -15,3 +15,13 @@
     color: var(--bg);
   }
 }
+
+@media (max-width: 768px) {
+  .nav {
+    gap: .5rem;
+  }
+  .link {
+    padding: 0.25rem 0.4rem;
+    font-size: .95rem;
+  }
+}
