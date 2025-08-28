@@ -7,8 +7,14 @@
 
 .trigger {
   @extend .btn;
-  padding-right: 1.6rem;
+  padding-right: 2.2rem;
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(180deg, color-mix(in oklab, var(--accent), transparent 20%), var(--accent));
+  color: var(--text);
+  border-color: color-mix(in oklab, var(--accent), black 15%);
 }
 
 .chevron {
@@ -32,15 +38,19 @@
   border-radius: 0.5rem;
   z-index: 20;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .item {
-  padding: 0.45rem 0.85rem;
+  padding: 0.55rem 0.9rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
   &:hover,
   &.active {
-    background: var(--accent);
+    background: color-mix(in oklab, var(--accent), transparent 20%);
     color: var(--text);
   }
 }

@@ -1,35 +1,46 @@
-import { Sun, Moon } from 'lucide-react';
-import clsx from 'clsx';
-import styles from './ThemeToggle.module.scss';
-import { setTheme } from '../../utils/theme';
-import { useState, useEffect } from 'react';
+import { Sun, Moon } from "lucide-react";
+import clsx from "clsx";
+import styles from "./ThemeToggle.module.scss";
+import { setTheme } from "../../utils/theme";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
-export const ThemeToggle: React.FC<{ className?: string }> = ({ className }) => {
+export const ThemeToggle: React.FC<{ className?: string }> = ({
+  className,
+}) => {
+  const { t } = useTranslation();
   const [dark, setDark] = useState(
-    document.documentElement.classList.contains('theme-dark')
+    document.documentElement.classList.contains("theme-dark")
   );
 
   useEffect(() => {
     const obs = new MutationObserver(() =>
-      setDark(document.documentElement.classList.contains('theme-dark'))
+      setDark(document.documentElement.classList.contains("theme-dark"))
     );
-    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    obs.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
     return () => obs.disconnect();
   }, []);
 
   const toggle = () => {
-    const next = dark ? 'light' : 'dark';
+    const next = dark ? "light" : "dark";
     setTheme(next);
     setDark(!dark);
   };
 
   return (
     <button
-      aria-label="Toggle theme"
+      aria-label={t("app.theme.dark")}
       className={clsx(styles.toggle, dark && styles.dark, className)}
       onClick={toggle}
     >
-      {dark ? <Sun size={24} strokeWidth={2} color='white'/> : <Moon size={24} strokeWidth={2} />}
+      {dark ? (
+        <Sun size={24} strokeWidth={2} color="white" />
+      ) : (
+        <Moon size={24} strokeWidth={2} />
+      )}
     </button>
   );
 };

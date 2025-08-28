@@ -1,44 +1,44 @@
-import React from 'react';
-import Card from '../components/Card/Card';
-import styles from './ExtensionChrome.module.scss';
+import React from "react";
+import Card from "../components/Card/Card";
+import styles from "./ExtensionChrome.module.scss";
+import { useTranslation } from "react-i18next";
 
-import Scribe from '../assets/scribe.png';
-import MailResponse from '../assets/mailResponse.png';
-import Smiley from '../assets/smiley.png';
-import Traduction from '../assets/traduction.png';
+import Scribe from "../assets/scribe.png";
+import MailResponse from "../assets/mailResponse.png";
+import Smiley from "../assets/smiley.png";
+import Traduction from "../assets/traduction.png";
 
 const ExtensionChrome: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className={styles.container}>
       <Card
-        title='IA : Scribe correction de mails'
-        projectLink='https://chromewebstore.google.com/detail/mkimocgphihjblpofonojpiplhfdafbi?authuser=0&hl=fr'
-        shortDescription='Utilisez l’IA pour corriger vos fautes d’orthographe dans vos emails'
+        title={t("extensions.scribeTitle")}
+        projectLink="https://chromewebstore.google.com/detail/mkimocgphihjblpofonojpiplhfdafbi?authuser=0&hl=fr"
+        shortDescription={t("extensions.scribeDesc")}
         imgSrc={Scribe}
-        skills={[ 'html', 'css','openai','javascript']}
-
+        skills={["html", "css", "openai", "javascript"]}
       />
       <Card
-        title='Création de templates pour mails'
-        projectLink='https://chromewebstore.google.com/detail/smart-response/ojamkcajnmmiemaidehilboeljknnjde?authuser=0&hl=fr'
-        shortDescription='Création de templates pour répondre à vos emails plus rapidement'
+        title={t("extensions.templatesTitle")}
+        projectLink="https://chromewebstore.google.com/detail/smart-response/ojamkcajnmmiemaidehilboeljknnjde?authuser=0&hl=fr"
+        shortDescription={t("extensions.templatesDesc")}
         imgSrc={MailResponse}
-        skills={[ 'html', 'css','openai','javascript']}
+        skills={["html", "css", "openai", "javascript"]}
       />
       <Card
-        title='Impostor Emoji'
-        projectLink='https://chromewebstore.google.com/detail/impostor-emoji/hiokcpoidlfkgmeiednkcagmhakkoeph?hl=fr&authuser=0'
-        shortDescription="Petit mini jeu d'observation pour passer le temps"
+        title={t("extensions.impostorTitle")}
+        projectLink="https://chromewebstore.google.com/detail/impostor-emoji/hiokcpoidlfkgmeiednkcagmhakkoeph?hl=fr&authuser=0"
+        shortDescription={t("extensions.impostorDesc")}
         imgSrc={Smiley}
-        skills={[ 'html', 'css','javascript']}
-
+        skills={["html", "css", "javascript"]}
       />
       <Card
-        title='IA : Traduction de mails'
-        projectLink='https://chromewebstore.google.com/detail/switch-language/cchfkaamljdlfkmpekjdmamfflpiihhn'
-        shortDescription="Avec le pouvoir de l'IA, le monde s'offre à vous"
+        title={t("extensions.translateTitle")}
+        projectLink="https://chromewebstore.google.com/detail/switch-language/cchfkaamljdlfkmpekjdmamfflpiihhn"
+        shortDescription={t("extensions.translateDesc")}
         imgSrc={Traduction}
-        skills={[ 'html', 'css','openai','javascript']}
+        skills={["html", "css", "openai", "javascript"]}
       />
     </div>
   );

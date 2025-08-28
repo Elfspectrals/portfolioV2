@@ -79,13 +79,27 @@ body {
   .badge { transition: none; }
 }
 
+/* ====== Social Badges ====== */
+.socialBadges {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.socialBadge {
+  text-decoration: none;
+  
+  &:hover .badge {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0,0,0,.16);
+  }
+}
+
 /* ====== Page containers ====== */
 .container {
   width: 100%;
   min-height: 100vh;
-  background: radial-gradient(1200px 800px at 10% -10%, color-mix(in oklab, var(--accent, #2563eb), transparent 92%), transparent),
-              radial-gradient(900px 700px at 90% 0%, color-mix(in oklab, var(--accent-2, #f97316), transparent 93%), transparent),
-              var(--background);
   color: var(--text);
   display: flex;
   flex-direction: column;
@@ -150,6 +164,9 @@ body {
 /* Small CTA row under the subtitle (jump link) */
 .ctaRow {
   margin-top: .9rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 /* ====== Section card ====== */
@@ -201,9 +218,7 @@ body {
 /* ====== Part Two (video + description) ====== */
 .homepagePartTwo {
   width: 100%;
-  /* changed from height:100vh to avoid clipping on short laptop screens */
   height: auto;
-  min-height: 100vh; /* still fill viewport when possible */
   margin: 0 auto;
   padding: clamp(0.9rem, 2vw, 1.25rem);
   background: var(--card-bg);
@@ -262,7 +277,7 @@ body {
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
-    max-height: 46vh;       /* fits with title + description */
+    max-height: 50vh;       /* fits with title + description */
     object-fit: cover;
     border-radius: 0.75rem;
     box-shadow: 0 6px 18px rgba(0,0,0,.12);

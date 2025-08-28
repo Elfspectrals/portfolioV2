@@ -1,0 +1,69 @@
+{
+  "app": {
+    "brand": "Portfolio",
+    "nav": {
+      "home": "Startseite",
+      "extension": "Chrome-Erweiterungen",
+      "world3d": "3D-Welt",
+      "contact": "Kontakt"
+    },
+    "theme": {
+      "light": "Hell",
+      "dark": "Dunkel"
+    },
+    "menu": "Menü"
+  },
+  "home": {
+    "title": "Willkommen",
+    "subtitle": "Entdecke meine Arbeit"
+  },
+  "homepage": {
+    "avatarAlt": "Porträt von Jérôme Neupert",
+    "heroGreeting": "Hi, ich bin Jérôme —",
+    "heroRole": "Full‑Stack‑Entwickler",
+    "heroSubtitle1": "Hier findest du einige meiner Projekte und Arbeiten.",
+    "heroSubtitle2": "Viel Spaß beim Entdecken meines Portfolios!",
+    "ctaSoftSkills": "Soft Skills ansehen ↘︎",
+    "ctaSoftSkillsAria": "Zu den Soft Skills springen",
+    "techTitle": "Technologien, die ich beherrsche",
+    "techAria": "Technologien",
+    "softTitle": "Soft Skills",
+    "softAria": "Soft Skills",
+    "partThreeTitle": "Weitere Projekte",
+    "partThreeText": "Entdecke weitere Arbeiten, Experimente und Open‑Source‑Beiträge.",
+    "gameTitle": "Gluttony Eater",
+    "gameVideoAria": "Gluttony Eater Prototyp Gameplay‑Video",
+    "gameSummary": "Beschreibung",
+    "gameParagraph": "Gluttony Eater ist ein Spiel mit Unreal Engine 5, in dem du einen Kämpfer spielst, der verschiedene Nahrungsmittel isst, um kontextuelle Superkräfte freizuschalten. Jedes Essen verleiht einen temporären Bonus – von explosiven Dashs bis hin zu Eisenmagen‑Schildern – und fördert kreative Kombos sowie Ressourcenmanagement.",
+    "gameBullet1": "Iss, um stärker zu werden, und time deine Snacks klug.",
+    "gameBullet2": "Situative Fähigkeiten je nach Nahrungsart (Bewegung, Verteidigung, Explosion).",
+    "gameBullet3": "Arcade‑Charakter, moderne Effekte und reaktive Steuerung.",
+    "tagUE5": "#UE5",
+    "tagIndie": "#IndieDev",
+    "tagFighting": "#Kampfspiel",
+    "tagPrototype": "#Prototyp"
+  },
+  "contact": {
+    "title": "Kontaktiere mich",
+    "subtitle": "Ich wäre gerne dein nächster Azubi — ich bin freundlich",
+    "name": "Dein Name",
+    "email": "Deine E-Mail",
+    "message": "Deine Nachricht",
+    "send": "Senden",
+    "sending": "Senden...",
+    "successToast": "Nachricht erfolgreich gesendet!",
+    "errorToast": "Fehler beim Senden der Nachricht.",
+    "successMsg": "Danke, deine Nachricht wurde gesendet!",
+    "errorMsg": "Ups, Senden fehlgeschlagen. Versuche es später erneut oder kontaktiere mich direkt."
+  },
+  "extensions": {
+    "scribeTitle": "KI: Scribe E-Mail-Korrektur",
+    "scribeDesc": "Nutze KI, um Rechtschreibfehler in deinen E-Mails zu korrigieren",
+    "templatesTitle": "E-Mail-Vorlagen erstellen",
+    "templatesDesc": "Erstelle Vorlagen, um schneller auf E-Mails zu antworten",
+    "impostorTitle": "Impostor Emoji",
+    "impostorDesc": "Ein kleines Beobachtungsspiel für zwischendurch",
+    "translateTitle": "KI: E-Mail-Übersetzung",
+    "translateDesc": "Mit der Kraft der KI steht dir die Welt offen"
+  }
+}

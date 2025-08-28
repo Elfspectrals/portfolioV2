@@ -1,0 +1,69 @@
+{
+  "app": {
+    "brand": "Portfolio",
+    "nav": {
+      "home": "Home",
+      "extension": "Chrome Extensions",
+      "world3d": "3D World",
+      "contact": "Contact"
+    },
+    "theme": {
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "menu": "Menu"
+  },
+  "home": {
+    "title": "Welcome",
+    "subtitle": "Explore my work"
+  },
+  "homepage": {
+    "avatarAlt": "Portrait of Jérôme Neupert",
+    "heroGreeting": "Hi, I'm Jérôme —",
+    "heroRole": "Full‑stack developer",
+    "heroSubtitle1": "Here are some of my projects and achievements.",
+    "heroSubtitle2": "Have fun exploring my portfolio!",
+    "ctaSoftSkills": "See Soft skills ↘︎",
+    "ctaSoftSkillsAria": "Jump to Soft skills",
+    "techTitle": "Technologies I master",
+    "techAria": "Technologies",
+    "softTitle": "Soft skills",
+    "softAria": "Soft skills",
+    "partThreeTitle": "More projects",
+    "partThreeText": "Explore additional work, experiments, and open-source contributions.",
+    "gameTitle": "Gluttony Eater",
+    "gameVideoAria": "Gluttony Eater prototype gameplay video",
+    "gameSummary": "Description",
+    "gameParagraph": "Gluttony Eater is a game built with Unreal Engine 5 where you play a fighter who eats various foods to unlock contextual superpowers. Each food grants a temporary bonus — from explosive dashes to iron-stomach shields — encouraging creative combos and resource management.",
+    "gameBullet1": "Eat to power up and time your snacks wisely.",
+    "gameBullet2": "Situational skills based on food types (movement, defense, explosion).",
+    "gameBullet3": "Arcade spirit, modern visuals, and responsive controls.",
+    "tagUE5": "#UE5",
+    "tagIndie": "#IndieDev",
+    "tagFighting": "#FightingGame",
+    "tagPrototype": "#Prototype"
+  },
+  "contact": {
+    "title": "Contact me",
+    "subtitle": "I'd love to be your next apprentice — I'm friendly",
+    "name": "Your name",
+    "email": "Your email",
+    "message": "Your message",
+    "send": "Send",
+    "sending": "Sending...",
+    "successToast": "Message sent successfully!",
+    "errorToast": "Error sending the message.",
+    "successMsg": "Thank you, your message has been sent!",
+    "errorMsg": "Oops, sending failed. Try again later or contact me directly."
+  },
+  "extensions": {
+    "scribeTitle": "AI: Scribe email correction",
+    "scribeDesc": "Use AI to correct spelling mistakes in your emails",
+    "templatesTitle": "Create email templates",
+    "templatesDesc": "Create templates to reply to your emails faster",
+    "impostorTitle": "Impostor Emoji",
+    "impostorDesc": "A small observation mini-game to pass the time",
+    "translateTitle": "AI: Email translation",
+    "translateDesc": "With the power of AI, the world opens to you"
+  }
+}

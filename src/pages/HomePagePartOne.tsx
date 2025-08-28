@@ -1,6 +1,7 @@
 import jeromeProfilePic from "../assets/jerome.jpg";
 import styles from "./HomePage.module.scss";
 import Badge from "../components/Badge/Badge";
+import { useTranslation } from "react-i18next";
 
 // tes imports logos
 import htmlLogo from "../assets/html.svg";
@@ -11,7 +12,7 @@ import reactLogo from "../assets/reactlogo.svg";
 import nodeLogo from "../assets/nodejs.svg";
 import cypressLogo from "../assets/cypress-1.svg";
 import jiraLogo from "../assets/jira-1.svg";
-import ghaLogo from "../assets/github-icon.svg"; // GitHub Actions → j’utilise ton github-icon
+import ghaLogo from "../assets/github-icon.svg"; // GitHub Actions → j'utilise ton github-icon
 import sqlLogo from "../assets/mysql-logo-pure.svg"; // SQL → MySQL logo
 import mongoLogo from "../assets/mongodb-icon-2.svg";
 import dockerLogo from "../assets/docker.svg";
@@ -63,13 +64,14 @@ const softSkills: SoftSkill[] = [
 ];
 
 const HomePagePartOne = () => {
+  const { t } = useTranslation();
   return (
     <div className={styles.container}>
       <header className={styles.hero}>
         <img
           className={styles.avatar}
           src={jeromeProfilePic}
-          alt="Portrait de Jérôme Neupert"
+          alt={t("homepage.avatarAlt")}
           width={240}
           height={240}
           loading="eager"
@@ -77,34 +79,55 @@ const HomePagePartOne = () => {
 
         <div className={styles.titleBlock}>
           <h1>
-            Salut, je suis Jérôme —{" "}
-            <span className={styles.highlight}>Développeur full-stack</span> &
+            {t("homepage.heroGreeting")}{" "}
+            <span className={styles.highlight}>{t("homepage.heroRole")}</span> &
             créateur d'expériences numériques
           </h1>
           <h3>
-            Vous retrouverez ici certains de mes projets et réalisations.
+            {t("homepage.heroSubtitle1")}
             <br />
-            Je vous laisse vous amuser en découvrant mon portfolio !
+            {t("homepage.heroSubtitle2")}
             <br />
           </h3>
-          
 
-          {/* Petit lien pour sauter à la section Soft skills */}
+          {/* CTA and Social badges row */}
           <div className={styles.ctaRow}>
             <a
               href="#soft-skills"
               className={styles.badge}
-              aria-label="Aller aux Soft skills"
+              aria-label={t("homepage.ctaSoftSkillsAria")}
             >
-              <span className={styles.label}>Voir Soft skills ↘︎</span>
+              <span className={styles.label}>
+                {t("homepage.ctaSoftSkills")}
+              </span>
+            </a>
+
+            {/* Social badges */}
+            <a
+              href="https://www.linkedin.com/in/jerome-neupert/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialBadge}
+              aria-label="LinkedIn Profile"
+            >
+              <Badge text="LinkedIn" />
+            </a>
+            <a
+              href="https://github.com/elfspectrals/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialBadge}
+              aria-label="GitHub Profile"
+            >
+              <Badge text="GitHub" />
             </a>
           </div>
         </div>
       </header>
 
       <section className={styles.section}>
-        <h2>Technologies que je maîtrise</h2>
-        <ul className={styles.chips} aria-label="Technologies">
+        <h2>{t("homepage.techTitle")}</h2>
+        <ul className={styles.chips} aria-label={t("homepage.techAria")}>
           {technologies.map((tech) => (
             <li key={tech.text} role="listitem">
               <Badge text={tech.text} svgLogo={tech.svgLogo} />
@@ -115,8 +138,8 @@ const HomePagePartOne = () => {
 
       {/* Ajout d'un id pour l'ancre */}
       <section className={styles.section} id="soft-skills">
-        <h2>Soft skills</h2>
-        <ul className={styles.chips} aria-label="Soft skills">
+        <h2>{t("homepage.softTitle")}</h2>
+        <ul className={styles.chips} aria-label={t("homepage.softAria")}>
           {softSkills.map((skill) => (
             <li key={skill.text} role="listitem">
               <Badge text={skill.text} svgLogo={skill.svgLogo} />

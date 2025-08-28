@@ -1,0 +1,69 @@
+{
+  "app": {
+    "brand": "Portfolio",
+    "nav": {
+      "home": "Accueil",
+      "extension": "Extensions Chrome",
+      "world3d": "Monde 3D",
+      "contact": "Contact"
+    },
+    "theme": {
+      "light": "Clair",
+      "dark": "Sombre"
+    },
+    "menu": "Menu"
+  },
+  "home": {
+    "title": "Bienvenue",
+    "subtitle": "Découvrez mon travail"
+  },
+  "homepage": {
+    "avatarAlt": "Portrait de Jérôme Neupert",
+    "heroGreeting": "Salut, je suis Jérôme —",
+    "heroRole": "Développeur full-stack",
+    "heroSubtitle1": "Vous retrouverez ici certains de mes projets et réalisations.",
+    "heroSubtitle2": "Je vous laisse vous amuser en découvrant mon portfolio !",
+    "ctaSoftSkills": "Voir Soft skills ↘︎",
+    "ctaSoftSkillsAria": "Aller aux Soft skills",
+    "techTitle": "Technologies que je maîtrise",
+    "techAria": "Technologies",
+    "softTitle": "Soft skills",
+    "softAria": "Soft skills",
+    "partThreeTitle": "Plus de projets",
+    "partThreeText": "Explorez d'autres travaux, expériences et contributions open-source.",
+    "gameTitle": "Gluttony Eater",
+    "gameVideoAria": "Vidéo de gameplay du prototype Gluttony Eater",
+    "gameSummary": "Description",
+    "gameParagraph": "Gluttony Eater est un jeu créé avec Unreal Engine 5 où vous incarnez un combattant qui mange différents aliments pour débloquer des super-pouvoirs contextuels. Chaque nourriture accorde un bonus temporaire — allant de dashs explosifs à des boucliers — encourageant les combos créatifs et la gestion des ressources.",
+    "gameBullet1": "Mangez pour gagner en puissance et choisissez le bon timing.",
+    "gameBullet2": "Compétences situationnelles selon les aliments (mouvement, défense, explosion).",
+    "gameBullet3": "Esprit arcade, effets modernes et contrôles réactifs.",
+    "tagUE5": "#UE5",
+    "tagIndie": "#IndieDev",
+    "tagFighting": "#JeuDeCombat",
+    "tagPrototype": "#Prototype"
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "subtitle": "Pour m'avoir en prochain alternant, je suis sympathique",
+    "name": "Votre nom",
+    "email": "Votre email",
+    "message": "Votre message",
+    "send": "Envoyer",
+    "sending": "Envoi...",
+    "successToast": "Message envoyé avec succès !",
+    "errorToast": "Erreur lors de l’envoi du message.",
+    "successMsg": "Merci, votre message a bien été envoyé !",
+    "errorMsg": "Oups, l’envoi a échoué. Réessayez plus tard ou contactez-moi directement."
+  },
+  "extensions": {
+    "scribeTitle": "IA : Scribe correction de mails",
+    "scribeDesc": "Utilisez l’IA pour corriger vos fautes d’orthographe dans vos emails",
+    "templatesTitle": "Création de templates pour mails",
+    "templatesDesc": "Création de templates pour répondre à vos emails plus rapidement",
+    "impostorTitle": "Impostor Emoji",
+    "impostorDesc": "Petit mini jeu d'observation pour passer le temps",
+    "translateTitle": "IA : Traduction de mails",
+    "translateDesc": "Avec le pouvoir de l'IA, le monde s'offre à vous"
+  }
+}

@@ -1,10 +1,10 @@
+// import { useTranslation } from "react-i18next";
+
 const HomePagePartThree = () => {
+  // const { t } = useTranslation();
   return (
     <section aria-labelledby="part-three-title">
-      <h2 id="part-three-title">More projects</h2>
-      <p>
-        Explore additional work, experiments, and open-source contributions.
-      </p>
+     
     </section>
   );
 };
