@@ -24,10 +24,9 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className={clsx(styles.header, className)}>
-      {/* Bloc gauche */}
+      {/* Left: Portfolio + Language + Theme */}
       <div className={styles.leftGroup}>
         <h1 className={styles.logo}>{t("app.brand")}</h1>
-        <ThemeToggle className={styles.themeBtn} />
         {languageFlag && onLanguageToggle && (
           <button
             type="button"
@@ -38,10 +37,12 @@ export const Header: React.FC<HeaderProps> = ({
             {languageFlag}
           </button>
         )}
+        <ThemeToggle className={styles.themeBtn} />
       </div>
 
-      {/* Bloc droit */}
+      {/* Right: Navigation or Burger */}
       <div className={styles.rightGroup}>
+        {/* Burger only visible on mobile */}
         <button
           type="button"
           className={styles.menuBtn}
@@ -55,9 +56,11 @@ export const Header: React.FC<HeaderProps> = ({
           </span>
         </button>
 
+        {/* Nav hidden on mobile, visible on desktop */}
         <div
           id="primary-navigation"
-          className={clsx(styles.navWrapper, { [styles.open]: isMenuOpen })}
+          className={styles.navWrapper}
+          data-open={isMenuOpen}
         >
           <Navigation links={navLinks} />
         </div>

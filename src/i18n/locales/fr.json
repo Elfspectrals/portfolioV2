@@ -29,6 +29,14 @@
     "techAria": "Technologies",
     "softTitle": "Soft skills",
     "softAria": "Soft skills",
+    "softSkills": {
+      "teamwork": "Esprit d'équipe",
+      "communication": "Communication",
+      "rigor": "Rigueur (QA mindset)",
+      "autonomy": "Autonomie",
+      "curiosity": "Curiosité",
+      "productSense": "Sens du produit"
+    },
     "partThreeTitle": "Plus de projets",
     "partThreeText": "Explorez d'autres travaux, expériences et contributions open-source.",
     "gameTitle": "Gluttony Eater",
@@ -52,13 +60,13 @@
     "send": "Envoyer",
     "sending": "Envoi...",
     "successToast": "Message envoyé avec succès !",
-    "errorToast": "Erreur lors de l’envoi du message.",
+    "errorToast": "Erreur lors de l'envoi du message.",
     "successMsg": "Merci, votre message a bien été envoyé !",
-    "errorMsg": "Oups, l’envoi a échoué. Réessayez plus tard ou contactez-moi directement."
+    "errorMsg": "Oups, l'envoi a échoué. Réessayez plus tard ou contactez-moi directement."
   },
   "extensions": {
     "scribeTitle": "IA : Scribe correction de mails",
-    "scribeDesc": "Utilisez l’IA pour corriger vos fautes d’orthographe dans vos emails",
+    "scribeDesc": "Utilisez l'IA pour corriger vos fautes d'orthographe dans vos emails",
     "templatesTitle": "Création de templates pour mails",
     "templatesDesc": "Création de templates pour répondre à vos emails plus rapidement",
     "impostorTitle": "Impostor Emoji",

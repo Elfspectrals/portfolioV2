@@ -53,18 +53,19 @@ const technologies: Technology[] = [
   { text: "Google + Gemini", svgLogo: googleLogo },
 ];
 
-// Tableau soft skills
-const softSkills: SoftSkill[] = [
-  { text: "Esprit d'équipe" },
-  { text: "Communication" },
-  { text: "Rigueur (QA mindset)" },
-  { text: "Autonomie" },
-  { text: "Curiosité" },
-  { text: "Sens du produit" },
-];
-
 const HomePagePartOne = () => {
   const { t } = useTranslation();
+
+  // Soft skills with translations
+  const softSkills: SoftSkill[] = [
+    { text: t("homepage.softSkills.teamwork") },
+    { text: t("homepage.softSkills.communication") },
+    { text: t("homepage.softSkills.rigor") },
+    { text: t("homepage.softSkills.autonomy") },
+    { text: t("homepage.softSkills.curiosity") },
+    { text: t("homepage.softSkills.productSense") },
+  ];
+
   return (
     <div className={styles.container}>
       <header className={styles.hero}>
@@ -72,8 +73,6 @@ const HomePagePartOne = () => {
           className={styles.avatar}
           src={jeromeProfilePic}
           alt={t("homepage.avatarAlt")}
-          width={240}
-          height={240}
           loading="eager"
         />
 
@@ -87,7 +86,6 @@ const HomePagePartOne = () => {
             {t("homepage.heroSubtitle1")}
             <br />
             {t("homepage.heroSubtitle2")}
-            <br />
           </h3>
 
           {/* CTA and Social badges row */}
@@ -113,7 +111,7 @@ const HomePagePartOne = () => {
               <Badge text="LinkedIn" />
             </a>
             <a
-              href="https://github.com/elfspectrals/"
+              href="https://github.com/jerome-neupert"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialBadge}

@@ -29,6 +29,14 @@
     "techAria": "Technologien",
     "softTitle": "Soft Skills",
     "softAria": "Soft Skills",
+    "softSkills": {
+      "teamwork": "Teamgeist",
+      "communication": "Kommunikation",
+      "rigor": "Sorgfalt (QA-Mindset)",
+      "autonomy": "Autonomie",
+      "curiosity": "Neugier",
+      "productSense": "Produktsinn"
+    },
     "partThreeTitle": "Weitere Projekte",
     "partThreeText": "Entdecke weitere Arbeiten, Experimente und Open‑Source‑Beiträge.",
     "gameTitle": "Gluttony Eater",
