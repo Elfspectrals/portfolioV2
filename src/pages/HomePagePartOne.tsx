@@ -79,7 +79,7 @@ const HomePagePartOne = () => {
         <div className={styles.titleBlock}>
           <h1>
             {t("homepage.heroGreeting")}{" "}
-            <span className={styles.highlight}>{t("homepage.heroRole")}</span> &
+            <span className={styles.highlight}>{t("homepage.heroRole")}</span> 
             
           </h1>
           <h3>
@@ -111,7 +111,7 @@ const HomePagePartOne = () => {
               <Badge text="LinkedIn" />
             </a>
             <a
-              href="https://github.com/jerome-neupert"
+              href="https://github.com/elfspectrals/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialBadge}
