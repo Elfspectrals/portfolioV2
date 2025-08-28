@@ -80,7 +80,7 @@ const HomePagePartOne = () => {
           <h1>
             {t("homepage.heroGreeting")}{" "}
             <span className={styles.highlight}>{t("homepage.heroRole")}</span> &
-            créateur d'expériences numériques
+            
           </h1>
           <h3>
             {t("homepage.heroSubtitle1")}

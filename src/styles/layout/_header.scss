@@ -67,16 +67,27 @@
 
 /* --- MOBILE --- */
 @media (max-width: 768px) {
+  .header {
+    position: relative;
+  }
+
   .navWrapper {
     display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--background);
+    border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 20%);
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    min-width: 200px;
+    padding: 0.5rem;
     margin-top: 0.5rem;
+    z-index: 100;
   }
 
   .navWrapper[data-open="true"] {
-    display: flex;
+    display: block;
   }
 
   .menuBtn {

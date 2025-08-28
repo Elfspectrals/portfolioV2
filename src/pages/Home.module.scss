@@ -1,8 +1,10 @@
-/* Scroll container */
+/* Scroll container with snap behavior */
 .container {
   min-height: 100vh;
   overflow-y: auto;
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 0;
 
   &::-webkit-scrollbar {
     width: 0;
@@ -10,12 +12,51 @@
   }
 }
 
+/* Each snap section */
+.snapSection {
+  width: 100%;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(1rem, 4vw, 2rem);
+  box-sizing: border-box;
+  position: relative;
+}
+
 .section {
   width: 100%;
 }
 
+/* Mobile adjustments */
 @media (max-width: 768px) {
-  .container { min-height: 100vh; }
+  .container { 
+    min-height: 100vh;
+    /* Make scroll snap less aggressive on mobile */
+    scroll-snap-type: y proximity;
+  }
+  
+  .snapSection {
+    min-height: 100vh;
+    padding: clamp(0.5rem, 2vw, 1rem);
+    /* Allow more flexible scrolling on mobile */
+    scroll-snap-align: start;
+  }
+}
+
+/* Disable scroll snap for very small screens or landscape mobile */
+@media (max-width: 480px), (max-height: 600px) {
+  .container {
+    scroll-snap-type: none;
+  }
+  
+  .snapSection {
+    min-height: auto;
+    scroll-snap-align: none;
+  }
 }
 
 /* src/assets/styles/typography.scss */

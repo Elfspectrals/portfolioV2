@@ -18,10 +18,26 @@
 
 @media (max-width: 768px) {
   .nav {
-    gap: .5rem;
+    flex-direction: column;
+    gap: 0.25rem;
   }
+  
   .link {
-    padding: 0.25rem 0.4rem;
-    font-size: .95rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    width: 100%;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: color-mix(in oklab, var(--accent, #2563eb), transparent 90%);
+      color: var(--text);
+    }
+    
+    &.active {
+      background: var(--accent, #2563eb);
+      color: white;
+    }
   }
 }
