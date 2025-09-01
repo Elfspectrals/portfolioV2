@@ -29,11 +29,11 @@ const HomePagePartTwo = () => {
             </span>
           </summary>
           <div className={styles.descriptionBody}>
-            <p>{t("homepage.gameParagraph")}</p>
+            <p dangerouslySetInnerHTML={{ __html: t("homepage.gameParagraph") }} />
             <ul className={styles.bullets}>
-              <li>{t("homepage.gameBullet1")}</li>
-              <li>{t("homepage.gameBullet2")}</li>
-              <li>{t("homepage.gameBullet3")}</li>
+              <li dangerouslySetInnerHTML={{ __html: t("homepage.gameBullet1") }} />
+              <li dangerouslySetInnerHTML={{ __html: t("homepage.gameBullet2") }} />
+              <li dangerouslySetInnerHTML={{ __html: t("homepage.gameBullet3") }} />
             </ul>
             <div className={styles.meta}>
               <span className={styles.tag}>{t("homepage.tagUE5")}</span>
