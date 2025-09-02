@@ -2,7 +2,7 @@ import styles from "./Home.module.scss";
 
 import HomePagePartOne from "./HomePagePartOne";
 import HomePagePartTwo from "./HomePagePartTwo";
-// import HomePagePartThree from "./HomePagePartThree";
+import HomePagePartThree from "./HomePagePartThree";
 
 const Home = () => {
   return (
@@ -13,9 +13,9 @@ const Home = () => {
       <section className={styles.snapSection}>
         <HomePagePartTwo />
       </section>
-      {/* <section className={styles.snapSection}>
+      <section className={styles.snapSection}>
         <HomePagePartThree />
-      </section> */}
+      </section>
     </main>
   );
 };

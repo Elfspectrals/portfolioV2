@@ -39,6 +39,13 @@
     },
     "partThreeTitle": "More projects",
     "partThreeText": "Explore additional work, experiments, and open-source contributions.",
+    "sharedDrinks": {
+      "title": "SharedDrinks",
+      "imageAlt": "SharedDrinks Mobile App Screenshot",
+      "description": "A mobile application that provides drink recommendations and helps users find nearby bars using location services and cocktail APIs.",
+      "summaryTitle": "App Summary",
+      "summary": "A mobile app to get recommendations on drinks & nearby bars. Features include drink suggestions, bar locator with maps, and cocktail recipes powered by external APIs."
+    },
     "gameTitle": "Gluttony Eater",
     "gameVideoAria": "Gluttony Eater prototype gameplay video",
     "gameSummary": "Description",
