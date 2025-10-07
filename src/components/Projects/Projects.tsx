@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView as useIntersectionObserver } from 'react-intersection-observer';
 import Tilt from 'react-parallax-tilt';
 import { 
   ExternalLink, 
   Github, 
-  Star, 
-  Calendar,
-  Users,
   Code2,
   Palette,
   Smartphone,
@@ -28,11 +25,6 @@ interface Project {
   featured: boolean;
   githubUrl?: string;
   liveUrl?: string;
-  stats: {
-    stars?: number;
-    contributors?: number;
-    downloads?: number;
-  };
 }
 
 const Projects: React.FC = () => {
@@ -54,12 +46,7 @@ const Projects: React.FC = () => {
       status: 'completed',
       featured: true,
       githubUrl: 'https://github.com/elfspectrals/shareddrinks',
-      liveUrl: 'https://shareddrinks.app',
-      stats: {
-        stars: 24,
-        contributors: 3,
-        downloads: 1500
-      }
+      liveUrl: 'https://shareddrinks.app'
     },
     {
       id: 'gluttony-eater',
@@ -71,11 +58,7 @@ const Projects: React.FC = () => {
       category: 'game',
       status: 'in-progress',
       featured: true,
-      githubUrl: 'https://github.com/elfspectrals/gluttony-eater',
-      stats: {
-        stars: 12,
-        contributors: 1
-      }
+      githubUrl: 'https://github.com/elfspectrals/gluttony-eater'
     },
     {
       id: 'portfolio-v2',
@@ -88,11 +71,7 @@ const Projects: React.FC = () => {
       status: 'completed',
       featured: true,
       githubUrl: 'https://github.com/elfspectrals/portfolio-v2',
-      liveUrl: 'https://jerome-neupert.dev',
-      stats: {
-        stars: 8,
-        contributors: 1
-      }
+      liveUrl: 'https://jerome-neupert.dev'
     },
     {
       id: 'chrome-extensions',
@@ -104,10 +83,7 @@ const Projects: React.FC = () => {
       category: 'web',
       status: 'completed',
       featured: false,
-      githubUrl: 'https://github.com/elfspectrals/chrome-extensions',
-      stats: {
-        downloads: 5000
-      }
+      githubUrl: 'https://github.com/elfspectrals/chrome-extensions'
     }
   ];
 
@@ -139,7 +115,7 @@ const Projects: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 12
       }
@@ -211,7 +187,7 @@ const Projects: React.FC = () => {
           className={styles.projectsGrid}
           variants={containerVariants}
         >
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <motion.div
               key={project.id}
               className={`${styles.projectCard} ${project.featured ? styles.featured : ''}`}
@@ -241,8 +217,7 @@ const Projects: React.FC = () => {
                       </div>
                       {project.featured && (
                         <div className={styles.featuredBadge}>
-                          <Star className={styles.starIcon} />
-                          <span>Featured</span>
+                          <span>⭐ Featured</span>
                         </div>
                       )}
                     </div>
@@ -274,29 +249,6 @@ const Projects: React.FC = () => {
                       ))}
                     </div>
 
-                    {/* Stats */}
-                    {project.stats && (
-                      <div className={styles.projectStats}>
-                        {project.stats.stars && (
-                          <div className={styles.stat}>
-                            <Star className={styles.statIcon} />
-                            <span>{project.stats.stars}</span>
-                          </div>
-                        )}
-                        {project.stats.contributors && (
-                          <div className={styles.stat}>
-                            <Users className={styles.statIcon} />
-                            <span>{project.stats.contributors}</span>
-                          </div>
-                        )}
-                        {project.stats.downloads && (
-                          <div className={styles.stat}>
-                            <Calendar className={styles.statIcon} />
-                            <span>{project.stats.downloads.toLocaleString()}</span>
-                          </div>
-                        )}
-                      </div>
-                    )}
 
                     {/* Action Buttons */}
                     <div className={styles.projectActions}>

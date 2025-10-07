@@ -258,10 +258,6 @@
   font-weight: 600;
 }
 
-.starIcon {
-  width: 14px;
-  height: 14px;
-}
 
 .projectInfo {
   padding: 1.5rem;
@@ -320,27 +316,6 @@
   border: 1px solid color-mix(in oklab, var(--accent-2), transparent 70%);
 }
 
-.projectStats {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-top: 1px solid var(--card-border);
-}
-
-.stat {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--card-text);
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.statIcon {
-  width: 16px;
-  height: 16px;
-  color: var(--accent-2);
-}
 
 .projectActions {
   display: flex;
