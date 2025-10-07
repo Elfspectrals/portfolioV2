@@ -216,44 +216,39 @@
   margin: 0;
 }
 
-.progressSection {
+.skillLevelSection {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.progressBar {
-  flex: 1;
-  height: 8px;
-  background: color-mix(in oklab, var(--card-border), transparent 50%);
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-}
-
-.progressFill {
-  height: 100%;
-  border-radius: 4px;
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    animation: shimmer 2s ease-in-out infinite;
-  }
-}
-
-.progressText {
-  font-size: 1.1rem;
+.skillLevel {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: var(--accent);
-  min-width: 50px;
-  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  
+  &.débutant {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  }
+  
+  &.intermédiaire {
+    background: linear-gradient(135deg, #ffa726, #ffb74d);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 167, 38, 0.3);
+  }
+  
+  &.maîtrise {
+    background: linear-gradient(135deg, #4caf50, #66bb6a);
+    color: white;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  }
 }
 
 .skillsSummary {

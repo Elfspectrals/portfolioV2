@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useInView as useIntersectionObserver } from 'react-intersection-observer';
-import CountUp from 'react-countup';
 import { 
   Code2, 
   Database, 
   Globe, 
   Smartphone, 
-  Palette,
   Zap,
   Shield,
   Layers
@@ -20,7 +18,7 @@ interface TechCategory {
   color: string;
   technologies: {
     name: string;
-    level: number;
+    level: 'débutant' | 'intermédiaire' | 'maîtrise';
     icon?: string;
   }[];
 }
@@ -32,18 +30,22 @@ const TechStack: React.FC = () => {
     triggerOnce: false
   });
 
+
   const categories: TechCategory[] = [
     {
       name: "Frontend",
       icon: <Globe className={styles.categoryIcon} />,
       color: "#3b82f6",
       technologies: [
-        { name: "React", level: 95, icon: "⚛️" },
-        { name: "TypeScript", level: 90, icon: "🔷" },
-        { name: "Next.js", level: 85, icon: "▲" },
-        { name: "Vue.js", level: 80, icon: "💚" },
-        { name: "Sass/SCSS", level: 95, icon: "🎨" },
-        { name: "Tailwind CSS", level: 90, icon: "🌊" }
+        { name: "React", level: "maîtrise", icon: "⚛️" },
+        { name: "TypeScript", level: "maîtrise", icon: "🔷" },
+        { name: "Next.js", level: "intermédiaire", icon: "▲" },
+        { name: "Vue.js", level: "intermédiaire", icon: "💚" },
+        { name: "HTML", level: "maîtrise", icon: "🌐" },
+        { name: "CSS", level: "maîtrise", icon: "🎨" },
+        { name: "JavaScript", level: "maîtrise", icon: "⚡" },
+        { name: "Sass/SCSS", level: "maîtrise", icon: "🎨" },
+        { name: "Tailwind CSS", level: "maîtrise", icon: "🌊" }
       ]
     },
     {
@@ -51,12 +53,11 @@ const TechStack: React.FC = () => {
       icon: <Database className={styles.categoryIcon} />,
       color: "#10b981",
       technologies: [
-        { name: "Node.js", level: 90, icon: "🟢" },
-        { name: "Express.js", level: 85, icon: "🚀" },
-        { name: "Python", level: 80, icon: "🐍" },
-        { name: "PostgreSQL", level: 85, icon: "🐘" },
-        { name: "MongoDB", level: 80, icon: "🍃" },
-        { name: "Redis", level: 75, icon: "🔴" }
+        { name: "Node.js", level: "maîtrise", icon: "🟢" },
+        { name: "Express.js", level: "maîtrise", icon: "🚀" },
+        { name: "Python", level: "intermédiaire", icon: "🐍" },
+        { name: "PostgreSQL", level: "intermédiaire", icon: "🐘" },
+        { name: "MongoDB", level: "débutant", icon: "🍃" },
       ]
     },
     {
@@ -64,10 +65,9 @@ const TechStack: React.FC = () => {
       icon: <Smartphone className={styles.categoryIcon} />,
       color: "#8b5cf6",
       technologies: [
-        { name: "React Native", level: 85, icon: "📱" },
-        { name: "Flutter", level: 70, icon: "🦋" },
-        { name: "Expo", level: 80, icon: "⚡" },
-        { name: "Firebase", level: 85, icon: "🔥" }
+        { name: "React Native", level: "maîtrise", icon: "📱" },
+        { name: "Flutter", level: "débutant", icon: "🦋" },
+        { name: "Firebase", level: "intermédiaire", icon: "🔥" }
       ]
     },
     {
@@ -75,12 +75,14 @@ const TechStack: React.FC = () => {
       icon: <Zap className={styles.categoryIcon} />,
       color: "#f59e0b",
       technologies: [
-        { name: "Git", level: 95, icon: "🌿" },
-        { name: "Docker", level: 80, icon: "🐳" },
-        { name: "AWS", level: 75, icon: "☁️" },
-        { name: "Vercel", level: 90, icon: "▲" },
-        { name: "Figma", level: 85, icon: "🎨" },
-        { name: "Jest", level: 80, icon: "🧪" }
+        { name: "Git", level: "maîtrise", icon: "🌿" },
+        { name: "GitHub Action", level: "intermédiaire", icon: "🐙" },
+        { name: "Jira", level: "maîtrise", icon: "🔍" },
+        { name: "Docker", level: "maîtrise", icon: "🐳" },
+        { name: "Figma", level: "intermédiaire", icon: "🎨" },
+        { name: "Cypress", level: "maîtrise", icon: "🧪" },
+        { name: "Unreal Engine 5", level: "intermédiaire", icon: "🎮" },
+        { name: "ThreeJS", level: "intermédiaire", icon: "🔺" }
       ]
     }
   ];
@@ -102,7 +104,7 @@ const TechStack: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 12
       }
@@ -184,30 +186,18 @@ const TechStack: React.FC = () => {
                   <h3 className={styles.techName}>{tech.name}</h3>
                 </div>
                 
-                <div className={styles.progressSection}>
-                  <div className={styles.progressBar}>
-                    <motion.div
-                      className={styles.progressFill}
-                      initial={{ width: 0 }}
-                      animate={{ width: `${tech.level}%` }}
-                      transition={{ 
-                        delay: index * 0.1 + 0.5,
-                        duration: 1,
-                        ease: "easeOut"
-                      }}
-                      style={{ 
-                        background: `linear-gradient(90deg, ${categories[activeCategory].color}, ${categories[activeCategory].color}88)`
-                      }}
-                    />
-                  </div>
-                  <div className={styles.progressText}>
-                    <CountUp
-                      end={tech.level}
-                      duration={1.5}
-                      delay={index * 0.1 + 0.5}
-                      suffix="%"
-                    />
-                  </div>
+                <div className={styles.skillLevelSection}>
+                  <motion.div
+                    className={`${styles.skillLevel} ${styles[tech.level]}`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ 
+                      delay: index * 0.1 + 0.5,
+                      duration: 0.5
+                    }}
+                  >
+                    {tech.level}
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
