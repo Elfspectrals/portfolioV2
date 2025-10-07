@@ -2,6 +2,7 @@ import jeromeProfilePic from "../assets/jerome.jpg";
 import styles from "./HomePage.module.scss";
 import Badge from "../components/Badge/Badge";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 // tes imports logos
 import htmlLogo from "../assets/html.svg";
@@ -55,6 +56,20 @@ const technologies: Technology[] = [
 
 const HomePagePartOne = () => {
   const { t } = useTranslation();
+  const [isVisible, setIsVisible] = useState(false);
+  const [techVisible, setTechVisible] = useState(false);
+  const [softVisible, setSoftVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+    const techTimer = setTimeout(() => setTechVisible(true), 500);
+    const softTimer = setTimeout(() => setSoftVisible(true), 1000);
+    
+    return () => {
+      clearTimeout(techTimer);
+      clearTimeout(softTimer);
+    };
+  }, []);
 
   // Soft skills with translations
   const softSkills: SoftSkill[] = [
@@ -68,21 +83,28 @@ const HomePagePartOne = () => {
 
   return (
     <div className={styles.container}>
-      <header className={styles.hero}>
-        <img
-          className={styles.avatar}
-          src={jeromeProfilePic}
-          alt={t("homepage.avatarAlt")}
-          loading="eager"
-        />
+      <header className={`${styles.hero} ${isVisible ? styles.heroVisible : ''}`}>
+        <div className={styles.avatarContainer}>
+          <img
+            className={styles.avatar}
+            src={jeromeProfilePic}
+            alt={t("homepage.avatarAlt")}
+            loading="eager"
+            width="128"
+            height="128"
+            decoding="async"
+          />
+          <div className={styles.avatarGlow} aria-hidden="true"></div>
+        </div>
 
         <div className={styles.titleBlock}>
-          <h1>
-            {t("homepage.heroGreeting")}{" "}
-            <span className={styles.highlight}>{t("homepage.heroRole")}</span> 
-            
+          <h1 className={styles.heroTitle}>
+            <span className={styles.greeting}>{t("homepage.heroGreeting")}</span>
+            <span className={`${styles.highlight} ${styles.roleText}`}>
+              {t("homepage.heroRole")}
+            </span>
           </h1>
-          <h3>
+          <h3 className={styles.heroSubtitle}>
             {t("homepage.heroSubtitle1")}
             <br />
             {t("homepage.heroSubtitle2")}
@@ -92,7 +114,7 @@ const HomePagePartOne = () => {
           <div className={styles.ctaRow}>
             <a
               href="#soft-skills"
-              className={styles.badge}
+              className={`${styles.badge} ${styles.ctaBadge}`}
               aria-label={t("homepage.ctaSoftSkillsAria")}
             >
               <span className={styles.label}>
@@ -123,11 +145,19 @@ const HomePagePartOne = () => {
         </div>
       </header>
 
-      <section className={styles.section}>
-        <h2>{t("homepage.techTitle")}</h2>
+      <section className={`${styles.section} ${techVisible ? styles.sectionVisible : ''}`}>
+        <h2 className={styles.sectionTitle}>
+          <span className={styles.titleText}>{t("homepage.techTitle")}</span>
+          <div className={styles.titleUnderline}></div>
+        </h2>
         <ul className={styles.chips} aria-label={t("homepage.techAria")}>
-          {technologies.map((tech) => (
-            <li key={tech.text} role="listitem">
+          {technologies.map((tech, index) => (
+            <li 
+              key={tech.text} 
+              role="listitem"
+              className={styles.techItem}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               <Badge text={tech.text} svgLogo={tech.svgLogo} />
             </li>
           ))}
@@ -135,11 +165,19 @@ const HomePagePartOne = () => {
       </section>
 
       {/* Ajout d'un id pour l'ancre */}
-      <section className={styles.section} id="soft-skills">
-        <h2>{t("homepage.softTitle")}</h2>
+      <section className={`${styles.section} ${softVisible ? styles.sectionVisible : ''}`} id="soft-skills">
+        <h2 className={styles.sectionTitle}>
+          <span className={styles.titleText}>{t("homepage.softTitle")}</span>
+          <div className={styles.titleUnderline}></div>
+        </h2>
         <ul className={styles.chips} aria-label={t("homepage.softAria")}>
-          {softSkills.map((skill) => (
-            <li key={skill.text} role="listitem">
+          {softSkills.map((skill, index) => (
+            <li 
+              key={skill.text} 
+              role="listitem"
+              className={styles.softItem}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               <Badge text={skill.text} svgLogo={skill.svgLogo} />
             </li>
           ))}

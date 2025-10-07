@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { Header } from "./components/Header/Header";
+import Navigation from "./components/Navigation/Navigation";
 import ChatBot from "./components/ChatBot/ChatBot";
+import ScrollProgress from "./components/ScrollProgress/ScrollProgress";
+import BackToTop from "./components/BackToTop/BackToTop";
 
 import { setTheme } from "./utils/theme";
 import { useTranslation } from "react-i18next";
@@ -12,10 +14,10 @@ import ThreeDWorld from "./pages/3DWorld";
 import Home from "./pages/Home";
 
 const navLinks = (t: (k: string) => string) => [
-  { label: t("app.nav.home"), href: "/" },
-  { label: t("app.nav.extension"), href: "/extension-chrome" },
-  { label: t("app.nav.world3d"), href: "/3DWorld" },
-  { label: t("app.nav.contact"), href: "/contact" },
+  { label: t("app.nav.home"), href: "#home" },
+  { label: t("app.nav.tech"), href: "#tech" },
+  { label: t("app.nav.projects"), href: "#projects" },
+  { label: t("app.nav.contact"), href: "#contact" },
 ];
 
 function App() {
@@ -43,7 +45,8 @@ function App() {
 
   return (
     <>
-      <Header
+      <ScrollProgress />
+      <Navigation
         navLinks={navLinks(t)}
         languageFlag={getLanguageFlag()}
         onLanguageToggle={cycleLanguage}
@@ -55,6 +58,7 @@ function App() {
         <Route path="/extension-chrome" element={<ExtensionChrome />} />
         <Route path="/3DWorld" element={<ThreeDWorld />} />
       </Routes>
+      <BackToTop />
     </>
   );
 }

@@ -3,8 +3,8 @@
     "brand": "Portfolio",
     "nav": {
       "home": "Accueil",
-      "extension": "Extensions Chrome",
-      "world3d": "Monde 3D",
+      "tech": "Technologies",
+      "projects": "Projets",
       "contact": "Contact"
     },
     "theme": {
@@ -19,16 +19,16 @@
   },
   "homepage": {
     "avatarAlt": "Portrait de Jérôme Neupert",
-    "heroGreeting": "Salut, je suis Jérôme —",
-    "heroRole": "Développeur full-stack & Créateur d'expériences numériques",
-    "heroSubtitle1": "Vous retrouverez ici certains de mes projets et réalisations.",
-    "heroSubtitle2": "Je vous laisse vous amuser en découvrant mon portfolio !",
+    "heroGreeting": "Bonjour, je suis Jérôme —",
+    "heroRole": "Développeur Full-Stack & Architecte d'Expériences Numériques",
+    "heroSubtitle1": "Passionné par la création d'applications web modernes et performantes.",
+    "heroSubtitle2": "Découvrez mes projets et compétences techniques ci-dessous.",
     "ctaSoftSkills": "Voir Soft skills ↘︎",
     "ctaSoftSkillsAria": "Aller aux Soft skills",
-    "techTitle": "Technologies que je maîtrise",
-    "techAria": "Technologies",
-    "softTitle": "Soft skills",
-    "softAria": "Soft skills",
+    "techTitle": "Stack Technologique",
+    "techAria": "Technologies maîtrisées",
+    "softTitle": "Compétences Transversales",
+    "softAria": "Soft skills et compétences humaines",
     "softSkills": {
       "teamwork": "Esprit d'équipe",
       "communication": "Communication",
@@ -37,8 +37,8 @@
       "curiosity": "Curiosité",
       "productSense": "Sens du produit"
     },
-    "partThreeTitle": "Plus de projets",
-    "partThreeText": "Explorez d'autres travaux, expériences et contributions open-source.",
+    "partThreeTitle": "Projets & Réalisations",
+    "partThreeText": "Découvrez mes projets personnels et professionnels, témoignant de ma passion pour l'innovation technologique.",
     "sharedDrinks": {
       "title": "SharedDrinks",
       "imageAlt": "Capture d'écran de l'Application Mobile SharedDrinks",
