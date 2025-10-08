@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView as useIntersectionObserver } from 'react-intersection-observer';
 import { 
   Mail, 
@@ -11,17 +11,12 @@ import {
   Github,
   Linkedin,
   Twitter,
-  Calendar,
   Clock,
   MessageCircle
 } from 'lucide-react';
 import styles from './Contact.module.scss';
 
-interface ContactProps {
-  t: (key: string) => string;
-}
-
-const Contact: React.FC<ContactProps> = ({ t }) => {
+const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -45,20 +40,43 @@ const Contact: React.FC<ContactProps> = ({ t }) => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setSubmitStatus('success');
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setSubmitStatus('idle');
-    }, 3000);
+    try {
+      // Create a hidden iframe to submit the form
+      const form = e.currentTarget as HTMLFormElement;
+      const iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.name = 'formsubmit-iframe';
+      document.body.appendChild(iframe);
+      
+      // Set form target to iframe
+      form.target = 'formsubmit-iframe';
+      
+      // Submit the form
+      form.submit();
+      
+      // Show success state after a delay
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      setSubmitStatus('success');
+      setIsSubmitting(false);
+      
+      // Clean up iframe
+      setTimeout(() => {
+        document.body.removeChild(iframe);
+      }, 1000);
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setSubmitStatus('idle');
+      }, 3000);
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {
@@ -78,7 +96,7 @@ const Contact: React.FC<ContactProps> = ({ t }) => {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 12
       }
@@ -95,13 +113,13 @@ const Contact: React.FC<ContactProps> = ({ t }) => {
     {
       icon: <Phone className={styles.contactIcon} />,
       title: 'Téléphone',
-      value: '+33 6 12 34 56 78',
-      href: 'tel:+33612345678'
+      value: '+33 7 67 19 62 73',
+      href: 'tel:+33767196273'
     },
     {
       icon: <MapPin className={styles.contactIcon} />,
       title: 'Localisation',
-      value: 'Paris, France',
+      value: 'Paris, Strasbourg, France',
       href: '#'
     }
   ];
@@ -226,7 +244,18 @@ const Contact: React.FC<ContactProps> = ({ t }) => {
                 <p>Je réponds généralement dans les 24h</p>
               </div>
 
-              <form onSubmit={handleSubmit} className={styles.form}>
+              <form 
+                action="https://formsubmit.co/jerome.neupert@gmail.com" 
+                method="POST"
+                onSubmit={handleSubmit} 
+                className={styles.form}
+              >
+                {/* FormSubmit configuration */}
+                <input type="hidden" name="_subject" value="Nouveau message depuis votre portfolio" />
+                <input type="hidden" name="_next" value={window.location.origin} />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Je vous répondrai dans les plus brefs délais." />
                 <div className={styles.formRow}>
                   <div className={styles.formGroup}>
                     <label htmlFor="name" className={styles.label}>
@@ -325,28 +354,6 @@ const Contact: React.FC<ContactProps> = ({ t }) => {
           </motion.div>
         </div>
 
-        {/* Call to Action */}
-        <motion.div 
-          className={styles.cta}
-          variants={itemVariants}
-        >
-          <div className={styles.ctaContent}>
-            <Calendar className={styles.ctaIcon} />
-            <h3>Prêt à commencer ?</h3>
-            <p>Planifions un appel pour discuter de votre projet</p>
-            <motion.a
-              href="https://calendly.com/jerome-neupert"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.ctaButton}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span>Planifier un appel</span>
-              <Calendar className={styles.buttonIcon} />
-            </motion.a>
-          </div>
-        </motion.div>
       </div>
     </motion.section>
   );

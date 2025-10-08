@@ -11,6 +11,9 @@ import {
   Zap,
   Chrome
 } from 'lucide-react';
+import scribeImage from '../assets/scribe.png?url';
+import templateMailImage from '../assets/templateMail.png?url';
+import translateImage from '../assets/translate.png?url';
 import styles from './HomePagePartFour.module.scss';
 
 interface Extension {
@@ -35,52 +38,40 @@ const HomePagePartFour: React.FC = () => {
 
   const extensions: Extension[] = [
     {
-      id: 'spell-checker-ai',
-      title: 'AI Spell Checker',
-      description: 'Correcteur d\'orthographe intelligent utilisant l\'IA',
-      longDescription: 'Extension Chrome qui utilise l\'intelligence artificielle pour corriger automatiquement l\'orthographe et la grammaire dans les champs de texte. Intégration avec des APIs d\'IA avancées pour une correction contextuelle précise.',
-      image: '/api/placeholder/400/300',
-      technologies: ['JavaScript', 'AI APIs', 'Chrome APIs', 'Manifest V3', 'Machine Learning'],
+      id: 'scribe-correcteur',
+      title: 'Scribe - Correcteur de Mail',
+      description: 'Correcteur d\'orthographe intelligent utilisant l\'IA de Google',
+      longDescription: 'Extension Chrome qui utilise l\'intelligence artificielle de Google (Gemini) pour corriger automatiquement l\'orthographe et la grammaire dans vos emails. Simple d\'utilisation avec un seul clic.',
+      image: scribeImage,
+      technologies: ['JavaScript', 'Google Gemini AI', 'Chrome APIs', 'Manifest V3', 'Gmail Integration'],
       category: 'ai',
       status: 'completed',
       featured: true,
-      chromeUrl: 'https://chrome.google.com/webstore/detail/ai-spell-checker'
+      chromeUrl: 'https://chromewebstore.google.com/detail/scribe-correcteur-de-mail/mkimocgphihjblpofonojpiplhfdafbi?authuser=0&hl=fr'
     },
     {
-      id: 'email-template-generator',
-      title: 'Email Template Generator',
-      description: 'Générateur de templates d\'emails professionnels',
-      longDescription: 'Extension qui génère automatiquement des templates d\'emails professionnels basés sur le contexte. Inclut des templates pour différents secteurs et situations professionnelles.',
-      image: '/api/placeholder/400/300',
-      technologies: ['JavaScript', 'Chrome APIs', 'Template Engine', 'HTML/CSS'],
+      id: 'smart-response',
+      title: 'Smart Response',
+      description: 'Templates Gmail intelligents avec variables',
+      longDescription: 'Extension qui permet de créer, gérer et réutiliser des templates d\'emails professionnels avec des variables intelligentes. Gain de temps garanti pour tous vos emails récurrents.',
+      image: templateMailImage,
+      technologies: ['JavaScript', 'Chrome APIs', 'Template Engine', 'HTML/CSS', 'Gmail API'],
       category: 'productivity',
       status: 'completed',
       featured: true,
-      chromeUrl: 'https://chrome.google.com/webstore/detail/email-template-generator'
+      chromeUrl: 'https://chromewebstore.google.com/detail/smart-response/ojamkcajnmmiemaidehilboeljknnjde?hl=fr&authuser=0'
     },
     {
-      id: 'observation-game',
-      title: 'Quick Observation Game',
-      description: 'Mini-jeu d\'observation pour les pauses',
-      longDescription: 'Jeu simple d\'observation qui apparaît dans un popup pour les courtes pauses. Développé pour améliorer la concentration et offrir un divertissement rapide pendant le travail.',
-      image: '/api/placeholder/400/300',
-      technologies: ['JavaScript', 'Canvas API', 'Game Logic', 'Chrome APIs'],
-      category: 'entertainment',
+      id: 'switch-language',
+      title: 'Switch Language',
+      description: 'Extension de traduction et changement de langue',
+      longDescription: 'Extension Chrome pour traduire et changer rapidement la langue des pages web. Interface simple et efficace pour la navigation multilingue.',
+      image: translateImage,
+      technologies: ['JavaScript', 'Translation APIs', 'Chrome APIs', 'Language Detection'],
+      category: 'utility',
       status: 'completed',
       featured: false,
-      chromeUrl: 'https://chrome.google.com/webstore/detail/observation-game'
-    },
-    {
-      id: 'tab-manager',
-      title: 'Smart Tab Manager',
-      description: 'Gestionnaire intelligent d\'onglets avec IA',
-      longDescription: 'Extension avancée qui utilise l\'IA pour organiser automatiquement les onglets par catégorie, suggérer des fermetures d\'onglets inutiles et optimiser l\'utilisation de la mémoire.',
-      image: '/api/placeholder/400/300',
-      technologies: ['JavaScript', 'AI Integration', 'Chrome APIs', 'Memory Management'],
-      category: 'utility',
-      status: 'in-progress',
-      featured: true,
-      chromeUrl: 'https://chrome.google.com/webstore/detail/smart-tab-manager'
+      chromeUrl: 'https://chromewebstore.google.com/detail/switch-language/cchfkaamljdlfkmpekjdmamfflpiihhn?hl=fr&authuser=0'
     }
   ];
 
