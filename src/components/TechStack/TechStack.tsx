@@ -176,7 +176,17 @@ const TechStack: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {categories[activeCategory].technologies.map((tech, index) => (
+            {categories[activeCategory].technologies
+              .sort((a, b) => {
+                // Define skill level order: mastery > intermediate > beginner
+                const levelOrder = {
+                  [t('techstack.level.mastery')]: 3,
+                  [t('techstack.level.intermediate')]: 2,
+                  [t('techstack.level.beginner')]: 1
+                };
+                return (levelOrder[b.level] || 0) - (levelOrder[a.level] || 0);
+              })
+              .map((tech, index) => (
               <motion.div
                 key={tech.name}
                 className={styles.techCard}

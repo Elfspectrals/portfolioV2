@@ -6,7 +6,6 @@ import Tilt from 'react-parallax-tilt';
 import { 
   ExternalLink, 
   Code2,
-  Palette,
   Smartphone,
   Globe,
   Zap,
@@ -24,7 +23,7 @@ interface Extension {
   longDescription: string;
   image: string;
   technologies: string[];
-  category: 'productivity' | 'entertainment' | 'utility' | 'ai';
+  category: 'productivity' | 'utility' | 'ai';
   status: 'completed' | 'in-progress' | 'planned';
   featured: boolean;
   chromeUrl?: string;
@@ -80,7 +79,6 @@ const HomePagePartFour: React.FC = () => {
   const categories = [
     { id: 'all', label: t('extensions.categories.all'), icon: <Code2 /> },
     { id: 'productivity', label: t('extensions.categories.productivity'), icon: <Zap /> },
-    { id: 'entertainment', label: t('extensions.categories.entertainment'), icon: <Palette /> },
     { id: 'utility', label: t('extensions.categories.utility'), icon: <Globe /> },
     { id: 'ai', label: t('extensions.categories.ai'), icon: <Smartphone /> }
   ];
@@ -116,7 +114,6 @@ const HomePagePartFour: React.FC = () => {
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'productivity': return <Zap className={styles.categoryIcon} />;
-      case 'entertainment': return <Palette className={styles.categoryIcon} />;
       case 'utility': return <Globe className={styles.categoryIcon} />;
       case 'ai': return <Smartphone className={styles.categoryIcon} />;
       default: return <Code2 className={styles.categoryIcon} />;
