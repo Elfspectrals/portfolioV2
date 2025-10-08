@@ -4,13 +4,17 @@ import { useInView as useIntersectionObserver } from 'react-intersection-observe
 import Tilt from 'react-parallax-tilt';
 import { 
   ExternalLink, 
-  Github, 
   Code2,
   Palette,
   Smartphone,
   Globe,
   Zap
 } from 'lucide-react';
+// Import project images
+import shareDrinkImage from '../../assets/ShareDrink.PNG?url';
+import scribeImage from '../../assets/scribe.png?url';
+import starbucksImage from '../../assets/starbucks.png?url';
+import portfolioImage from '../../assets/portfolio.png?url';
 import styles from './Projects.module.scss';
 
 interface Project {
@@ -23,7 +27,6 @@ interface Project {
   category: 'web' | 'mobile' | 'desktop' | 'game';
   status: 'completed' | 'in-progress' | 'planned';
   featured: boolean;
-  githubUrl?: string;
   liveUrl?: string;
 }
 
@@ -40,38 +43,36 @@ const Projects: React.FC = () => {
       title: 'SharedDrinks',
       description: 'Application mobile de recommandations de boissons et localisation de bars',
       longDescription: 'Une application mobile complète développée avec React Native qui permet aux utilisateurs de découvrir de nouveaux bars et cocktails. Intégration d\'APIs de cocktails, services de géolocalisation et système de recommandations personnalisées.',
-      image: '/api/placeholder/400/300',
+      image: shareDrinkImage,
       technologies: ['React Native', 'JavaScript', 'OpenStreetMap', 'CocktailAPI', 'Firebase'],
       category: 'mobile',
       status: 'completed',
       featured: true,
-      githubUrl: 'https://github.com/elfspectrals/shareddrinks',
-      liveUrl: 'https://shareddrinks.app'
+      liveUrl: 'https://sharedrinks-b8a73.web.app'
     },
-    {
-      id: 'gluttony-eater',
-      title: 'Gluttony Eater',
-      description: 'Jeu de combat développé avec Unreal Engine 5',
-      longDescription: 'Prototype de jeu de combat innovant utilisant Unreal Engine 5. Système de combat dynamique basé sur la consommation d\'aliments pour débloquer des super-pouvoirs. Intégration de shaders personnalisés et effets de particules avancés.',
-      image: '/api/placeholder/400/300',
-      technologies: ['Unreal Engine 5', 'C++', 'Blueprints', 'HLSL', 'Substance Designer'],
-      category: 'game',
-      status: 'in-progress',
-      featured: true,
-      githubUrl: 'https://github.com/elfspectrals/gluttony-eater'
-    },
+     {
+       id: "starbucks-coffee-simulator",
+       title: "Starbucks Coffee Simulator",
+       description: "Simulateur de café Starbucks 3D avec système de crafting et interactions clients",
+       longDescription: "Simulateur immersif de café Starbucks développé avec React, TypeScript et Three.js. Jeu 3D en vue à la troisième personne avec système de crafting de boissons, gestion d'inventaire, clients IA, et interface de jeu complète. Optimisé avec compression Draco et modèles low-poly pour des performances optimales.",
+       image: starbucksImage,
+       technologies: ["React", "TypeScript", "Three.js", "React Three Fiber", "Drei", "CSS3"],
+       category: "game",
+       status: "completed",
+       featured: true,
+       liveUrl: "https://starbuckssimulator.web.app"
+     },
     {
       id: 'portfolio-v2',
       title: 'Portfolio V2',
       description: 'Portfolio moderne avec animations avancées et design responsive',
       longDescription: 'Portfolio personnel développé avec React, TypeScript et Framer Motion. Design moderne avec animations fluides, mode sombre/clair, et optimisations de performance. Intégration de Three.js pour les éléments 3D.',
-      image: '/api/placeholder/400/300',
+      image: portfolioImage,
       technologies: ['React', 'TypeScript', 'Framer Motion', 'SCSS', 'Vite'],
       category: 'web',
       status: 'completed',
       featured: true,
-      githubUrl: 'https://github.com/elfspectrals/portfolio-v2',
-      liveUrl: 'https://jerome-neupert.dev'
+      liveUrl: 'https://portfoliojerome-7db78.web.app'
     }
   ];
 
@@ -251,19 +252,6 @@ const Projects: React.FC = () => {
                         >
                           <ExternalLink className={styles.buttonIcon} />
                           <span>Voir le projet</span>
-                        </motion.a>
-                      )}
-                      {project.githubUrl && (
-                        <motion.a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={styles.secondaryButton}
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Github className={styles.buttonIcon} />
-                          <span>Code source</span>
                         </motion.a>
                       )}
                     </div>

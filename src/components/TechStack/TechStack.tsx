@@ -38,7 +38,7 @@ const TechStack: React.FC = () => {
       color: "#3b82f6",
       technologies: [
         { name: "React", level: "maîtrise", icon: "⚛️" },
-        { name: "TypeScript", level: "maîtrise", icon: "🔷" },
+        { name: "TypeScript", level: "intermédiaire", icon: "🔷" },
         { name: "Next.js", level: "intermédiaire", icon: "▲" },
         { name: "Vue.js", level: "intermédiaire", icon: "💚" },
         { name: "HTML", level: "maîtrise", icon: "🌐" },
@@ -78,7 +78,7 @@ const TechStack: React.FC = () => {
         { name: "Git", level: "maîtrise", icon: "🌿" },
         { name: "GitHub Action", level: "intermédiaire", icon: "🐙" },
         { name: "Jira", level: "maîtrise", icon: "🔍" },
-        { name: "Docker", level: "maîtrise", icon: "🐳" },
+        { name: "Docker", level: "intermédiaire", icon: "🐳" },
         { name: "Figma", level: "intermédiaire", icon: "🎨" },
         { name: "Cypress", level: "maîtrise", icon: "🧪" },
         { name: "Unreal Engine 5", level: "intermédiaire", icon: "🎮" },
