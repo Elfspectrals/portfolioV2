@@ -135,16 +135,59 @@ body {
   text-align: center;
   width: 100%;
   max-width: min(1000px, 100%);
-  background: linear-gradient(180deg, color-mix(in oklab, var(--card-bg), transparent 5%), transparent);
+  background: linear-gradient(135deg, 
+    color-mix(in oklab, var(--card-bg), #fff 8%), 
+    color-mix(in oklab, var(--card-bg), transparent 5%)
+  );
   border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 20%);
   border-radius: clamp(0.75rem, 2vw, 1.25rem);
   padding: clamp(0.75rem, 4vw, 1.25rem);
-  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  box-shadow: 
+    0 8px 24px rgba(0,0,0,.06),
+    0 0 0 1px color-mix(in oklab, var(--accent, #2563eb), transparent 90%);
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
 
   /* Snap each big block */
   scroll-snap-align: start;
   scroll-snap-stop: always;
+
+  /* Animation states */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.heroVisible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Animated background gradient */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+      color-mix(in oklab, var(--accent, #2563eb), transparent 95%),
+      color-mix(in oklab, var(--accent-2, #f97316), transparent 95%),
+      color-mix(in oklab, var(--accent, #2563eb), transparent 95%)
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+    opacity: 0.1;
+    z-index: -1;
+  }
+}
+
+/* Avatar container with glow effect */
+.avatarContainer {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
 }
 
 .avatar {
@@ -152,13 +195,39 @@ body {
   height: clamp(4.5rem, 18vw, 8rem);
   object-fit: cover;
   border-radius: clamp(0.75rem, 2vw, 1.25rem);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 
+    0 6px 18px rgba(0,0,0,0.12),
+    0 0 0 1px color-mix(in oklab, var(--accent, #2563eb), transparent 80%);
   background: var(--card-bg);
   border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 10%);
-  transition: transform .35s ease, box-shadow .35s ease;
-  margin: 0 auto;
+  transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
 
-  &:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 12px 28px rgba(0,0,0,.18); }
+  &:hover { 
+    transform: translateY(-4px) scale(1.05); 
+    box-shadow: 
+      0 20px 40px rgba(0,0,0,.2),
+      0 0 0 1px color-mix(in oklab, var(--accent, #2563eb), transparent 60%);
+  }
+}
+
+.avatarGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, 
+    color-mix(in oklab, var(--accent, #2563eb), transparent 70%) 0%,
+    color-mix(in oklab, var(--accent-2, #f97316), transparent 70%) 50%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulseGlow 3s ease-in-out infinite;
+  z-index: 1;
 }
 
 .titleBlock {
@@ -166,22 +235,46 @@ body {
   text-align: center;
 }
 
-.titleBlock h1 {
+.heroTitle {
   font-size: clamp(1.25rem, 5vw, 2rem);
   line-height: 1.2;
   margin: 0 0 clamp(0.5rem, 2vw, 0.75rem);
   font-weight: 800;
   max-width: 100%;
   word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.titleBlock h3 {
+.greeting {
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  font-weight: 600;
+  color: var(--card-text);
+  opacity: 0;
+  animation: slideInLeft 0.8s ease 0.3s both;
+}
+
+.roleText {
+  background: linear-gradient(135deg, var(--accent, #2563eb), var(--accent-2, #f97316));
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  color: transparent;
+  background-size: 200% 200%; 
+  animation: gradientMove 7s ease infinite;
+  opacity: 0;
+  animation: slideInRight 0.8s ease 0.6s both, gradientMove 7s ease infinite;
+}
+
+.heroSubtitle {
   font-weight: 500;
   color: var(--card-text);
   margin: 0;
   max-width: 100%;
   font-size: clamp(0.85rem, 3.5vw, 1rem);
   line-height: 1.4;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 0.9s both;
 }
 
 .highlight {
@@ -199,27 +292,83 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 1.2s both;
+}
+
+.ctaBadge {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
 }
 
 /* ====== Section card ====== */
 .section {
   width: 100%;
   max-width: min(1000px, 100%);
-  background: linear-gradient(180deg, color-mix(in oklab, var(--card-bg), #fff 4%), var(--card-bg));
+  background: linear-gradient(135deg, 
+    color-mix(in oklab, var(--card-bg), #fff 6%), 
+    color-mix(in oklab, var(--card-bg), transparent 2%)
+  );
   border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 15%);
   border-radius: clamp(0.75rem, 2vw, 1rem);
   padding: clamp(0.75rem, 4vw, 1.25rem);
-  box-shadow: 0 6px 20px rgba(0,0,0,.05);
-  animation: fadeUp .7s ease both;
+  box-shadow: 
+    0 6px 20px rgba(0,0,0,.05),
+    0 0 0 1px color-mix(in oklab, var(--accent, #2563eb), transparent 95%);
   margin: 0 auto;
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 
   /* Snap each section */
   scroll-snap-align: start;
   scroll-snap-stop: always;
+
+  /* Animation states */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.sectionVisible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Subtle animated background */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+      color-mix(in oklab, var(--accent, #2563eb), transparent 98%),
+      color-mix(in oklab, var(--accent-2, #f97316), transparent 98%)
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+    opacity: 0.05;
+    z-index: -1;
+  }
 }
 
-.section h2 {
+.sectionTitle {
   font-size: clamp(1.1rem, 4.5vw, 1.6rem);
   margin: 0 0 clamp(0.75rem, 3vw, 1rem);
   color: var(--text);
@@ -227,17 +376,35 @@ body {
   letter-spacing: .2px;
   position: relative;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.section h2::after {
-  content: "";
-  position: absolute;
-  left: 50%; bottom: -0.45rem;
-  transform: translateX(-50%);
+.titleText {
+  position: relative;
+  z-index: 2;
+}
+
+.titleUnderline {
   width: clamp(40px, 10vw, 56px); 
   height: 3px;
   background: linear-gradient(90deg, var(--accent, #2563eb), var(--accent-2, #f97316));
   border-radius: 999px;
+  margin-top: 0.5rem;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-2, #f97316), var(--accent, #2563eb));
+    border-radius: inherit;
+    animation: expandLine 1.2s ease 0.5s both;
+  }
 }
 
 /* Responsive grid for chips: auto-fit nice wrapping */
@@ -250,6 +417,16 @@ body {
   justify-items: center;
 }
 
+.techItem, .softItem {
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  animation: slideInUp 0.6s ease both;
+  
+  &:hover {
+    transform: translateY(-2px) scale(1.05);
+  }
+}
+
 /* Keep original .chip for backward compatibility if needed */
 .chip { display: contents; }
 
@@ -260,17 +437,52 @@ body {
   height: auto;
   margin: 0 auto;
   padding: clamp(0.9rem, 2vw, 1.25rem);
-  background: var(--card-bg);
+  background: linear-gradient(135deg, 
+    color-mix(in oklab, var(--card-bg), #fff 6%), 
+    color-mix(in oklab, var(--card-bg), transparent 2%)
+  );
   border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 15%);
   border-radius: 0.9rem;
-  box-shadow: 0 8px 22px rgba(0,0,0,.07);
+  box-shadow: 
+    0 8px 22px rgba(0,0,0,.07),
+    0 0 0 1px color-mix(in oklab, var(--accent, #2563eb), transparent 95%);
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  position: relative;
+  overflow: hidden;
 
   /* Snap this big block too */
   scroll-snap-align: start;
   scroll-snap-stop: always;
+
+  /* Animation states */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.sectionVisible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Subtle animated background */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+      color-mix(in oklab, var(--accent, #2563eb), transparent 98%),
+      color-mix(in oklab, var(--accent-2, #f97316), transparent 98%)
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+    opacity: 0.05;
+    z-index: -1;
+  }
 
   .title {
     font-size: clamp(1.3rem, 3vw, 1.8rem);
@@ -312,6 +524,15 @@ body {
     border-radius: 0.75rem;
   }
 
+  .videoContainer {
+    position: relative;
+    width: 100%;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,.15);
+    background: #000;
+  }
+
   .video {
     width: 100%;
     height: auto;
@@ -319,8 +540,47 @@ body {
     max-height: 50vh;       /* fits with title + description */
     object-fit: cover;
     border-radius: 0.75rem;
-    box-shadow: 0 6px 18px rgba(0,0,0,.12);
-    background: #000;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: scale(0.95);
+
+    &.videoLoaded {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 32px rgba(0,0,0,.2);
+    }
+  }
+
+  .videoPlaceholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, 
+      color-mix(in oklab, var(--accent, #2563eb), transparent 90%),
+      color-mix(in oklab, var(--accent-2, #f97316), transparent 90%)
+    );
+    color: var(--text);
+    border-radius: 0.75rem;
+  }
+
+  .loadingSpinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid color-mix(in oklab, var(--accent, #2563eb), transparent 80%);
+    border-top: 3px solid var(--accent, #2563eb);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
   }
 
   /* RIGHT: YouTube-style description with its own scroll if needed */
@@ -478,14 +738,127 @@ body {
   }
 }
 
+/* ====== Projects Section ====== */
+.projectsSection {
+  width: 100%;
+  max-width: min(1000px, 100%);
+  margin: 0 auto;
+  padding: clamp(0.75rem, 4vw, 1.25rem);
+  background: linear-gradient(135deg, 
+    color-mix(in oklab, var(--card-bg), #fff 6%), 
+    color-mix(in oklab, var(--card-bg), transparent 2%)
+  );
+  border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 15%);
+  border-radius: clamp(0.75rem, 2vw, 1rem);
+  box-shadow: 
+    0 6px 20px rgba(0,0,0,.05),
+    0 0 0 1px color-mix(in oklab, var(--accent, #2563eb), transparent 95%);
+  position: relative;
+  overflow: hidden;
+
+  /* Animation states */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.sectionVisible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Subtle animated background */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+      color-mix(in oklab, var(--accent, #2563eb), transparent 98%),
+      color-mix(in oklab, var(--accent-2, #f97316), transparent 98%)
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+    opacity: 0.05;
+    z-index: -1;
+  }
+}
+
+.sectionDescription {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: var(--card-text);
+  text-align: center;
+  margin: 0 0 clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.6;
+}
+
 /* ====== Project Card Styles ====== */
 .projectCard {
   margin-top: clamp(1.5rem, 4vw, 2rem);
-  background: linear-gradient(180deg, color-mix(in oklab, var(--card-bg), #fff 2%), var(--card-bg));
+  background: linear-gradient(135deg, 
+    color-mix(in oklab, var(--card-bg), #fff 4%), 
+    color-mix(in oklab, var(--card-bg), transparent 1%)
+  );
   border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 20%);
   border-radius: clamp(0.75rem, 2vw, 1rem);
   padding: clamp(1rem, 3vw, 1.5rem);
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  box-shadow: 
+    0 8px 24px rgba(0,0,0,.08),
+    0 0 0 1px color-mix(in oklab, var(--accent, #2563eb), transparent 90%);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 16px 40px rgba(0,0,0,.12),
+      0 0 0 1px color-mix(in oklab, var(--accent, #2563eb), transparent 80%);
+  }
+
+  /* Subtle animated background */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+      color-mix(in oklab, var(--accent, #2563eb), transparent 98%),
+      color-mix(in oklab, var(--accent-2, #f97316), transparent 98%)
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 12s ease infinite;
+    opacity: 0.03;
+    z-index: -1;
+  }
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.projectStatus {
+  display: flex;
+  align-items: center;
+}
+
+.statusBadge {
+  background: linear-gradient(135deg, var(--accent, #2563eb), var(--accent-2, #f97316));
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .projectTitle {
@@ -519,11 +892,20 @@ body {
   width: 100%;
   border-radius: clamp(0.5rem, 1.5vw, 0.75rem);
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,.1);
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
   border: 1px solid color-mix(in oklab, var(--card-border, #e5e7eb), transparent 30%);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
 }
 
 .projectScreenshot {
@@ -532,11 +914,34 @@ body {
   height: 100%;
   object-fit: cover;
   border: none;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: scale(0.95);
+
+  &.imageLoaded {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
-.projectScreenshot:hover {
-  transform: scale(1.02);
+.imagePlaceholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, 
+    color-mix(in oklab, var(--accent, #2563eb), transparent 90%),
+    color-mix(in oklab, var(--accent-2, #f97316), transparent 90%)
+  );
+  border-radius: inherit;
 }
 
 .projectInfo {
@@ -563,6 +968,71 @@ body {
   --_bg: color-mix(in oklab, var(--accent, #2563eb) 15%, transparent);
   --_border1: color-mix(in oklab, var(--accent, #2563eb) 60%, transparent);
   --_border2: color-mix(in oklab, var(--accent-2, #f97316) 60%, transparent);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  }
+}
+
+.projectActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.actionButton {
+  background: linear-gradient(135deg, var(--accent, #2563eb), var(--accent-2, #f97316));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+
+    &::before {
+      left: 100%;
+    }
+  }
+}
+
+.actionButtonSecondary {
+  background: transparent;
+  color: var(--accent, #2563eb);
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--accent, #2563eb);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--accent, #2563eb);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  }
 }
 
 .projectSummary {
@@ -597,6 +1067,15 @@ body {
   .projectBadges {
     justify-content: center;
   }
+
+  .projectActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actionButton, .actionButtonSecondary {
+    text-align: center;
+  }
 }
 
 /* ====== Animations ====== */
@@ -604,9 +1083,54 @@ body {
 @keyframes fadeUp { from { opacity: 0; transform: translateY(1rem);} to { opacity: 1; transform: translateY(0);} }
 @keyframes gradientMove { 0%{ background-position: 0% 50%; } 50%{ background-position: 100% 50%; } 100%{ background-position: 0% 50%; } }
 
+/* New professional animations */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  50% { opacity: 0.3; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+@keyframes expandLine {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .container, .section { animation: none; }
-  .highlight { animation: none; }
+  .container, .section, .hero, .homepagePartTwo, .projectsSection { animation: none; }
+  .highlight, .roleText, .avatarGlow { animation: none; }
+  .techItem, .softItem { animation: none; }
+  .video, .projectScreenshot { transition: none; }
+  .badge, .actionButton, .actionButtonSecondary { transition: none; }
 }
 
 /* ====== Laptop-height tweaks (MacBook 800–900px tall) ====== */

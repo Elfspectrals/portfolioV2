@@ -1,54 +1,143 @@
-# React + TypeScript + Vite
+# Portfolio Jérôme Neupert
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un portfolio moderne et professionnel développé avec React, TypeScript et Framer Motion.
 
-Currently, two official plugins are available:
+## 🚀 Technologies Utilisées
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Frontend
+- **React 18** - Bibliothèque UI moderne
+- **TypeScript** - Typage statique pour JavaScript
+- **Framer Motion** - Animations fluides et avancées
+- **React Spring** - Animations physiques réalistes
+- **SCSS** - Préprocesseur CSS avec modules
+- **Vite** - Build tool ultra-rapide
 
-## Expanding the ESLint configuration
+### Bibliothèques d'Animation
+- **React Intersection Observer** - Détection de scroll
+- **React Parallax Tilt** - Effets 3D sur les cartes
+- **React CountUp** - Animations de compteurs
+- **Lucide React** - Icônes modernes
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Outils de Développement
+- **ESLint** - Linting du code
+- **Prettier** - Formatage du code
+- **Sass** - Préprocesseur CSS
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🎨 Fonctionnalités
+
+### Design & Animations
+- ✅ **Design responsive** mobile-first
+- ✅ **Animations fluides** avec Framer Motion
+- ✅ **Effets 3D** sur les cartes de projets
+- ✅ **Gradients animés** en arrière-plan
+- ✅ **Micro-interactions** sur tous les éléments
+- ✅ **Scroll animations** avec intersection observer
+
+### Sections
+- ✅ **Hero Section** avec avatar 3D et particules
+- ✅ **Tech Stack** avec progress bars animées
+- ✅ **Projets** avec filtres et cartes 3D
+- ✅ **Contact** avec formulaire interactif
+- ✅ **Navigation** fixe avec blur effect
+
+### Performance
+- ✅ **Lazy loading** pour les images
+- ✅ **Optimisations SEO** avec métadonnées
+- ✅ **Reduced motion** respecté
+- ✅ **Code splitting** avec React.lazy
+- ✅ **Scroll progress** et retour en haut
+
+## 🛠️ Installation
+
+```bash
+# Cloner le repository
+git clone https://github.com/elfspectrals/portfolio-v2.git
+
+# Installer les dépendances
+npm install
+
+# Démarrer le serveur de développement
+npm run dev
+
+# Build pour la production
+npm run build
+
+# Preview du build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Structure du Projet
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
 ```
+src/
+├── components/          # Composants réutilisables
+│   ├── Hero/           # Section hero avec animations
+│   ├── TechStack/      # Stack technologique
+│   ├── Projects/       # Projets avec cartes 3D
+│   ├── Contact/        # Formulaire de contact
+│   ├── Navigation/     # Navigation fixe
+│   ├── Loading/        # Composant de chargement
+│   ├── ScrollProgress/ # Barre de progression
+│   └── BackToTop/      # Bouton retour en haut
+├── pages/              # Pages de l'application
+├── styles/             # Styles globaux et abstracts
+├── utils/              # Utilitaires et helpers
+├── hooks/              # Hooks personnalisés
+└── i18n/               # Internationalisation
+```
+
+## 🎯 Optimisations
+
+### Performance
+- **Lazy loading** des images et composants
+- **Intersection Observer** pour les animations
+- **Debounce/Throttle** pour les événements
+- **Code splitting** automatique
+
+### SEO
+- **Métadonnées** optimisées
+- **Structured data** JSON-LD
+- **Open Graph** tags
+- **Sitemap** automatique
+
+### Accessibilité
+- **ARIA labels** sur tous les éléments
+- **Navigation clavier** complète
+- **Reduced motion** respecté
+- **Contraste** optimisé
+
+## 🌐 Internationalisation
+
+Le portfolio supporte 3 langues :
+- 🇫🇷 Français (par défaut)
+- 🇬🇧 Anglais
+- 🇩🇪 Allemand
+
+## 📱 Responsive Design
+
+- **Mobile** : < 768px
+- **Tablet** : 768px - 1024px
+- **Desktop** : > 1024px
+
+## 🚀 Déploiement
+
+Le projet est configuré pour être déployé sur :
+- **Vercel** (recommandé)
+- **Netlify**
+- **GitHub Pages**
+- **Firebase Hosting**
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+## 👨‍💻 Auteur
+
+**Jérôme Neupert**
+- GitHub: [@elfspectrals](https://github.com/elfspectrals)
+- LinkedIn: [Jérôme Neupert](https://www.linkedin.com/in/jerome-neupert/)
+- Email: jerome.neupert@gmail.com
+
+---
+
+Développé avec ❤️ par Jérôme Neupert

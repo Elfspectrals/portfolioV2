@@ -3,8 +3,9 @@
     "brand": "Portfolio",
     "nav": {
       "home": "Startseite",
-      "extension": "Chrome-Erweiterungen",
-      "world3d": "3D-Welt",
+      "tech": "Technologien",
+      "projects": "Projekte",
+      "extensions": "Erweiterungen",
       "contact": "Kontakt"
     },
     "theme": {
