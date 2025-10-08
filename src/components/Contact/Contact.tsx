@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView as useIntersectionObserver } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import { 
   Mail, 
   Phone, 
@@ -10,13 +11,13 @@ import {
   AlertCircle,
   Github,
   Linkedin,
-  Twitter,
   Clock,
   MessageCircle
 } from 'lucide-react';
 import styles from './Contact.module.scss';
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -106,20 +107,20 @@ const Contact: React.FC = () => {
   const contactInfo = [
     {
       icon: <Mail className={styles.contactIcon} />,
-      title: 'Email',
+      title: t('contact.email'),
       value: 'jerome.neupert@gmail.com',
       href: 'mailto:jerome.neupert@gmail.com'
     },
     {
       icon: <Phone className={styles.contactIcon} />,
-      title: 'Téléphone',
+      title: t('contact.phone'),
       value: '+33 7 67 19 62 73',
       href: 'tel:+33767196273'
     },
     {
       icon: <MapPin className={styles.contactIcon} />,
-      title: 'Localisation',
-      value: 'Paris, Strasbourg, France',
+      title: t('contact.location'),
+      value: t('contact.locationValue'),
       href: '#'
     }
   ];
@@ -127,21 +128,15 @@ const Contact: React.FC = () => {
   const socialLinks = [
     {
       icon: <Github className={styles.socialIcon} />,
-      name: 'GitHub',
+      name: t('contact.social.github'),
       href: 'https://github.com/elfspectrals/',
       color: '#333'
     },
     {
       icon: <Linkedin className={styles.socialIcon} />,
-      name: 'LinkedIn',
+      name: t('contact.social.linkedin'),
       href: 'https://www.linkedin.com/in/jerome-neupert/',
       color: '#0077b5'
-    },
-    {
-      icon: <Twitter className={styles.socialIcon} />,
-      name: 'Twitter',
-      href: 'https://twitter.com/jerome_dev',
-      color: '#1da1f2'
     }
   ];
 
@@ -161,9 +156,9 @@ const Contact: React.FC = () => {
         >
           <div className={styles.titleSection}>
             <MessageCircle className={styles.titleIcon} />
-            <h2 className={styles.title}>Contactez-moi</h2>
+            <h2 className={styles.title}>{t('contact.title')}</h2>
             <p className={styles.subtitle}>
-              Prêt à collaborer ? Discutons de votre prochain projet
+              {t('contact.subtitle')}
             </p>
           </div>
         </motion.div>
@@ -175,8 +170,8 @@ const Contact: React.FC = () => {
             variants={itemVariants}
           >
             <div className={styles.infoCard}>
-              <h3>Informations de contact</h3>
-              <p>N'hésitez pas à me contacter pour toute question ou collaboration</p>
+              <h3>{t('contact.infoTitle')}</h3>
+              <p>{t('contact.infoDescription')}</p>
               
               <div className={styles.contactList}>
                 {contactInfo.map((info, index) => (
@@ -199,18 +194,18 @@ const Contact: React.FC = () => {
               <div className={styles.availability}>
                 <div className={styles.availabilityHeader}>
                   <Clock className={styles.availabilityIcon} />
-                  <span>Disponibilité</span>
+                  <span>{t('contact.availability')}</span>
                 </div>
                 <div className={styles.availabilityStatus}>
                   <div className={styles.statusDot} />
-                  <span>Disponible pour de nouveaux projets</span>
+                  <span>{t('contact.availabilityStatus')}</span>
                 </div>
               </div>
             </div>
 
             <div className={styles.socialCard}>
-              <h3>Réseaux sociaux</h3>
-              <p>Suivez-moi pour voir mes derniers projets</p>
+              <h3>{t('contact.socialTitle')}</h3>
+              <p>{t('contact.socialDescription')}</p>
               
               <div className={styles.socialLinks}>
                 {socialLinks.map((social, index) => (
@@ -240,8 +235,8 @@ const Contact: React.FC = () => {
           >
             <div className={styles.formCard}>
               <div className={styles.formHeader}>
-                <h3>Envoyez-moi un message</h3>
-                <p>Je réponds généralement dans les 24h</p>
+                <h3>{t('contact.formTitle')}</h3>
+                <p>{t('contact.formDescription')}</p>
               </div>
 
               <form 
@@ -251,15 +246,15 @@ const Contact: React.FC = () => {
                 className={styles.form}
               >
                 {/* FormSubmit configuration */}
-                <input type="hidden" name="_subject" value="Nouveau message depuis votre portfolio" />
+                <input type="hidden" name="_subject" value={t('contact.formSubject')} />
                 <input type="hidden" name="_next" value={window.location.origin} />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Je vous répondrai dans les plus brefs délais." />
+                <input type="hidden" name="_autoresponse" value={t('contact.formAutoResponse')} />
                 <div className={styles.formRow}>
                   <div className={styles.formGroup}>
                     <label htmlFor="name" className={styles.label}>
-                      Nom complet *
+                      {t('contact.nameLabel')} *
                     </label>
                     <input
                       type="text"
@@ -269,12 +264,12 @@ const Contact: React.FC = () => {
                       onChange={handleInputChange}
                       className={styles.input}
                       required
-                      placeholder="Votre nom"
+                      placeholder={t('contact.namePlaceholder')}
                     />
                   </div>
                   <div className={styles.formGroup}>
                     <label htmlFor="email" className={styles.label}>
-                      Email *
+                      {t('contact.emailLabel')} *
                     </label>
                     <input
                       type="email"
@@ -284,14 +279,14 @@ const Contact: React.FC = () => {
                       onChange={handleInputChange}
                       className={styles.input}
                       required
-                      placeholder="votre@email.com"
+                      placeholder={t('contact.emailPlaceholder')}
                     />
                   </div>
                 </div>
 
                 <div className={styles.formGroup}>
                   <label htmlFor="subject" className={styles.label}>
-                    Sujet
+                    {t('contact.subjectLabel')}
                   </label>
                   <input
                     type="text"
@@ -300,13 +295,13 @@ const Contact: React.FC = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     className={styles.input}
-                    placeholder="Sujet de votre message"
+                    placeholder={t('contact.subjectPlaceholder')}
                   />
                 </div>
 
                 <div className={styles.formGroup}>
                   <label htmlFor="message" className={styles.label}>
-                    Message *
+                    {t('contact.messageLabel')} *
                   </label>
                   <textarea
                     id="message"
@@ -316,7 +311,7 @@ const Contact: React.FC = () => {
                     className={styles.textarea}
                     required
                     rows={5}
-                    placeholder="Décrivez votre projet ou votre demande..."
+                    placeholder={t('contact.messagePlaceholder')}
                   />
                 </div>
 
@@ -330,22 +325,22 @@ const Contact: React.FC = () => {
                   {isSubmitting ? (
                     <>
                       <div className={styles.spinner} />
-                      <span>Envoi en cours...</span>
+                      <span>{t('contact.sending')}</span>
                     </>
                   ) : submitStatus === 'success' ? (
                     <>
                       <CheckCircle className={styles.buttonIcon} />
-                      <span>Message envoyé !</span>
+                      <span>{t('contact.successMessage')}</span>
                     </>
                   ) : submitStatus === 'error' ? (
                     <>
                       <AlertCircle className={styles.buttonIcon} />
-                      <span>Erreur d'envoi</span>
+                      <span>{t('contact.errorMessage')}</span>
                     </>
                   ) : (
                     <>
                       <Send className={styles.buttonIcon} />
-                      <span>Envoyer le message</span>
+                      <span>{t('contact.sendButton')}</span>
                     </>
                   )}
                 </motion.button>

@@ -57,20 +57,77 @@
     "tagUE5": "#UE5",
     "tagIndie": "#IndieDev",
     "tagFighting": "#Kampfspiel",
-    "tagPrototype": "#Prototyp"
+    "tagPrototype": "#Prototyp",
+    "stats": {
+      "experience": "Jahre Erfahrung",
+      "projects": "Projekte abgeschlossen"
+    },
+    "cta": {
+      "workTogether": "Lass uns zusammenarbeiten",
+      "viewProjects": "Meine Projekte ansehen"
+    },
+    "scrollToDiscover": "Scrollen zum Entdecken",
+    "techSubtitle": "Technologien und Tools, die ich beherrsche, um moderne Lösungen zu erstellen",
+    "expertise": {
+      "title": "Vielseitige Expertise",
+      "description": "Vollständige Beherrschung des Entwicklungszyklus, vom Design bis zur Produktion"
+    },
+    "quality": {
+      "title": "Qualität & Leistung",
+      "description": "Sauberer Code, automatisierte Tests und Optimierungen für performante Anwendungen"
+    },
+    "innovation": {
+      "title": "Kontinuierliche Innovation",
+      "description": "Konstante technologische Beobachtung und Adoption der neuesten Technologien"
+    },
+    "interested": {
+      "title": "Interessiert an meiner Arbeit?",
+      "description": "Kontaktiere mich gerne, um über dein Projekt zu sprechen",
+      "cta": "Projekt starten"
+    },
+    "extensions": {
+      "title": "Chrome-Erweiterungen",
+      "subtitle": "Sammlung von Chrome-Erweiterungen zur Verbesserung der Produktivität und Benutzererfahrung"
+    },
+    "sharedDrinks": {
+      "title": "SharedDrinks",
+      "status": "Persönliches Projekt",
+      "imageAlt": "Screenshot der SharedDrinks-Anwendung"
+    }
   },
   "contact": {
     "title": "Kontaktiere mich",
-    "subtitle": "Ich wäre gerne dein nächster Azubi — ich bin freundlich",
-    "name": "Dein Name",
-    "email": "Deine E-Mail",
-    "message": "Deine Nachricht",
-    "send": "Senden",
+    "subtitle": "Bereit zur Zusammenarbeit? Lass uns über dein nächstes Projekt sprechen",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "location": "Standort",
+    "locationValue": "Paris, Straßburg, Frankreich",
+    "infoTitle": "Kontaktinformationen",
+    "infoDescription": "Kontaktiere mich gerne für Fragen oder Zusammenarbeit",
+    "availability": "Verfügbarkeit",
+    "availabilityStatus": "Verfügbar für neue Projekte",
+    "socialTitle": "Soziale Netzwerke",
+    "socialDescription": "Folge mir, um meine neuesten Projekte zu sehen",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "formTitle": "Schicke mir eine Nachricht",
+    "formDescription": "Ich antworte normalerweise innerhalb von 24 Stunden",
+    "formSubject": "Neue Nachricht von deinem Portfolio",
+    "formAutoResponse": "Danke für deine Nachricht! Ich melde mich so schnell wie möglich bei dir.",
+    "nameLabel": "Vollständiger Name",
+    "namePlaceholder": "Dein Name",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "deine@email.com",
+    "subjectLabel": "Betreff",
+    "subjectPlaceholder": "Betreff deiner Nachricht",
+    "messageLabel": "Nachricht",
+    "messagePlaceholder": "Beschreibe dein Projekt oder deine Anfrage...",
+    "sendButton": "Nachricht senden",
     "sending": "Senden...",
-    "successToast": "Nachricht erfolgreich gesendet!",
-    "errorToast": "Fehler beim Senden der Nachricht.",
-    "successMsg": "Danke, deine Nachricht wurde gesendet!",
-    "errorMsg": "Ups, Senden fehlgeschlagen. Versuche es später erneut oder kontaktiere mich direkt."
+    "successMessage": "Nachricht gesendet!",
+    "errorMessage": "Sendefehler"
   },
   "extensions": {
     "scribeTitle": "KI: Scribe E-Mail-Korrektur",
@@ -80,6 +137,64 @@
     "impostorTitle": "Impostor Emoji",
     "impostorDesc": "Ein kleines Beobachtungsspiel für zwischendurch",
     "translateTitle": "KI: E-Mail-Übersetzung",
-    "translateDesc": "Mit der Kraft der KI steht dir die Welt offen"
+    "translateDesc": "Mit der Kraft der KI steht dir die Welt offen",
+    "categories": {
+      "all": "Alle",
+      "productivity": "Produktivität",
+      "entertainment": "Unterhaltung",
+      "utility": "Hilfsprogramme",
+      "ai": "KI"
+    },
+    "scribeLongDesc": "Chrome-Erweiterung, die Googles künstliche Intelligenz (Gemini) nutzt, um automatisch Rechtschreibung und Grammatik in Ihren E-Mails zu korrigieren. Einfach zu verwenden mit einem Klick.",
+    "templatesLongDesc": "Erweiterung, die es ermöglicht, professionelle E-Mail-Vorlagen mit intelligenten Variablen zu erstellen, zu verwalten und wiederzuverwenden. Garantierte Zeitersparnis für alle Ihre wiederkehrenden E-Mails.",
+    "translateLongDesc": "Chrome-Erweiterung zum schnellen Übersetzen und Ändern der Sprache von Webseiten. Einfache und effiziente Benutzeroberfläche für mehrsprachige Navigation."
+  },
+  "chatbot": {
+    "welcome": "👋 Hi! Wie kann ich dir helfen?",
+    "assistant": "Assistent",
+    "avatarAlt": "Chat-Avatar",
+    "qa1": {
+      "question": "Mein Ausbildungsrhythmus?",
+      "answer": "Ich bin in Ausbildung mit einem Rhythmus von 3 Wochen im Unternehmen und 1 Woche in der Schule."
+    },
+    "qa2": {
+      "question": "In welchem Jahr bin ich?",
+      "answer": "Ich bin im 3. Jahr an der ESGI und plane, einen Master in Entwicklung zu machen."
+    },
+    "qa3": {
+      "question": "Welche Sprachen kenne ich?",
+      "answer": "Ich verwende hauptsächlich JavaScript, TypeScript, React, Node.js, HTML, CSS, PHP (Laravel & Symfony), WordPress & Shopify und ein bisschen Go oder Rust. Und auch Unreal Engine."
+    },
+    "qa4": {
+      "question": "An welchen Projekten arbeite ich?",
+      "answer": "Ich arbeite an Chrome-Erweiterungen, React/Node-Apps und KI-Integrationen mit Gemini. Oder Spiele auf Unreal Engine 5 oder Web, frag mich gerne."
+    }
+  },
+  "techstack": {
+    "level": {
+      "beginner": "Anfänger",
+      "intermediate": "Fortgeschritten",
+      "mastery": "Meister"
+    }
+  },
+  "projects": {
+    "categories": {
+      "all": "Alle",
+      "web": "Web",
+      "mobile": "Mobile",
+      "game": "Spiele"
+    },
+    "shareddrinks": {
+      "description": "Mobile Anwendung für Getränkeempfehlungen und Bar-Standorte",
+      "longDescription": "Eine vollständige mobile Anwendung entwickelt mit React Native, die es Benutzern ermöglicht, neue Bars und Cocktails zu entdecken. Integration von Cocktail-APIs, Geolocation-Services und personalisiertem Empfehlungssystem."
+    },
+    "starbucks": {
+      "description": "3D Starbucks Kaffee-Simulator mit Crafting-System und Kundeninteraktionen",
+      "longDescription": "Immersiver Starbucks Kaffee-Simulator entwickelt mit React, TypeScript und Three.js. 3D Third-Person-Spiel mit Getränke-Crafting-System, Inventarverwaltung, KI-Kunden und kompletter Spieloberfläche. Optimiert mit Draco-Kompression und Low-Poly-Modellen für optimale Leistung."
+    },
+    "portfolio": {
+      "description": "Modernes Portfolio mit fortgeschrittenen Animationen und responsivem Design",
+      "longDescription": "Persönliches Portfolio entwickelt mit React, TypeScript und Framer Motion. Modernes Design mit flüssigen Animationen, Dunkel-/Hellmodus und Leistungsoptimierungen. Three.js-Integration für 3D-Elemente."
+    }
   }
 }

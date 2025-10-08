@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView as useIntersectionObserver } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import Tilt from 'react-parallax-tilt';
 import { 
   ExternalLink, 
@@ -11,7 +12,7 @@ import {
   Zap,
   Chrome
 } from 'lucide-react';
-import scribeImage from '../assets/scribe.png?url';
+import scribeImage from '../assets/frenchCorrector.png?url';
 import templateMailImage from '../assets/templateMail.png?url';
 import translateImage from '../assets/translate.png?url';
 import styles from './HomePagePartFour.module.scss';
@@ -30,6 +31,7 @@ interface Extension {
 }
 
 const HomePagePartFour: React.FC = () => {
+  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const { ref, inView } = useIntersectionObserver({
     threshold: 0.1,
@@ -39,9 +41,9 @@ const HomePagePartFour: React.FC = () => {
   const extensions: Extension[] = [
     {
       id: 'scribe-correcteur',
-      title: 'Scribe - Correcteur de Mail',
-      description: 'Correcteur d\'orthographe intelligent utilisant l\'IA de Google',
-      longDescription: 'Extension Chrome qui utilise l\'intelligence artificielle de Google (Gemini) pour corriger automatiquement l\'orthographe et la grammaire dans vos emails. Simple d\'utilisation avec un seul clic.',
+      title: t('extensions.scribeTitle'),
+      description: t('extensions.scribeDesc'),
+      longDescription: t('extensions.scribeLongDesc'),
       image: scribeImage,
       technologies: ['JavaScript', 'Google Gemini AI', 'Chrome APIs', 'Manifest V3', 'Gmail Integration'],
       category: 'ai',
@@ -51,9 +53,9 @@ const HomePagePartFour: React.FC = () => {
     },
     {
       id: 'smart-response',
-      title: 'Smart Response',
-      description: 'Templates Gmail intelligents avec variables',
-      longDescription: 'Extension qui permet de créer, gérer et réutiliser des templates d\'emails professionnels avec des variables intelligentes. Gain de temps garanti pour tous vos emails récurrents.',
+      title: t('extensions.templatesTitle'),
+      description: t('extensions.templatesDesc'),
+      longDescription: t('extensions.templatesLongDesc'),
       image: templateMailImage,
       technologies: ['JavaScript', 'Chrome APIs', 'Template Engine', 'HTML/CSS', 'Gmail API'],
       category: 'productivity',
@@ -63,9 +65,9 @@ const HomePagePartFour: React.FC = () => {
     },
     {
       id: 'switch-language',
-      title: 'Switch Language',
-      description: 'Extension de traduction et changement de langue',
-      longDescription: 'Extension Chrome pour traduire et changer rapidement la langue des pages web. Interface simple et efficace pour la navigation multilingue.',
+      title: t('extensions.translateTitle'),
+      description: t('extensions.translateDesc'),
+      longDescription: t('extensions.translateLongDesc'),
       image: translateImage,
       technologies: ['JavaScript', 'Translation APIs', 'Chrome APIs', 'Language Detection'],
       category: 'utility',
@@ -76,11 +78,11 @@ const HomePagePartFour: React.FC = () => {
   ];
 
   const categories = [
-    { id: 'all', label: 'Toutes', icon: <Code2 /> },
-    { id: 'productivity', label: 'Productivité', icon: <Zap /> },
-    { id: 'entertainment', label: 'Divertissement', icon: <Palette /> },
-    { id: 'utility', label: 'Utilitaires', icon: <Globe /> },
-    { id: 'ai', label: 'IA', icon: <Smartphone /> }
+    { id: 'all', label: t('extensions.categories.all'), icon: <Code2 /> },
+    { id: 'productivity', label: t('extensions.categories.productivity'), icon: <Zap /> },
+    { id: 'entertainment', label: t('extensions.categories.entertainment'), icon: <Palette /> },
+    { id: 'utility', label: t('extensions.categories.utility'), icon: <Globe /> },
+    { id: 'ai', label: t('extensions.categories.ai'), icon: <Smartphone /> }
   ];
 
   const filteredExtensions = activeFilter === 'all' 
@@ -146,9 +148,9 @@ const HomePagePartFour: React.FC = () => {
         >
           <div className={styles.titleSection}>
             <Chrome className={styles.titleIcon} />
-            <h2 className={styles.title}>Extensions Chrome</h2>
+            <h2 className={styles.title}>{t('homepage.extensions.title')}</h2>
             <p className={styles.subtitle}>
-              Collection d'extensions Chrome développées pour améliorer la productivité et l'expérience utilisateur
+              {t('homepage.extensions.subtitle')}
             </p>
           </div>
         </motion.div>

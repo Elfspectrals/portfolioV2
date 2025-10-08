@@ -57,20 +57,77 @@
     "tagUE5": "#UE5",
     "tagIndie": "#IndieDev",
     "tagFighting": "#JeuDeCombat",
-    "tagPrototype": "#Prototype"
+    "tagPrototype": "#Prototype",
+    "stats": {
+      "experience": "Années d'expérience",
+      "projects": "Projets réalisés"
+    },
+    "cta": {
+      "workTogether": "Travaillons ensemble",
+      "viewProjects": "Voir mes projets"
+    },
+    "scrollToDiscover": "Scroll pour découvrir",
+    "techSubtitle": "Technologies et outils que je maîtrise pour créer des solutions modernes",
+    "expertise": {
+      "title": "Expertise Polyvalente",
+      "description": "Maîtrise complète du cycle de développement, du design à la mise en production"
+    },
+    "quality": {
+      "title": "Qualité & Performance",
+      "description": "Code propre, tests automatisés et optimisations pour des applications performantes"
+    },
+    "innovation": {
+      "title": "Innovation Continue",
+      "description": "Veille technologique constante et adoption des dernières technologies"
+    },
+    "interested": {
+      "title": "Intéressé par mon travail ?",
+      "description": "N'hésitez pas à me contacter pour discuter de votre projet",
+      "cta": "Commencer un projet"
+    },
+    "extensions": {
+      "title": "Extensions Chrome",
+      "subtitle": "Collection d'extensions Chrome développées pour améliorer la productivité et l'expérience utilisateur"
+    },
+    "sharedDrinks": {
+      "title": "SharedDrinks",
+      "status": "Projet Personnel",
+      "imageAlt": "Capture d'écran de l'application SharedDrinks"
+    }
   },
   "contact": {
     "title": "Contactez-moi",
-    "subtitle": "Pour m'avoir en prochain alternant, je suis sympathique",
-    "name": "Votre nom",
-    "email": "Votre email",
-    "message": "Votre message",
-    "send": "Envoyer",
-    "sending": "Envoi...",
-    "successToast": "Message envoyé avec succès !",
-    "errorToast": "Erreur lors de l'envoi du message.",
-    "successMsg": "Merci, votre message a bien été envoyé !",
-    "errorMsg": "Oups, l'envoi a échoué. Réessayez plus tard ou contactez-moi directement."
+    "subtitle": "Prêt à collaborer ? Discutons de votre prochain projet",
+    "email": "Email",
+    "phone": "Téléphone",
+    "location": "Localisation",
+    "locationValue": "Paris, Strasbourg, France",
+    "infoTitle": "Informations de contact",
+    "infoDescription": "N'hésitez pas à me contacter pour toute question ou collaboration",
+    "availability": "Disponibilité",
+    "availabilityStatus": "Disponible pour de nouveaux projets",
+    "socialTitle": "Réseaux sociaux",
+    "socialDescription": "Suivez-moi pour voir mes derniers projets",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+        },
+    "formTitle": "Envoyez-moi un message",
+    "formDescription": "Je réponds généralement dans les 24h",
+    "formSubject": "Nouveau message depuis votre portfolio",
+    "formAutoResponse": "Merci pour votre message ! Je vous répondrai dans les plus brefs délais.",
+    "nameLabel": "Nom complet",
+    "namePlaceholder": "Votre nom",
+    "emailLabel": "Email",
+    "emailPlaceholder": "votre@email.com",
+    "subjectLabel": "Sujet",
+    "subjectPlaceholder": "Sujet de votre message",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Décrivez votre projet ou votre demande...",
+    "sendButton": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "successMessage": "Message envoyé !",
+    "errorMessage": "Erreur d'envoi"
   },
   "extensions": {
     "scribeTitle": "IA : Scribe correction de mails",
@@ -80,6 +137,64 @@
     "impostorTitle": "Impostor Emoji",
     "impostorDesc": "Petit mini jeu d'observation pour passer le temps",
     "translateTitle": "IA : Traduction de mails",
-    "translateDesc": "Avec le pouvoir de l'IA, le monde s'offre à vous"
+    "translateDesc": "Avec le pouvoir de l'IA, le monde s'offre à vous",
+    "categories": {
+      "all": "Toutes",
+      "productivity": "Productivité",
+      "entertainment": "Divertissement",
+      "utility": "Utilitaires",
+      "ai": "IA"
+    },
+    "scribeLongDesc": "Extension Chrome qui utilise l'intelligence artificielle de Google (Gemini) pour corriger automatiquement l'orthographe et la grammaire dans vos emails. Simple d'utilisation avec un seul clic.",
+    "templatesLongDesc": "Extension qui permet de créer, gérer et réutiliser des templates d'emails professionnels avec des variables intelligentes. Gain de temps garanti pour tous vos emails récurrents.",
+    "translateLongDesc": "Extension Chrome pour traduire et changer rapidement la langue des pages web. Interface simple et efficace pour la navigation multilingue."
+  },
+  "chatbot": {
+    "welcome": "👋 Salut ! Comment puis-je t'aider ?",
+    "assistant": "Assistant",
+    "avatarAlt": "Avatar du chat",
+    "qa1": {
+      "question": "Mon rythme d'alternance ?",
+      "answer": "Je suis en alternance avec un rythme de 3 semaines en entreprise et 1 semaine en cours."
+    },
+    "qa2": {
+      "question": "Je suis en quelle année ?",
+      "answer": "Je suis dans ma 3ème année à l'ESGI et je prévois d'aller en master dans le développement."
+    },
+    "qa3": {
+      "question": "Quels langages je connais ?",
+      "answer": "J'utilise principalement JavaScript, TypeScript, React, Node.js, HTML, CSS, PHP ( Laravel & Symfony), Wordpress & Shopify et un peu de Go ou du Rust. Et encore du Unreal Engine."
+    },
+    "qa4": {
+      "question": "Quels projets je fais ?",
+      "answer": "Je travaille sur des extensions Chrome, des applis React/Node, et des intégrations IA avec Gemini. Ou encore des jeux sur Unreal Engine 5 ou bien en web n'hésitez pas à me demander."
+    }
+  },
+  "techstack": {
+    "level": {
+      "beginner": "débutant",
+      "intermediate": "intermédiaire",
+      "mastery": "maîtrise"
+    }
+  },
+  "projects": {
+    "categories": {
+      "all": "Tous",
+      "web": "Web",
+      "mobile": "Mobile",
+      "game": "Jeux"
+    },
+    "shareddrinks": {
+      "description": "Application mobile de recommandations de boissons et localisation de bars",
+      "longDescription": "Une application mobile complète développée avec React Native qui permet aux utilisateurs de découvrir de nouveaux bars et cocktails. Intégration d'APIs de cocktails, services de géolocalisation et système de recommandations personnalisées."
+    },
+    "starbucks": {
+      "description": "Simulateur de café Starbucks 3D avec système de crafting et interactions clients",
+      "longDescription": "Simulateur immersif de café Starbucks développé avec React, TypeScript et Three.js. Jeu 3D en vue à la troisième personne avec système de crafting de boissons, gestion d'inventaire, clients IA, et interface de jeu complète. Optimisé avec compression Draco et modèles low-poly pour des performances optimales."
+    },
+    "portfolio": {
+      "description": "Portfolio moderne avec animations avancées et design responsive",
+      "longDescription": "Portfolio personnel développé avec React, TypeScript et Framer Motion. Design moderne avec animations fluides, mode sombre/clair, et optimisations de performance. Intégration de Three.js pour les éléments 3D."
+    }
   }
 }

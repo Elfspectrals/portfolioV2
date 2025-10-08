@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView as useIntersectionObserver } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import Tilt from 'react-parallax-tilt';
 import { 
   ExternalLink, 
@@ -30,6 +31,7 @@ interface Project {
 }
 
 const Projects: React.FC = () => {
+  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const { ref, inView } = useIntersectionObserver({
     threshold: 0.1,
@@ -40,8 +42,8 @@ const Projects: React.FC = () => {
     {
       id: 'shareddrinks',
       title: 'SharedDrinks',
-      description: 'Application mobile de recommandations de boissons et localisation de bars',
-      longDescription: 'Une application mobile complète développée avec React Native qui permet aux utilisateurs de découvrir de nouveaux bars et cocktails. Intégration d\'APIs de cocktails, services de géolocalisation et système de recommandations personnalisées.',
+      description: t('projects.shareddrinks.description'),
+      longDescription: t('projects.shareddrinks.longDescription'),
       image: shareDrinkImage,
       technologies: ['React Native', 'JavaScript', 'OpenStreetMap', 'CocktailAPI', 'Firebase'],
       category: 'mobile',
@@ -52,8 +54,8 @@ const Projects: React.FC = () => {
      {
        id: "starbucks-coffee-simulator",
        title: "Starbucks Coffee Simulator",
-       description: "Simulateur de café Starbucks 3D avec système de crafting et interactions clients",
-       longDescription: "Simulateur immersif de café Starbucks développé avec React, TypeScript et Three.js. Jeu 3D en vue à la troisième personne avec système de crafting de boissons, gestion d'inventaire, clients IA, et interface de jeu complète. Optimisé avec compression Draco et modèles low-poly pour des performances optimales.",
+       description: t('projects.starbucks.description'),
+       longDescription: t('projects.starbucks.longDescription'),
        image: starbucksImage,
        technologies: ["React", "TypeScript", "Three.js", "React Three Fiber", "Drei", "CSS3"],
        category: "game",
@@ -64,8 +66,8 @@ const Projects: React.FC = () => {
     {
       id: 'portfolio-v2',
       title: 'Portfolio V2',
-      description: 'Portfolio moderne avec animations avancées et design responsive',
-      longDescription: 'Portfolio personnel développé avec React, TypeScript et Framer Motion. Design moderne avec animations fluides, mode sombre/clair, et optimisations de performance. Intégration de Three.js pour les éléments 3D.',
+      description: t('projects.portfolio.description'),
+      longDescription: t('projects.portfolio.longDescription'),
       image: portfolioImage,
       technologies: ['React', 'TypeScript', 'Framer Motion', 'SCSS', 'Vite'],
       category: 'web',
@@ -76,10 +78,10 @@ const Projects: React.FC = () => {
   ];
 
   const categories = [
-    { id: 'all', label: 'Tous', icon: <Code2 /> },
-    { id: 'web', label: 'Web', icon: <Globe /> },
-    { id: 'mobile', label: 'Mobile', icon: <Smartphone /> },
-    { id: 'game', label: 'Jeux', icon: <Zap /> }
+    { id: 'all', label: t('projects.categories.all'), icon: <Code2 /> },
+    { id: 'web', label: t('projects.categories.web'), icon: <Globe /> },
+    { id: 'mobile', label: t('projects.categories.mobile'), icon: <Smartphone /> },
+    { id: 'game', label: t('projects.categories.game'), icon: <Zap /> }
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -144,9 +146,9 @@ const Projects: React.FC = () => {
         >
           <div className={styles.titleSection}>
             <Palette className={styles.titleIcon} />
-            <h2 className={styles.title}>Projets & Réalisations</h2>
+            <h2 className={styles.title}>{t('homepage.partThreeTitle')}</h2>
             <p className={styles.subtitle}>
-              Découvrez mes projets personnels et professionnels, témoignant de ma passion pour l'innovation technologique
+              {t('homepage.partThreeText')}
             </p>
           </div>
         </motion.div>
@@ -267,15 +269,15 @@ const Projects: React.FC = () => {
           variants={itemVariants}
         >
           <div className={styles.ctaContent}>
-            <h3>Intéressé par mon travail ?</h3>
-            <p>N'hésitez pas à me contacter pour discuter de votre projet</p>
+            <h3>{t('homepage.interested.title')}</h3>
+            <p>{t('homepage.interested.description')}</p>
             <motion.a
               href="#contact"
               className={styles.ctaButton}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Commencer un projet</span>
+              <span>{t('homepage.interested.cta')}</span>
               <ExternalLink className={styles.buttonIcon} />
             </motion.a>
           </div>

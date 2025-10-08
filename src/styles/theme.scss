@@ -1,11 +1,12 @@
 @use 'abstracts/variables' as v;
+@use 'sass:map';
 
 html.theme-light {
   --gray-1: #{v.$border-Card-Light};
   @each $name, $value in v.$v-light { --#{$name}: #{$value}; }
   --accent: #{v.$blue};
   --accent-2: #{v.$orange};
-  --fg: #{map-get(v.$v-light, "text")};
+  --fg: #{map.get(v.$v-light, "text")};
 }
 
 html.theme-dark {
@@ -13,5 +14,5 @@ html.theme-dark {
   @each $name, $value in v.$v-dark { --#{$name}: #{$value}; }
   --accent: #{v.$blue};
   --accent-2: #{v.$orange};
-  --fg: #{map-get(v.$v-dark, "text")};
+  --fg: #{map.get(v.$v-dark, "text")};
 }

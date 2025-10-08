@@ -3,7 +3,7 @@ import Card from "../components/Card/Card";
 import styles from "./ExtensionChrome.module.scss";
 import { useTranslation } from "react-i18next";
 
-import Scribe from "../assets/scribe.png?url";
+import Scribe from "../assets/frenchCorrector.png?url";
 import TemplateMail from "../assets/templateMail.png?url";
 import Translate from "../assets/translate.png?url";
 

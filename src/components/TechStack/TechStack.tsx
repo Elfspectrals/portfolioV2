@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView as useIntersectionObserver } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import { 
   Code2, 
   Database, 
@@ -18,17 +19,26 @@ interface TechCategory {
   color: string;
   technologies: {
     name: string;
-    level: 'débutant' | 'intermédiaire' | 'maîtrise';
+    level: string;
     icon?: string;
   }[];
 }
 
 const TechStack: React.FC = () => {
+  const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState(0);
   const { ref, inView } = useIntersectionObserver({
     threshold: 0.1,
     triggerOnce: false
   });
+
+  // Helper function to get CSS class for skill level
+  const getSkillLevelClass = (level: string) => {
+    if (level === t('techstack.level.beginner')) return 'beginner';
+    if (level === t('techstack.level.intermediate')) return 'intermediate';
+    if (level === t('techstack.level.mastery')) return 'mastery';
+    return 'beginner'; // fallback
+  };
 
 
   const categories: TechCategory[] = [
@@ -37,15 +47,15 @@ const TechStack: React.FC = () => {
       icon: <Globe className={styles.categoryIcon} />,
       color: "#3b82f6",
       technologies: [
-        { name: "React", level: "maîtrise", icon: "⚛️" },
-        { name: "TypeScript", level: "intermédiaire", icon: "🔷" },
-        { name: "Next.js", level: "intermédiaire", icon: "▲" },
-        { name: "Vue.js", level: "intermédiaire", icon: "💚" },
-        { name: "HTML", level: "maîtrise", icon: "🌐" },
-        { name: "CSS", level: "maîtrise", icon: "🎨" },
-        { name: "JavaScript", level: "maîtrise", icon: "⚡" },
-        { name: "Sass/SCSS", level: "maîtrise", icon: "🎨" },
-        { name: "Tailwind CSS", level: "maîtrise", icon: "🌊" }
+        { name: "React", level: t('techstack.level.mastery'), icon: "⚛️" },
+        { name: "TypeScript", level: t('techstack.level.intermediate'), icon: "🔷" },
+        { name: "Next.js", level: t('techstack.level.intermediate'), icon: "▲" },
+        { name: "Vue.js", level: t('techstack.level.intermediate'), icon: "💚" },
+        { name: "HTML", level: t('techstack.level.mastery'), icon: "🌐" },
+        { name: "CSS", level: t('techstack.level.mastery'), icon: "🎨" },
+        { name: "JavaScript", level: t('techstack.level.mastery'), icon: "⚡" },
+        { name: "Sass/SCSS", level: t('techstack.level.mastery'), icon: "🎨" },
+        { name: "Tailwind CSS", level: t('techstack.level.mastery'), icon: "🌊" }
       ]
     },
     {
@@ -53,11 +63,11 @@ const TechStack: React.FC = () => {
       icon: <Database className={styles.categoryIcon} />,
       color: "#10b981",
       technologies: [
-        { name: "Node.js", level: "maîtrise", icon: "🟢" },
-        { name: "Express.js", level: "maîtrise", icon: "🚀" },
-        { name: "Python", level: "intermédiaire", icon: "🐍" },
-        { name: "PostgreSQL", level: "intermédiaire", icon: "🐘" },
-        { name: "MongoDB", level: "débutant", icon: "🍃" },
+        { name: "Node.js", level: t('techstack.level.mastery'), icon: "🟢" },
+        { name: "Express.js", level: t('techstack.level.mastery'), icon: "🚀" },
+        { name: "Python", level: t('techstack.level.intermediate'), icon: "🐍" },
+        { name: "PostgreSQL", level: t('techstack.level.intermediate'), icon: "🐘" },
+        { name: "MongoDB", level: t('techstack.level.beginner'), icon: "🍃" },
       ]
     },
     {
@@ -65,9 +75,9 @@ const TechStack: React.FC = () => {
       icon: <Smartphone className={styles.categoryIcon} />,
       color: "#8b5cf6",
       technologies: [
-        { name: "React Native", level: "maîtrise", icon: "📱" },
-        { name: "Flutter", level: "débutant", icon: "🦋" },
-        { name: "Firebase", level: "intermédiaire", icon: "🔥" }
+        { name: "React Native", level: t('techstack.level.mastery'), icon: "📱" },
+        { name: "Flutter", level: t('techstack.level.beginner'), icon: "🦋" },
+        { name: "Firebase", level: t('techstack.level.intermediate'), icon: "🔥" }
       ]
     },
     {
@@ -75,14 +85,14 @@ const TechStack: React.FC = () => {
       icon: <Zap className={styles.categoryIcon} />,
       color: "#f59e0b",
       technologies: [
-        { name: "Git", level: "maîtrise", icon: "🌿" },
-        { name: "GitHub Action", level: "intermédiaire", icon: "🐙" },
-        { name: "Jira", level: "maîtrise", icon: "🔍" },
-        { name: "Docker", level: "intermédiaire", icon: "🐳" },
-        { name: "Figma", level: "intermédiaire", icon: "🎨" },
-        { name: "Cypress", level: "maîtrise", icon: "🧪" },
-        { name: "Unreal Engine 5", level: "intermédiaire", icon: "🎮" },
-        { name: "ThreeJS", level: "intermédiaire", icon: "🔺" }
+        { name: "Git", level: t('techstack.level.mastery'), icon: "🌿" },
+        { name: "GitHub Action", level: t('techstack.level.intermediate'), icon: "🐙" },
+        { name: "Jira", level: t('techstack.level.mastery'), icon: "🔍" },
+        { name: "Docker", level: t('techstack.level.intermediate'), icon: "🐳" },
+        { name: "Figma", level: t('techstack.level.intermediate'), icon: "🎨" },
+        { name: "Cypress", level: t('techstack.level.mastery'), icon: "🧪" },
+        { name: "Unreal Engine 5", level: t('techstack.level.intermediate'), icon: "🎮" },
+        { name: "ThreeJS", level: t('techstack.level.intermediate'), icon: "🔺" }
       ]
     }
   ];
@@ -127,9 +137,9 @@ const TechStack: React.FC = () => {
         >
           <div className={styles.titleSection}>
             <Code2 className={styles.titleIcon} />
-            <h2 className={styles.title}>Stack Technologique</h2>
+            <h2 className={styles.title}>{t('homepage.techTitle')}</h2>
             <p className={styles.subtitle}>
-              Technologies et outils que je maîtrise pour créer des solutions modernes
+              {t('homepage.techSubtitle')}
             </p>
           </div>
         </motion.div>
@@ -188,7 +198,7 @@ const TechStack: React.FC = () => {
                 
                 <div className={styles.skillLevelSection}>
                   <motion.div
-                    className={`${styles.skillLevel} ${styles[tech.level]}`}
+                    className={`${styles.skillLevel} ${styles[getSkillLevelClass(tech.level)]}`}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ 
@@ -211,9 +221,9 @@ const TechStack: React.FC = () => {
             <div className={styles.summaryCard}>
               <Layers className={styles.summaryIcon} />
               <div className={styles.summaryContent}>
-                <h3>Expertise Polyvalente</h3>
+                <h3>{t('homepage.expertise.title')}</h3>
                 <p>
-                  Maîtrise complète du cycle de développement, du design à la mise en production
+                  {t('homepage.expertise.description')}
                 </p>
               </div>
             </div>
@@ -221,9 +231,9 @@ const TechStack: React.FC = () => {
             <div className={styles.summaryCard}>
               <Shield className={styles.summaryIcon} />
               <div className={styles.summaryContent}>
-                <h3>Qualité & Performance</h3>
+                <h3>{t('homepage.quality.title')}</h3>
                 <p>
-                  Code propre, tests automatisés et optimisations pour des applications performantes
+                  {t('homepage.quality.description')}
                 </p>
               </div>
             </div>
@@ -231,9 +241,9 @@ const TechStack: React.FC = () => {
             <div className={styles.summaryCard}>
               <Zap className={styles.summaryIcon} />
               <div className={styles.summaryContent}>
-                <h3>Innovation Continue</h3>
+                <h3>{t('homepage.innovation.title')}</h3>
                 <p>
-                  Veille technologique constante et adoption des dernières technologies
+                  {t('homepage.innovation.description')}
                 </p>
               </div>
             </div>

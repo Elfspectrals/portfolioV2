@@ -23,7 +23,7 @@ const navLinks = (t: (k: string) => string) => [
 
 function App() {
   const { t } = useTranslation();
-  const [theme, setThemeState] = useState<"light" | "dark">("light");
+  const [, setThemeState] = useState<"light" | "dark">("light");
   const [currentLang, setCurrentLang] = useState("fr");
 
   useEffect(() => {

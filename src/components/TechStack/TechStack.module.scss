@@ -232,19 +232,19 @@
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
   
-  &.débutant {
+  &.beginner {
     background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
     color: white;
     box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
   }
   
-  &.intermédiaire {
+  &.intermediate {
     background: linear-gradient(135deg, #ffa726, #ffb74d);
     color: white;
     box-shadow: 0 4px 15px rgba(255, 167, 38, 0.3);
   }
   
-  &.maîtrise {
+  &.mastery {
     background: linear-gradient(135deg, #4caf50, #66bb6a);
     color: white;
     box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);

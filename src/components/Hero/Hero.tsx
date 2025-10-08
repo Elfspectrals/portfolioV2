@@ -197,11 +197,11 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
             >
               <div className={styles.stat}>
                 <span className={styles.statNumber}>3+</span>
-                <span className={styles.statLabel}>Années d'expérience</span>
+                <span className={styles.statLabel}>{t("homepage.stats.experience")}</span>
               </div>
               <div className={styles.stat}>
                 <span className={styles.statNumber}>15+</span>
-                <span className={styles.statLabel}>Projets réalisés</span>
+                <span className={styles.statLabel}>{t("homepage.stats.projects")}</span>
               </div>
               
             </motion.div>
@@ -219,7 +219,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>Travaillons ensemble</span>
+                <span>{t("homepage.cta.workTogether")}</span>
                 <ArrowRight className={styles.buttonIcon} />
               </motion.a>
 
@@ -229,7 +229,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>Voir mes projets</span>
+                <span>{t("homepage.cta.viewProjects")}</span>
               </motion.a>
             </motion.div>
 
@@ -291,7 +291,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
           >
             ↓
           </motion.div>
-          <span>Scroll pour découvrir</span>
+          <span>{t("homepage.scrollToDiscover")}</span>
         </motion.div>
       </div>
 

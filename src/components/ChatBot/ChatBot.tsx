@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./ChatBot.module.scss";
 import Avatar from '../../assets/avatar.png';
 
@@ -7,29 +8,31 @@ type QA = {
   answer: string;
 };
 
-const predefinedQA: QA[] = [
-  {
-    question: "Mon rythme d'alternance ?",
-    answer: "Je suis en alternance avec un rythme de 3 semaines en entreprise et 1 semaine en cours.",
-  },
-  {
-    question: "Je suis en quelle année ?",
-    answer: "Je suis dans ma 3ème année à l'ESGI et je prévois d'aller en master dans le développement.",
-  },
-  {
-    question: "Quels langages je connais ?",
-    answer: "J'utilise principalement JavaScript, TypeScript, React, Node.js, HTML, CSS, PHP ( Laravel & Symfony), Wordpress & Shopify et un peu de Go ou du Rust. Et encore du Unreal Engine.",
-  },
-  {
-    question: "Quels projets je fais ?",
-    answer: "Je travaille sur des extensions Chrome, des applis React/Node, et des intégrations IA avec Gemini. Ou encore des jeux sur Unreal Engine 5 ou bien en web n'hésitez pas à me demander.",
-  },
-];
-
 const ChatBot = () => {
+  const { t } = useTranslation();
+  
+  const predefinedQA: QA[] = [
+    {
+      question: t('chatbot.qa1.question'),
+      answer: t('chatbot.qa1.answer'),
+    },
+    {
+      question: t('chatbot.qa2.question'),
+      answer: t('chatbot.qa2.answer'),
+    },
+    {
+      question: t('chatbot.qa3.question'),
+      answer: t('chatbot.qa3.answer'),
+    },
+    {
+      question: t('chatbot.qa4.question'),
+      answer: t('chatbot.qa4.answer'),
+    },
+  ];
+
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ from: "bot" | "user"; text: string }[]>([
-    { from: "bot", text: "👋 Salut ! Comment puis-je t’aider ?" },
+    { from: "bot", text: t('chatbot.welcome') },
   ]);
 
   const handleQuestionClick = (qa: QA) => {
@@ -45,7 +48,7 @@ const ChatBot = () => {
       {isOpen && (
         <div className={styles.chatWindow}>
           <div className={styles.chatHeader}>
-            <span>Assistant</span>
+            <span>{t('chatbot.assistant')}</span>
             <button onClick={() => setIsOpen(false)}>✖</button>
           </div>
 
@@ -75,7 +78,7 @@ const ChatBot = () => {
         className={styles.avatarButton}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <img src={Avatar} alt="Chat Avatar" />
+        <img src={Avatar} alt={t('chatbot.avatarAlt')} />
       </button>
     </div>
   );

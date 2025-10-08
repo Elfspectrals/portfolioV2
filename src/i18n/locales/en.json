@@ -57,20 +57,77 @@
     "tagUE5": "#UE5",
     "tagIndie": "#IndieDev",
     "tagFighting": "#FightingGame",
-    "tagPrototype": "#Prototype"
+    "tagPrototype": "#Prototype",
+    "stats": {
+      "experience": "Years of experience",
+      "projects": "Projects completed"
+    },
+    "cta": {
+      "workTogether": "Let's work together",
+      "viewProjects": "View my projects"
+    },
+    "scrollToDiscover": "Scroll to discover",
+    "techSubtitle": "Technologies and tools I master to create modern solutions",
+    "expertise": {
+      "title": "Versatile Expertise",
+      "description": "Complete mastery of the development cycle, from design to production"
+    },
+    "quality": {
+      "title": "Quality & Performance",
+      "description": "Clean code, automated tests and optimizations for performant applications"
+    },
+    "innovation": {
+      "title": "Continuous Innovation",
+      "description": "Constant technological watch and adoption of the latest technologies"
+    },
+    "interested": {
+      "title": "Interested in my work?",
+      "description": "Feel free to contact me to discuss your project",
+      "cta": "Start a project"
+    },
+    "extensions": {
+      "title": "Chrome Extensions",
+      "subtitle": "Collection of Chrome extensions developed to improve productivity and user experience"
+    },
+    "sharedDrinks": {
+      "title": "SharedDrinks",
+      "status": "Personal Project",
+      "imageAlt": "Screenshot of the SharedDrinks application"
+    }
   },
   "contact": {
     "title": "Contact me",
-    "subtitle": "I'd love to be your next apprentice — I'm friendly",
-    "name": "Your name",
-    "email": "Your email",
-    "message": "Your message",
-    "send": "Send",
+    "subtitle": "Ready to collaborate? Let's discuss your next project",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "locationValue": "Paris, Strasbourg, France",
+    "infoTitle": "Contact information",
+    "infoDescription": "Feel free to contact me for any questions or collaboration",
+    "availability": "Availability",
+    "availabilityStatus": "Available for new projects",
+    "socialTitle": "Social networks",
+    "socialDescription": "Follow me to see my latest projects",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "formTitle": "Send me a message",
+    "formDescription": "I usually respond within 24 hours",
+    "formSubject": "New message from your portfolio",
+    "formAutoResponse": "Thank you for your message! I will get back to you as soon as possible.",
+    "nameLabel": "Full name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Subject of your message",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Describe your project or request...",
+    "sendButton": "Send message",
     "sending": "Sending...",
-    "successToast": "Message sent successfully!",
-    "errorToast": "Error sending the message.",
-    "successMsg": "Thank you, your message has been sent!",
-    "errorMsg": "Oops, sending failed. Try again later or contact me directly."
+    "successMessage": "Message sent!",
+    "errorMessage": "Send error"
   },
   "extensions": {
     "scribeTitle": "AI: Scribe email correction",
@@ -80,6 +137,64 @@
     "impostorTitle": "Impostor Emoji",
     "impostorDesc": "A small observation mini-game to pass the time",
     "translateTitle": "AI: Email translation",
-    "translateDesc": "With the power of AI, the world opens to you"
+    "translateDesc": "With the power of AI, the world opens to you",
+    "categories": {
+      "all": "All",
+      "productivity": "Productivity",
+      "entertainment": "Entertainment",
+      "utility": "Utilities",
+      "ai": "AI"
+    },
+    "scribeLongDesc": "Chrome extension that uses Google's artificial intelligence (Gemini) to automatically correct spelling and grammar in your emails. Simple to use with one click.",
+    "templatesLongDesc": "Extension that allows you to create, manage and reuse professional email templates with smart variables. Guaranteed time savings for all your recurring emails.",
+    "translateLongDesc": "Chrome extension to quickly translate and change the language of web pages. Simple and efficient interface for multilingual navigation."
+  },
+  "chatbot": {
+    "welcome": "👋 Hi! How can I help you?",
+    "assistant": "Assistant",
+    "avatarAlt": "Chat avatar",
+    "qa1": {
+      "question": "My apprenticeship schedule?",
+      "answer": "I'm in apprenticeship with a schedule of 3 weeks in company and 1 week in school."
+    },
+    "qa2": {
+      "question": "What year am I in?",
+      "answer": "I'm in my 3rd year at ESGI and I plan to go to master's in development."
+    },
+    "qa3": {
+      "question": "What languages do I know?",
+      "answer": "I mainly use JavaScript, TypeScript, React, Node.js, HTML, CSS, PHP (Laravel & Symfony), WordPress & Shopify and a bit of Go or Rust. And also Unreal Engine."
+    },
+    "qa4": {
+      "question": "What projects do I work on?",
+      "answer": "I work on Chrome extensions, React/Node apps, and AI integrations with Gemini. Or games on Unreal Engine 5 or web, feel free to ask me."
+    }
+  },
+  "techstack": {
+    "level": {
+      "beginner": "beginner",
+      "intermediate": "intermediate",
+      "mastery": "mastery"
+    }
+  },
+  "projects": {
+    "categories": {
+      "all": "All",
+      "web": "Web",
+      "mobile": "Mobile",
+      "game": "Games"
+    },
+    "shareddrinks": {
+      "description": "Mobile application for drink recommendations and bar location",
+      "longDescription": "A complete mobile application developed with React Native that allows users to discover new bars and cocktails. Integration of cocktail APIs, geolocation services and personalized recommendation system."
+    },
+    "starbucks": {
+      "description": "3D Starbucks coffee simulator with crafting system and customer interactions",
+      "longDescription": "Immersive Starbucks coffee simulator developed with React, TypeScript and Three.js. 3D third-person view game with drink crafting system, inventory management, AI customers, and complete game interface. Optimized with Draco compression and low-poly models for optimal performance."
+    },
+    "portfolio": {
+      "description": "Modern portfolio with advanced animations and responsive design",
+      "longDescription": "Personal portfolio developed with React, TypeScript and Framer Motion. Modern design with smooth animations, dark/light mode, and performance optimizations. Three.js integration for 3D elements."
+    }
   }
 }

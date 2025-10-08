@@ -26,7 +26,7 @@ const HomePagePartThree = () => {
         <div className={styles.projectHeader}>
           <h3 className={styles.projectTitle}>{t("homepage.sharedDrinks.title")}</h3>
           <div className={styles.projectStatus}>
-            <span className={styles.statusBadge}>Projet Personnel</span>
+            <span className={styles.statusBadge}>{t("homepage.sharedDrinks.status")}</span>
           </div>
         </div>
         
