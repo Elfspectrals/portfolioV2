@@ -33,7 +33,6 @@ function App() {
     
     // Détection Android et correction des couleurs
     const isAndroid = /Android/i.test(navigator.userAgent);
-    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
     
     // Force le thème sombre sur Android pour éviter les problèmes de couleurs
     const initialTheme = savedTheme || (isAndroid ? "dark" : (systemPrefersDark ? "dark" : "light"));
