@@ -72,7 +72,7 @@ const HomePagePartFour: React.FC = () => {
       category: 'utility',
       status: 'completed',
       featured: false,
-      chromeUrl: 'https://chromewebstore.google.com/detail/switch-language/cchfkaamljdlfkmpekjdmamfflpiihhn?hl=fr&authuser=0'
+      chromeUrl: 'https://chromewebstore.google.com/detail/switch-la3+nguage/cchfkaamljdlfkmpekjdmamfflpiihhn?hl=fr&authuser=0'
     }
   ];
 

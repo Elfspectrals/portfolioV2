@@ -1,6 +1,7 @@
-@use 'abstracts/variables';
+@use 'abstracts/variables' as v;
 @use 'abstracts/functions';
 @use 'abstracts/mixins';
+@use 'sass:map';
 
 @use 'theme';
 
@@ -18,7 +19,77 @@ html, body {
   color: var(--text);
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
 
+/* Force dark theme on mobile if no theme is set */
+@media (max-width: 768px) {
+  html:not(.theme-light):not(.theme-dark) {
+    --gray-1: #{v.$border-Card-Dark};
+    --background: #{map.get(v.$v-dark, "background")};
+    --text: #{map.get(v.$v-dark, "text")};
+    --card-bg: #{map.get(v.$v-dark, "card-bg")};
+    --card-text: #{map.get(v.$v-dark, "card-text")};
+    --accent: #{v.$blue};
+    --accent-2: #{v.$orange};
+    --fg: #{map.get(v.$v-dark, "text")};
+  }
+}
+
+/* Corrections spécifiques pour Android */
+@supports (-webkit-appearance: none) {
+  /* Détection des navigateurs WebKit (Chrome mobile, etc.) */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Amélioration du rendu des couleurs sur Android */
+  .hero {
+    background: var(--background) !important;
+  }
+  
+  /* Correction des gradients sur Android */
+  .gradientOrb {
+    background: radial-gradient(circle, 
+      rgba(59, 130, 246, 0.3) 0%,
+      rgba(245, 158, 11, 0.2) 50%,
+      transparent 100%
+    ) !important;
+  }
+}
+
+/* Styles spécifiques pour les appareils Android */
+html.android-device {
+  /* Amélioration du rendu des couleurs sur Android */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Correction des problèmes de couleurs sur Android - garde les couleurs originales */
+  .hero {
+    background: var(--background) !important;
+  }
+  
+  .gradientOrb {
+    background: radial-gradient(circle, 
+      rgba(37, 99, 235, 0.3) 0%,
+      rgba(249, 115, 22, 0.2) 50%,
+      transparent 100%
+    ) !important;
+  }
+  
+  .name {
+    color: var(--text) !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+  }
+  
+  .primaryButton {
+    background: var(--accent) !important;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4) !important;
+  }
 }
 
 /* Ensure CSS variables root selector is correct */

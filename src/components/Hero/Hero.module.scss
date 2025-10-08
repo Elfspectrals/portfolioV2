@@ -8,10 +8,21 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: var(--background);
+  
+  /* Fallback pour Android */
   background: linear-gradient(135deg, 
     var(--background) 0%, 
-    color-mix(in oklab, var(--background), var(--accent) 5%) 100%
+    var(--background) 100%
   );
+  
+  /* Amélioration pour navigateurs modernes */
+  @supports (background: color-mix(in oklab, var(--background), var(--accent) 5%)) {
+    background: linear-gradient(135deg, 
+      var(--background) 0%, 
+      color-mix(in oklab, var(--background), var(--accent) 5%) 100%
+    );
+  }
 }
 
 .background {
@@ -30,14 +41,23 @@
   width: 400px;
   height: 400px;
   background: radial-gradient(circle, 
-    color-mix(in oklab, var(--accent), transparent 20%) 0%,
-    color-mix(in oklab, var(--accent-2), transparent 30%) 50%,
+    rgba(37, 99, 235, 0.3) 0%,
+    rgba(249, 115, 22, 0.2) 50%,
     transparent 100%
   );
   border-radius: 50%;
   filter: blur(60px);
   opacity: 0.6;
   animation: float 6s ease-in-out infinite;
+  
+  /* Fallback pour Android */
+  @supports (background: color-mix(in oklab, var(--accent), transparent 20%)) {
+    background: radial-gradient(circle, 
+      color-mix(in oklab, var(--accent), transparent 20%) 0%,
+      color-mix(in oklab, var(--accent-2), transparent 30%) 50%,
+      transparent 100%
+    );
+  }
 }
 
 .particles {
@@ -180,15 +200,20 @@
 .name {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
-  background: linear-gradient(135deg, 
-    var(--text) 0%, 
-    var(--accent) 50%, 
-    var(--accent-2) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--text);
   line-height: 1.1;
+  
+  /* Gradient pour navigateurs modernes */
+  @supports (background-clip: text) {
+    background: linear-gradient(135deg, 
+      var(--text) 0%, 
+      var(--accent) 50%, 
+      var(--accent-2) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
 
 .role {
@@ -251,20 +276,26 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: var(--accent);
   color: white;
   padding: 1rem 2rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
-  box-shadow: 0 8px 25px color-mix(in oklab, var(--accent), transparent 60%);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
 
+  /* Gradient pour navigateurs modernes */
+  @supports (background: linear-gradient(135deg, var(--accent), var(--accent-2))) {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  }
+
   &:hover {
-    box-shadow: 0 12px 35px color-mix(in oklab, var(--accent), transparent 40%);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.6);
+    transform: translateY(-2px);
   }
 }
 
@@ -371,6 +402,10 @@
 @media (max-width: 768px) {
   .hero {
     padding: 2rem 0;
+    background: linear-gradient(135deg, 
+      var(--background) 0%, 
+      color-mix(in oklab, var(--background), var(--accent) 8%) 100%
+    );
   }
 
   .container {
@@ -384,6 +419,10 @@
   .avatar {
     width: 150px;
     height: 150px;
+    border: 3px solid var(--accent);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 0 0 2px var(--accent);
   }
 
   .stats {
@@ -392,6 +431,8 @@
 
   .statNumber {
     font-size: 1.5rem;
+    color: var(--accent);
+    text-shadow: 0 0 10px color-mix(in oklab, var(--accent), transparent 50%);
   }
 
   .ctaSection {
@@ -403,5 +444,15 @@
   .secondaryButton {
     width: 100%;
     justify-content: center;
+  }
+
+  .primaryButton {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+  }
+
+  .secondaryButton {
+    border: 2px solid var(--accent);
+    color: var(--accent);
   }
 }

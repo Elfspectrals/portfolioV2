@@ -27,11 +27,24 @@ function App() {
   const [currentLang, setCurrentLang] = useState("fr");
 
   useEffect(() => {
-    // Initialize theme from localStorage or default to light
+    // Initialize theme from localStorage, system preference, or default to dark
     const savedTheme = localStorage.getItem('theme') as "light" | "dark" | null;
-    const initialTheme = savedTheme || "light";
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Détection Android et correction des couleurs
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+    
+    // Force le thème sombre sur Android pour éviter les problèmes de couleurs
+    const initialTheme = savedTheme || (isAndroid ? "dark" : (systemPrefersDark ? "dark" : "light"));
+    
     setThemeState(initialTheme);
     setTheme(initialTheme);
+    
+    // Ajouter une classe spécifique pour Android
+    if (isAndroid) {
+      document.documentElement.classList.add('android-device');
+    }
   }, []);
 
   const cycleLanguage = () => {

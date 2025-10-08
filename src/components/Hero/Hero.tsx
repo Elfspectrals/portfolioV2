@@ -196,7 +196,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
               transition={{ delay: 0.8, duration: 0.8 }}
             >
               <div className={styles.stat}>
-                <span className={styles.statNumber}>3+</span>
+                <span className={styles.statNumber}>2</span>
                 <span className={styles.statLabel}>{t("homepage.stats.experience")}</span>
               </div>
               <div className={styles.stat}>
