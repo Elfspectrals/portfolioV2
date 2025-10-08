@@ -23,12 +23,16 @@ const navLinks = (t: (k: string) => string) => [
 
 function App() {
   const { t } = useTranslation();
-  const [theme] = useState<"light" | "dark">("light");
+  const [theme, setThemeState] = useState<"light" | "dark">("light");
   const [currentLang, setCurrentLang] = useState("fr");
 
   useEffect(() => {
-    setTheme(theme);
-  }, [theme]);
+    // Initialize theme from localStorage or default to light
+    const savedTheme = localStorage.getItem('theme') as "light" | "dark" | null;
+    const initialTheme = savedTheme || "light";
+    setThemeState(initialTheme);
+    setTheme(initialTheme);
+  }, []);
 
   const cycleLanguage = () => {
     const languages = ["fr", "en", "de"];

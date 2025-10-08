@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Menu, X, Code2, Sun } from 'lucide-react';
+import { Menu, X, Code2, Sun, Moon } from 'lucide-react';
 import styles from './Navigation.module.scss';
+import { setTheme } from '../../utils/theme';
 
 interface NavigationProps {
   navLinks: Array<{
@@ -20,6 +21,9 @@ const Navigation: React.FC<NavigationProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDark, setIsDark] = useState(
+    document.documentElement.classList.contains("theme-dark")
+  );
   
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 100], [0, -100]);
@@ -55,6 +59,20 @@ const Navigation: React.FC<NavigationProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Listen for theme changes
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains("theme-dark"));
+    });
+    
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"]
+    });
+    
+    return () => observer.disconnect();
+  }, []);
+
   const handleNavClick = (href: string) => {
     setIsOpen(false);
     const element = document.querySelector(href);
@@ -64,8 +82,9 @@ const Navigation: React.FC<NavigationProps> = ({
   };
 
   const toggleTheme = () => {
-    // Theme toggle logic here
-    console.log('Toggle theme');
+    const nextTheme = isDark ? 'light' : 'dark';
+    setTheme(nextTheme);
+    setIsDark(!isDark);
   };
 
   return (
@@ -130,7 +149,11 @@ const Navigation: React.FC<NavigationProps> = ({
             whileHover={{ scale: 1.1, rotate: 180 }}
             whileTap={{ scale: 0.9 }}
           >
-            <Sun className={styles.themeIcon} />
+            {isDark ? (
+              <Sun className={styles.themeIcon} />
+            ) : (
+              <Moon className={styles.themeIcon} />
+            )}
           </motion.button>
 
           {/* Mobile Menu Button */}

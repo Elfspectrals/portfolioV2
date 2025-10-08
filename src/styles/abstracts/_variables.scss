@@ -69,13 +69,3 @@ $v-dark: (
   @include export-badge-light();
 }
 
-/* ===== Thèmes via classes (pilotées par utils/theme.ts) ===== */
-.theme-light {
-  @include export-theme-vars($v-light);
-  @include export-badge-light();
-}
-
-.theme-dark {
-  @include export-theme-vars($v-dark);
-  @include export-badge-dark();
-}
