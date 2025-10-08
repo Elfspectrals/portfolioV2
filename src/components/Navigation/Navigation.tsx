@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Menu, X, Home, Code2, Briefcase, Mail, Sun, Moon } from 'lucide-react';
+import { Menu, X, Code2, Sun } from 'lucide-react';
 import styles from './Navigation.module.scss';
 
 interface NavigationProps {

@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 // Import project images
 import shareDrinkImage from '../../assets/ShareDrink.PNG?url';
-import scribeImage from '../../assets/scribe.png?url';
 import starbucksImage from '../../assets/starbucks.png?url';
 import portfolioImage from '../../assets/portfolio.png?url';
 import styles from './Projects.module.scss';

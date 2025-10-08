@@ -32,7 +32,7 @@ const Loading: React.FC<LoadingProps> = ({
       transition: {
         duration: 1,
         repeat: Infinity,
-        ease: "linear"
+        ease: "linear" as const
       }
     }
   };

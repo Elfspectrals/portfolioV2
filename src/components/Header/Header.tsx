@@ -3,7 +3,12 @@ import { useState } from "react";
 import styles from "./Header.module.scss";
 import { useTranslation } from "react-i18next";
 
-import { Navigation, type NavItem } from "../Navigation/Navigation";
+import Navigation from "../Navigation/Navigation";
+
+export interface NavItem {
+  label: string;
+  href: string;
+}
 import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 
 export interface HeaderProps {
@@ -62,7 +67,7 @@ export const Header: React.FC<HeaderProps> = ({
           className={styles.navWrapper}
           data-open={isMenuOpen}
         >
-          <Navigation links={navLinks} />
+          <Navigation navLinks={navLinks} />
         </div>
       </div>
     </header>

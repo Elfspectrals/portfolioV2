@@ -15,7 +15,7 @@ const Home = () => {
       <TechStack />
       <Projects />
       <HomePagePartFour />
-      <Contact t={t} />
+      <Contact />
     </main>
   );
 };
