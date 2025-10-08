@@ -136,7 +136,7 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 **Jérôme Neupert**
 - GitHub: [@elfspectrals](https://github.com/elfspectrals)
 - LinkedIn: [Jérôme Neupert](https://www.linkedin.com/in/jerome-neupert/)
-- Email: jerome@example.com
+- Email: jerome.neupert@gmail.com
 
 ---
 

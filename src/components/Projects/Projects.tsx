@@ -72,18 +72,6 @@ const Projects: React.FC = () => {
       featured: true,
       githubUrl: 'https://github.com/elfspectrals/portfolio-v2',
       liveUrl: 'https://jerome-neupert.dev'
-    },
-    {
-      id: 'chrome-extensions',
-      title: 'Chrome Extensions Suite',
-      description: 'Collection d\'extensions Chrome pour la productivité',
-      longDescription: 'Suite d\'extensions Chrome développées pour améliorer la productivité. Inclut un correcteur d\'orthographe IA, un générateur de templates d\'emails, et un mini-jeu d\'observation. Intégration avec des APIs d\'IA pour la correction automatique.',
-      image: '/api/placeholder/400/300',
-      technologies: ['JavaScript', 'Chrome APIs', 'AI Integration', 'Manifest V3'],
-      category: 'web',
-      status: 'completed',
-      featured: false,
-      githubUrl: 'https://github.com/elfspectrals/chrome-extensions'
     }
   ];
 

@@ -36,7 +36,7 @@ const Navigation: React.FC<NavigationProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'tech', 'projects', 'contact'];
+      const sections = ['home', 'tech', 'projects', 'extensions', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {

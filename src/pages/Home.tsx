@@ -1,8 +1,8 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Hero from '../components/Hero/Hero';
 import TechStack from '../components/TechStack/TechStack';
 import Projects from '../components/Projects/Projects';
+import HomePagePartFour from './HomePagePartFour';
 import Contact from '../components/Contact/Contact';
 import styles from "./Home.module.scss";
 
@@ -14,6 +14,7 @@ const Home = () => {
       <Hero t={t} />
       <TechStack />
       <Projects />
+      <HomePagePartFour />
       <Contact t={t} />
     </main>
   );

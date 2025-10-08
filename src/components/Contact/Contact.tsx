@@ -89,8 +89,8 @@ const Contact: React.FC<ContactProps> = ({ t }) => {
     {
       icon: <Mail className={styles.contactIcon} />,
       title: 'Email',
-      value: 'jerome@example.com',
-      href: 'mailto:jerome@example.com'
+      value: 'jerome.neupert@gmail.com',
+      href: 'mailto:jerome.neupert@gmail.com'
     },
     {
       icon: <Phone className={styles.contactIcon} />,

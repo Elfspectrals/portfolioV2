@@ -17,6 +17,7 @@ const navLinks = (t: (k: string) => string) => [
   { label: t("app.nav.home"), href: "#home" },
   { label: t("app.nav.tech"), href: "#tech" },
   { label: t("app.nav.projects"), href: "#projects" },
+  { label: t("app.nav.extensions"), href: "#extensions" },
   { label: t("app.nav.contact"), href: "#contact" },
 ];
 

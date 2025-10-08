@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Tilt from 'react-parallax-tilt';
 import { 
   Code2, 
-  Sparkles, 
   ArrowRight, 
   Github, 
   Linkedin, 
-  Mail,
-  Download,
-  Star
+  Mail
 } from 'lucide-react';
 import jeromeProfilePic from '../../assets/jerome.jpg';
+import MailModal from '../MailModal/MailModal';
 import styles from './Hero.module.scss';
 
 interface HeroProps {
@@ -21,6 +19,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ t }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMailModalOpen, setIsMailModalOpen] = useState(false);
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 300], [0, -50]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0.8]);
@@ -59,7 +58,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 12
       }
@@ -72,7 +71,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
       transition: {
         duration: 4,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: "easeInOut" as const
       }
     }
   };
@@ -204,10 +203,7 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
                 <span className={styles.statNumber}>15+</span>
                 <span className={styles.statLabel}>Projets réalisés</span>
               </div>
-              <div className={styles.stat}>
-                <span className={styles.statNumber}>100%</span>
-                <span className={styles.statLabel}>Satisfaction client</span>
-              </div>
+              
             </motion.div>
 
             {/* CTA Buttons */}
@@ -268,15 +264,15 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
                 <span>LinkedIn</span>
               </motion.a>
 
-              <motion.a
-                href="mailto:jerome@example.com"
+              <motion.button
+                onClick={() => setIsMailModalOpen(true)}
                 className={styles.socialLink}
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
               >
                 <Mail className={styles.socialIcon} />
                 <span>Email</span>
-              </motion.a>
+              </motion.button>
             </motion.div>
           </motion.div>
         </div>
@@ -298,6 +294,12 @@ const Hero: React.FC<HeroProps> = ({ t }) => {
           <span>Scroll pour découvrir</span>
         </motion.div>
       </div>
+
+      {/* Mail Modal */}
+      <MailModal 
+        isOpen={isMailModalOpen} 
+        onClose={() => setIsMailModalOpen(false)} 
+      />
     </motion.section>
   );
 };
