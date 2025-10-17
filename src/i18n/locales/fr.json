@@ -111,7 +111,7 @@
     "social": {
       "github": "GitHub",
       "linkedin": "LinkedIn"
-        },
+    },
     "formTitle": "Envoyez-moi un message",
     "formDescription": "Je réponds généralement dans les 24h",
     "formSubject": "Nouveau message depuis votre portfolio",
@@ -194,6 +194,11 @@
     "portfolio": {
       "description": "Portfolio moderne avec animations avancées et design responsive",
       "longDescription": "Portfolio personnel développé avec React, TypeScript et Framer Motion. Design moderne avec animations fluides, mode sombre/clair, et optimisations de performance. Intégration de Three.js pour les éléments 3D."
+    }
+  },
+  "projectsExtensions": {
+    "categories": {
+      "all": "Tous"
     }
   }
 }

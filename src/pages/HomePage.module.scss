@@ -96,8 +96,7 @@ body {
 .socialBadges {
   display: flex;
   gap: 1rem;
-  margin-top: 1.5rem;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .socialBadge {
@@ -181,6 +180,14 @@ body {
     opacity: 0.1;
     z-index: -1;
   }
+}
+
+/* Avatar section containing avatar and social badges */
+.avatarSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* Avatar container with glow effect */

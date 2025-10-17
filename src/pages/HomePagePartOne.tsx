@@ -64,7 +64,7 @@ const HomePagePartOne = () => {
     setIsVisible(true);
     const techTimer = setTimeout(() => setTechVisible(true), 500);
     const softTimer = setTimeout(() => setSoftVisible(true), 1000);
-    
+
     return () => {
       clearTimeout(techTimer);
       clearTimeout(softTimer);
@@ -83,46 +83,25 @@ const HomePagePartOne = () => {
 
   return (
     <div className={styles.container}>
-      <header className={`${styles.hero} ${isVisible ? styles.heroVisible : ''}`}>
-        <div className={styles.avatarContainer}>
-          <img
-            className={styles.avatar}
-            src={jeromeProfilePic}
-            alt={t("homepage.avatarAlt")}
-            loading="eager"
-            width="128"
-            height="128"
-            decoding="async"
-          />
-          <div className={styles.avatarGlow} aria-hidden="true"></div>
-        </div>
+      <header
+        className={`${styles.hero} ${isVisible ? styles.heroVisible : ""}`}
+      >
+        <div className={styles.avatarSection}>
+          <div className={styles.avatarContainer}>
+            <img
+              className={styles.avatar}
+              src={jeromeProfilePic}
+              alt={t("homepage.avatarAlt")}
+              loading="eager"
+              width="128"
+              height="128"
+              decoding="async"
+            />
+            <div className={styles.avatarGlow} aria-hidden="true"></div>
+          </div>
 
-        <div className={styles.titleBlock}>
-          <h1 className={styles.heroTitle}>
-            <span className={styles.greeting}>{t("homepage.heroGreeting")}</span>
-            <span className={`${styles.highlight} ${styles.roleText}`}>
-              {t("homepage.heroRole")}
-            </span>
-          </h1>
-          <h3 className={styles.heroSubtitle}>
-            {t("homepage.heroSubtitle1")}
-            <br />
-            {t("homepage.heroSubtitle2")}
-          </h3>
-
-          {/* CTA and Social badges row */}
-          <div className={styles.ctaRow}>
-            <a
-              href="#soft-skills"
-              className={`${styles.badge} ${styles.ctaBadge}`}
-              aria-label={t("homepage.ctaSoftSkillsAria")}
-            >
-              <span className={styles.label}>
-                {t("homepage.ctaSoftSkills")}
-              </span>
-            </a>
-
-            {/* Social badges */}
+          {/* Social badges below avatar */}
+          <div className={styles.socialBadges}>
             <a
               href="https://www.linkedin.com/in/jerome-neupert/"
               target="_blank"
@@ -141,19 +120,59 @@ const HomePagePartOne = () => {
             >
               <Badge text="GitHub" />
             </a>
+            <a
+              href="#contact"
+              className={styles.socialBadge}
+              aria-label="Contact"
+            >
+              <Badge text="Contact" />
+            </a>
+          </div>
+        </div>
+
+        <div className={styles.titleBlock}>
+          <h1 className={styles.heroTitle}>
+            <span className={styles.greeting}>
+              {t("homepage.heroGreeting")}
+            </span>
+            <span className={`${styles.highlight} ${styles.roleText}`}>
+              {t("homepage.heroRole")}
+            </span>
+          </h1>
+          <h3 className={styles.heroSubtitle}>
+            {t("homepage.heroSubtitle1")}
+            <br />
+            {t("homepage.heroSubtitle2")}
+          </h3>
+
+          {/* CTA row */}
+          <div className={styles.ctaRow}>
+            <a
+              href="#soft-skills"
+              className={`${styles.badge} ${styles.ctaBadge}`}
+              aria-label={t("homepage.ctaSoftSkillsAria")}
+            >
+              <span className={styles.label}>
+                {t("homepage.ctaSoftSkills")}
+              </span>
+            </a>
           </div>
         </div>
       </header>
 
-      <section className={`${styles.section} ${techVisible ? styles.sectionVisible : ''}`}>
+      <section
+        className={`${styles.section} ${
+          techVisible ? styles.sectionVisible : ""
+        }`}
+      >
         <h2 className={styles.sectionTitle}>
           <span className={styles.titleText}>{t("homepage.techTitle")}</span>
           <div className={styles.titleUnderline}></div>
         </h2>
         <ul className={styles.chips} aria-label={t("homepage.techAria")}>
           {technologies.map((tech, index) => (
-            <li 
-              key={tech.text} 
+            <li
+              key={tech.text}
               role="listitem"
               className={styles.techItem}
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -165,15 +184,20 @@ const HomePagePartOne = () => {
       </section>
 
       {/* Ajout d'un id pour l'ancre */}
-      <section className={`${styles.section} ${softVisible ? styles.sectionVisible : ''}`} id="soft-skills">
+      <section
+        className={`${styles.section} ${
+          softVisible ? styles.sectionVisible : ""
+        }`}
+        id="soft-skills"
+      >
         <h2 className={styles.sectionTitle}>
           <span className={styles.titleText}>{t("homepage.softTitle")}</span>
           <div className={styles.titleUnderline}></div>
         </h2>
         <ul className={styles.chips} aria-label={t("homepage.softAria")}>
           {softSkills.map((skill, index) => (
-            <li 
-              key={skill.text} 
+            <li
+              key={skill.text}
               role="listitem"
               className={styles.softItem}
               style={{ animationDelay: `${index * 0.1}s` }}

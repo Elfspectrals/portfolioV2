@@ -107,6 +107,13 @@
   align-items: center;
 }
 
+.avatarSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
 .avatarContainer {
   position: relative;
   display: inline-block;

@@ -195,5 +195,10 @@
       "description": "Modern portfolio with advanced animations and responsive design",
       "longDescription": "Personal portfolio developed with React, TypeScript and Framer Motion. Modern design with smooth animations, dark/light mode, and performance optimizations. Three.js integration for 3D elements."
     }
+  },
+  "projectsExtensions": {
+    "categories": {
+      "all": "All"
+    }
   }
 }

@@ -4,8 +4,8 @@
 $blue:   #2563eb;
 $orange: #f97316;
 $green:  #16a34a;
-$border-Card-Light: blue;
-$border-Card-Dark: red;
+$border-Card-Light: #e2e8f0;
+$border-Card-Dark: #334155;
 
 $v-light: (
   "background": #DDE1C5,
@@ -16,11 +16,11 @@ $v-light: (
 );
 
 $v-dark: (
-  "background": #042B29,
-  "text": #EAEAEA,
-  "card-bg": #581818,
-  "card-text": #F5F5F5,
-  "card-icon": #EE7A46,
+  "background": #0f172a,
+  "text": #f1f5f9,
+  "card-bg": #1e293b,
+  "card-text": #cbd5e1,
+  "card-icon": #60a5fa,
 );
 
 /* ===== Mixins pour exporter des maps en variables CSS ===== */
